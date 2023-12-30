@@ -32,7 +32,14 @@ module.exports = function(grunt) {
     grunt.initConfig(babelConfig);
 
         grunt.loadNpmTasks('grunt-babel');
-      
+        grunt.registerTask("makeSymlinks", "Adds all the symlinks to the workspace", () => {
+            if (!fs.existsSync("./src/server_scripts/common.js")) {
+                fs.symlinkSync(path.join(process.cwd(),"./src/startup_scripts/common.js"), "./src/server_scripts/common.js")
+            }
+            else {
+                grunt.log.writeln("startup_scripts/common.js symlink already exists")
+            }
+        })
         grunt.registerTask("dev", "Copies files to the instance specified by localConfig.json", () => {
             //Load the localConfig.json
             let config
@@ -60,5 +67,5 @@ module.exports = function(grunt) {
             fs.rmSync(path.join(config.instanceFolder,"kubejs/"))
             fs.symlinkSync(path.join(process.cwd(),"./kubejs"), path.join(config.instanceFolder,"kubejs/"),"dir")
         })
-        grunt.registerTask("default", ["babel", "dev"]);
+        grunt.registerTask("default", ["makeSymlinks","babel", "dev"]);
 }

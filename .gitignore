@@ -10,5 +10,7 @@
 /node_modules
 # local config
 localConfig.json
+# Symlinks
+src/server_scripts/common.js
 # Vscode
 .vscode
