@@ -3,7 +3,11 @@ const babelConfig = {
       options: {
         sourceMap: false,
         presets: ["@babel/preset-env"],
-        plugins: [["babel-plugin-preserve-comment-header",{pattern: "priority:"}]],
+        plugins: [
+            ["babel-plugin-preserve-comment-header",{
+                //This is regex for matching headers in KubeJS scripts so that babel doesn't push them to random places
+                pattern: "priority:"
+            }]],
         sourceType: "script"
       },
       dist: {
