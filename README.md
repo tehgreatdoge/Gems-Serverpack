@@ -1,7 +1,7 @@
 # Gem's Serverpack
 This is a simple little modpack for playing around with various mods
 ## TODO
-Actually implement the tooling for dev and dist builds<br>
+Actually implement the tooling for dist builds<br>
 Make tooling for interacting with curseforge and modrinth in js.
 I plan on working on this and releasing it as npm modules.<br>
 A better project structure but its not too important
@@ -15,11 +15,12 @@ Now, make a file called localConfig.json. Here is an example file:
 }
 ```
 ## Building
+You have to build after every change to a kubejs file<br>
 `grunt` <br>
-This will use babel to build the scripts in /src and copy all the relevant files
+This uses babel to build the scripts in /src and copy/symlink all the relevant files
 to the instanceFolder defined in localConfig.json<br>
 `grunt dist <target>` <br>
-This will use babel to build the scripts in /src, copy all the relevant files
+This would use babel to build the scripts in /src, copy all the relevant files
 to dist/curseforge and dist/modrinth (or the target), and make the appropriate 
 platform-specific changes
 ## Updating Dev Instance After Modlist Changes
