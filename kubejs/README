@@ -1,0 +1,5 @@
+This contains all the non-script KubeJS components
+The script components are added during the build phase
+The KubeJS folder is symlinked into the dev folder or
+copied directly into the dist. The git ignore prevents temporary files
+(any folders other than /assets /config /data) from being commited

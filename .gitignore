@@ -1,0 +1,12 @@
+#kubejs folder, don't ignore non-temp files
+/kubejs/*
+!/kubejs/data/
+!/kubejs/config/
+!/kubejs/assets/
+!/kubejs/README
+#dist folder
+/dist
+#node_modules
+/node_modules
+# local config
+localConfig.json
