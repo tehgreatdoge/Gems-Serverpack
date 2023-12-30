@@ -18,7 +18,11 @@ Now, make a file called localConfig.json. Here is an example file:
 `grunt` <br>
 This will use babel to build the scripts in /src and copy all the relevant files
 to the instanceFolder defined in localConfig.json<br>
-`grunt dist` <br>
+`grunt dist <target>` <br>
 This will use babel to build the scripts in /src, copy all the relevant files
-to dist/curseforge and dist/modrinth, and make the appropriate platform-specific
-changes
+to dist/curseforge and dist/modrinth (or the target), and make the appropriate 
+platform-specific changes
+## Updating Dev Instance After Modlist Changes
+(read todo first)<br>
+To update your dev instance after modlist changes you must first build dist and
+then you can load the instance into your preferred launcher.
