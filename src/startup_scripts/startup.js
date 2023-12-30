@@ -1,8 +1,10 @@
-// priority: 1
+// priority: 0
 
 // Visit the wiki for more info - https://kubejs.com/
 
 console.info('Loading Startup Scripts')
+
+global.MODID = "gems_server"
 
 Platform.mods.kubejs.name = "Gem's Server"
 
@@ -24,8 +26,5 @@ for (let key in Substrate) {
         .tagBlock('minecraft:needs_iron_tool') // the tool tier must be at least iron
     })
 }
-
-
-global.MODID = "gems_server"
 
 console.info('Loaded Startup Scripts')

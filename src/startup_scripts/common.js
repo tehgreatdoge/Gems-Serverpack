@@ -1,4 +1,5 @@
-// priority: 0
+// priority: 1
+// This file is automatically shared amongst the server and startup scripts
 class Substrate {
     static IRON = new Substrate("iron_substrate", "Iron Substrate")
     static GOLD = new Substrate("gold_substrate", "Gold Substrate")
@@ -22,12 +23,23 @@ class Substrate {
         return "gems_server:"+this.identifier
     }
 }
-global.Substrate = Substrate
-function Tier(substrate, materials) {
-    let newTier = {}
-    newTier.materials = materials
+class Tier {
+    static IRON = new Tier(Substrate.IRON, {coal: 1, iron: 0.5})
+    static GOLD = new Tier(Substrate.GOLD, {coal: 2, iron: 1, gold: 0.5})
+    static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5})
+    // All tiers after this require the previous tier to craft
+    static NETHERITE = new Tier(Substrate.NETHERITE, {coal: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1})
+    static VACUUM_TUBE = new Tier(Substrate.VACUUM_TUBE, {coal: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1})
+    static COMPUTATIONAL = new Tier(Substrate.COMPUTATIONAL, {coal: 4, iron: 4, gold: 4, diamond: 3, ancient_debris: 1, lapis: 3, redstone: 3, certus:2, nether_quartz: 2})
+    // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
+    static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, certus:2, nether_quartz: 2, fluix:1})
+    static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:3, nether_quartz: 3, fluix:1, osmium:1})
+    constructor(substrate, materials) {
+        this.substrate = substrate
+        this.materials = materials
+    }
 }
-global.Material = {
+var Materials = {
     coal: {
         item: "minecraft:coal",
         display: "minecraft:coal_ore",
@@ -84,17 +96,4 @@ global.Material = {
         drops: [{"item": "mekanism:raw_osmium",min:2, max:3}]
     },
 
-}
-
-global.tiers = {
-    IRON: Tier(Substrate.IRON, {coal: 1, iron: 0.5}),
-    GOLD: Tier(Substrate.GOLD, {coal: 2, iron: 1, gold: 0.5}),
-    DIAMOND: Tier(Substrate.DIAMOND, {coal: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5}),
-    // All tiers after this require the previous tier to craft
-    NETHERITE: Tier(Substrate.NETHERITE, {coal: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1}),
-    VACUUM_TUBE: Tier(Substrate.VACUUM_TUBE, {coal: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1}),
-    COMPUTATIONAL: Tier(Substrate.COMPUTATIONAL, {coal: 4, iron: 4, gold: 4, diamond: 3, ancient_debris: 1, lapis: 3, redstone: 3, certus:2, nether_quartz: 2}),
-    // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
-    MEKANISED: Tier(Substrate.MEKANISED, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, certus:2, nether_quartz: 2, fluix:1}),
-    REACTIVE: Tier(Substrate.REACTIVE, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:3, nether_quartz: 3, fluix:1, osmium:1}),
 }
