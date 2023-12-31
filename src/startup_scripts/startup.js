@@ -6,8 +6,6 @@ console.info('Loading Startup Scripts')
 
 global.MODID = "gems_server"
 
-Platform.mods.kubejs.name = "Gem's Server"
-
 // Register substrates
 for (let key in Substrate) {
     let substrate = Substrate[key]
@@ -20,6 +18,7 @@ for (let key in Substrate) {
         .soundType("metal")
         .hardness(1.0) // Set hardness (affects mining time)
         .resistance(1.0) // Set resistance (to explosions, etc)
+        .lightLevel(substrate.builderOptions.lightLevel ?? 0)
         .tagBoth("gems_server:substrates") // Tag the block and item
         .requiresTool(true) // Requires a tool or it won't drop (see tags below)
         .tagBlock("mineable/pickaxe") // or a pickaxe

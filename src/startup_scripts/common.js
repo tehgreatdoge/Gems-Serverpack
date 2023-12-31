@@ -6,15 +6,16 @@ class Substrate {
     static DIAMOND = new Substrate("diamond_substrate", "Diamond Substrate")
     static NETHERITE = new Substrate("netherite_substrate", "Netherite Substrate")
     static VACUUM_TUBE = new Substrate("vacuum_tube_substrate", "Vacuum Tube Substrate")
-    static COMPUTATIONAL = new Substrate("computational_substrate", "Computational Substrate")
+    static COMPUTATIONAL = new Substrate("computational_substrate", "Computational Substrate", {lightLevel: 0.5})
     static MEKANISED = new Substrate("mekanised_substrate", "Mekanised Substrate")
     static REACTIVE = new Substrate("reactive_substrate", "Reactive Substrate")
     static DEEP_SPACE = new Substrate("deep_space_substrate", "Deep Space Substrate")
     static NAQUADRIA = new Substrate("naquadria_substrate", "Naquadria Substrate")
     static POSITRONIC = new Substrate("positronic_substrate", "Positronic Substrate")
-    constructor(identifier, name) {
+    constructor(identifier, name, builderOptions) {
         this.name = name
         this.identifier = identifier
+        this.builderOptions = builderOptions ?? {}
     }
     getName() {
         return this.name
