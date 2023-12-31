@@ -63,9 +63,15 @@ module.exports = function(grunt) {
                 grunt.log.error("Unable to find the minecraft instance specified by .instanceFolder")
                 return false
             }
-            let progress = grunt.log.writeln("Symlinking scripts")
+            grunt.log.writeln("Symlinking scripts")
             fs.rmSync(path.join(config.instanceFolder,"kubejs/"))
             fs.symlinkSync(path.join(process.cwd(),"./kubejs"), path.join(config.instanceFolder,"kubejs/"),"dir")
+            grunt.log.writeln("Symlinking config")
+            fs.rmSync(path.join(config.instanceFolder,"config/"),{ recursive: true, force: true })
+            fs.symlinkSync(path.join(process.cwd(),"./config"), path.join(config.instanceFolder,"config/"),"dir")
+            grunt.log.writeln("Symlinking defaultconfigs")
+            fs.rmSync(path.join(config.instanceFolder,"defaultconfigs/"), { recursive: true, force: true })
+            fs.symlinkSync(path.join(process.cwd(),"./defaultconfigs"), path.join(config.instanceFolder,"defaultconfigs/"),"dir")
         })
         grunt.registerTask("default", ["makeSymlinks","babel", "dev"]);
 }
