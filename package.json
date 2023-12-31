@@ -15,6 +15,7 @@
     "grunt-babel": "^8.0.0"
   },
   "dependencies": {
-    "babel-plugin-transform-move-comments-to-top": "^1.0.3"
+    "babel-plugin-transform-move-comments-to-top": "^1.0.3",
+    "ignore": "^5.3.0"
   }
 }

@@ -1,5 +1,6 @@
 const fs = require("node:fs")
 const path = require("node:path")
+const ignore = require("ignore")
 
 const babelConfig = {
     babel: {
@@ -40,6 +41,40 @@ module.exports = function(grunt) {
                 grunt.log.writeln("startup_scripts/common.js symlink already exists")
             }
         })
+        grunt.registerTask("assemble", "Puts all the correct folders in /dist", () => {
+            fs.mkdirSync("./dist")
+            grunt.log.write("Copying kubejs ")
+            fs.cpSync("./kubejs/", "./dist/kubejs/", {'errorOnExist': true, "recursive":true})
+            grunt.log.ok()
+            grunt.log.write("Copying config ")
+            let ignoreFile = ignore()
+            ignoreFile.add(fs.readFileSync(".gitignore").toString())
+            //fs.cpSync gives extended length paths but process.cwd doesnt
+            if (path.win32 == path) {
+                //Convert cwd to extended length
+                let cwd = "\\\\?\\"+process.cwd()
+                fs.cpSync("./config/", "./dist/config/", {'errorOnExist': true, "recursive":true, filter: (src) => {
+                    src = path.relative(cwd,src)
+                    return !ignoreFile.ignores(src)
+                }})
+            }
+            grunt.log.ok()
+            grunt.log.write("Copying defaultconfigs ")
+            fs.cpSync("./defaultconfigs/", "./dist/defaultconfigs/", {'errorOnExist': true, "recursive":true})
+            grunt.log.ok()
+        })
+        grunt.registerTask("cleanScripts", "Cleans the built scripts from /kubejs", () => {
+            grunt.log.write("Cleaning scripts ")
+            fs.rmSync("./kubejs/client_scripts", { recursive: true, force: true })
+            fs.rmSync("./kubejs/server_scripts", { recursive: true, force: true })
+            fs.rmSync("./kubejs/startup_scripts", { recursive: true, force: true })
+            grunt.log.ok()
+        })
+        grunt.registerTask("cleanDist", "Cleans the /dist folder", () => {
+            grunt.log.write("Cleaning dist ")
+            fs.rmSync("./dist", { recursive: true, force: true })
+            grunt.log.ok()
+        })
         grunt.registerTask("dev", "Copies files to the instance specified by localConfig.json", () => {
             //Load the localConfig.json
             let config
@@ -60,7 +95,7 @@ module.exports = function(grunt) {
             }
             // Verify if the minecraft instance exists
             if (!fs.existsSync(config.instanceFolder)) {
-                grunt.log.error("Unable to find the minecraft instance specified by .instanceFolder")
+                grunt.log.error("Unable to find the minecraft instance specified by localConfig.json$instanceFolder")
                 return false
             }
             grunt.log.writeln("Symlinking scripts")
@@ -75,4 +110,5 @@ module.exports = function(grunt) {
             fs.symlinkSync(path.join(process.cwd(),"./defaultconfigs"), path.join(config.instanceFolder,"defaultconfigs/"),"dir")
         })
         grunt.registerTask("default", ["makeSymlinks","babel", "dev"]);
+        grunt.registerTask("build", ["cleanScripts", "cleanDist","babel", "assemble"]);
 }
