@@ -14,3 +14,18 @@ localConfig.json
 src/server_scripts/common.js
 # Vscode
 .vscode
+## Annoying config files
+/config/*
+!/config/ftbquests
+!/config/megacells.json
+!/config/sgjourney-common.toml
+!/config/sidebar_buttons.json
+!/config/theoneprobe-common.toml
+# ae2
+!/config/ae2
+/config/ae2/*
+!/config/ae2/common.json
+# advanced peripherals
+!/config/Advancedperipherals
+/config/Advancedperipherals/*
+!/config/Advancedperipherals/world.toml

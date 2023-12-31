@@ -1,0 +1,147 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "the_beginnings"
+	group: ""
+	icon: "botanypots:light_blue_glazed_terracotta_botany_pot"
+	id: "7EAC592E39C4CF7B"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "39646520A484643F"
+			rewards: [{
+				id: "2508FBF82AF82FFE"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "This pack uses mekanisn and create for resources, sgjourney and ad astra for exploration, and botany pots + a custom tiered substrate system for resources."
+			tasks: [{
+				id: "25C2BBA1C0F6ADC2"
+				title: "Welcome to the SGJourney Community Pack"
+				type: "checkmark"
+			}]
+			x: -7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["39646520A484643F"]
+			description: ["To start automating resources, you can use botany pots! You'll need to get some clay to make pots and terracotta. Once you have a pot and terracotta, you can make your first botany pot!"]
+			id: "1B3E348B011762ED"
+			rewards: [
+				{
+					count: 16
+					id: "46832A222B5C3A90"
+					item: "minecraft:grass_block"
+					type: "item"
+				}
+				{
+					id: "16F64308E7018D9F"
+					item: "minecraft:oak_sapling"
+					type: "item"
+				}
+				{
+					id: "3EE44FFE9DA4760A"
+					item: "minecraft:potato"
+					type: "item"
+				}
+			]
+			subtitle: "Just add dirt!"
+			tasks: [
+				{
+					consume_items: false
+					id: "70799550336697A6"
+					item: {
+						Count: 1b
+						id: "itemfilters:tag"
+						tag: {
+							value: "botanypots:all_botany_pots"
+						}
+					}
+					match_nbt: false
+					only_from_crafting: true
+					title: "Craft a Botany Pot"
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "28761084E9CDF897"
+					item: "minecraft:terracotta"
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "464771C3B822775F"
+					item: "minecraft:flower_pot"
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Getting started with botany pots!"
+			x: -5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1B3E348B011762ED"]
+			description: [
+				"In order to grow iron, copper, and coal, you will need an Iron Substrate. Go ahead and craft one and use it as a botany pot soil."
+				"{@pagebreak}"
+				"This modpack uses a unique growth substrate system for growing ores. You can find a list of substrates by typing \"@sgj_community substrates\" into jei."
+			]
+			id: "7053517E4216FCD1"
+			rewards: [
+				{
+					id: "246314D09A0CE38F"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					id: "62F9100A43823A63"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+				{
+					id: "558373DE155919C5"
+					item: "minecraft:coal"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "7A6CE16DBC66AFE0"
+				item: "gems_server:iron_substrate"
+				type: "item"
+			}]
+			title: "How do I grow ores?"
+			x: -3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1B3E348B011762ED"]
+			description: ["As cool as botany pots are, you don't want to watch them grow all day. Hopper botany pots will automatically collect and store your botany pot outputs."]
+			id: "691B9DE097A3AFD4"
+			rewards: [{
+				count: 3
+				id: "6F4F0ACFD303C939"
+				item: "minecraft:hopper"
+				type: "item"
+			}]
+			subtitle: "Watching diamonds grow"
+			tasks: [{
+				id: "06CE12D07D4D17CD"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "botanypots:hopper_botany_pots"
+					}
+				}
+				title: "Craft a Hopper Botany Pot"
+				type: "item"
+			}]
+			title: "Hop to it"
+			x: -5.5d
+			y: 2.0d
+		}
+	]
+	title: "The Beginnings"
+}

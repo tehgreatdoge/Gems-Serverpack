@@ -1,0 +1,90 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ae2"
+	group: ""
+	icon: "ae2:controller"
+	id: "130D8C64768FBA7D"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["3C51ACFA7F2A04E8"]
+			description: [
+				"Around your world there are meteors which are key to Applied Energistics 2. If you find one that has crystals growing inside and a mysterious cube, break the cube and take some crystals."
+				"{@pagebreak}"
+				"Having trouble? Consider creating a meteor compass."
+			]
+			id: "6525C803A8BD105A"
+			rewards: [{
+				id: "6C93AB08262686C1"
+				table_id: 7428168543327068380L
+				type: "random"
+			}]
+			subtitle: "Look out below!"
+			tasks: [
+				{
+					id: "38F508D60E937707"
+					item: "ae2:calculation_processor_press"
+					type: "item"
+				}
+				{
+					id: "3BB11E2D6752B0B7"
+					item: "ae2:engineering_processor_press"
+					type: "item"
+				}
+				{
+					id: "662AFD1D2AE77BBD"
+					item: "ae2:logic_processor_press"
+					type: "item"
+				}
+				{
+					id: "215C0EB22E47360F"
+					item: "ae2:silicon_press"
+					type: "item"
+				}
+			]
+			title: "Meteor Hunter"
+			x: -2.5d
+			y: 1.5d
+		}
+		{
+			description: ["Applied Energistics 2 is a storage mod based around the idea of energy-mass equivalency. Your items get stored as \"energy\" inside cells which is then converted back to retrieve them. Ultimately, this means you can store a LOT of items."]
+			id: "3C51ACFA7F2A04E8"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "45478175ED5E98E0"
+					table_id: 7428168543327068380L
+					type: "random"
+				}
+				{
+					id: "7BE9A9A7723492D5"
+					type: "xp"
+					xp: 20
+				}
+			]
+			subtitle: "Mass from energy, energy from mass"
+			tasks: [{
+				id: "0693694DC8DD1B2C"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "e = mc^2"
+			x: -5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3C51ACFA7F2A04E8"]
+			id: "112725E86D8D3D75"
+			tasks: [{
+				id: "53A8DEC2E3D507B4"
+				item: "ae2:charger"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -2.0d
+		}
+	]
+	title: "Applied Energistics"
+}
