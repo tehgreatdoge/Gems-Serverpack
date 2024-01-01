@@ -43,8 +43,9 @@ module.exports = function(grunt) {
         })
         grunt.registerTask("assemble", "Puts all the correct folders in /dist", () => {
             fs.mkdirSync("./dist")
+            fs.mkdirSync("./dist/overrides")
             grunt.log.write("Copying kubejs ")
-            fs.cpSync("./kubejs/", "./dist/kubejs/", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./kubejs/", "./dist/overrides/kubejs/", {'errorOnExist': true, "recursive":true})
             grunt.log.ok()
             grunt.log.write("Copying config ")
             let ignoreFile = ignore()
@@ -53,14 +54,17 @@ module.exports = function(grunt) {
             if (path.win32 == path) {
                 //Convert cwd to extended length
                 let cwd = "\\\\?\\"+process.cwd()
-                fs.cpSync("./config/", "./dist/config/", {'errorOnExist': true, "recursive":true, filter: (src) => {
+                fs.cpSync("./config/", "./dist/overrides/config/", {'errorOnExist': true, "recursive":true, filter: (src) => {
                     src = path.relative(cwd,src)
                     return !ignoreFile.ignores(src)
                 }})
             }
             grunt.log.ok()
             grunt.log.write("Copying defaultconfigs ")
-            fs.cpSync("./defaultconfigs/", "./dist/defaultconfigs/", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./defaultconfigs/", "./dist/overrides/defaultconfigs/", {'errorOnExist': true, "recursive":true})
+            grunt.log.ok()
+            grunt.log.write("Copying manifest ")
+            fs.copyFileSync("./manifest.json","./dist/manifest.json")
             grunt.log.ok()
         })
         grunt.registerTask("cleanScripts", "Cleans the built scripts from /kubejs", () => {
