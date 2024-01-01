@@ -103,7 +103,7 @@ module.exports = function(grunt) {
                 return false
             }
             grunt.log.writeln("Symlinking scripts")
-            fs.rmSync(path.join(config.instanceFolder,"kubejs/"))
+            fs.rmSync(path.join(config.instanceFolder,"kubejs/"), {recursive: true, force: true})
             fs.symlinkSync(path.join(process.cwd(),"./kubejs"), path.join(config.instanceFolder,"kubejs/"),"dir")
             // Sorry linux users, idk if night config will work properly with symlinks (idk why it works with junctions either)
             grunt.log.writeln("Junctioning config")
