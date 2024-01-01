@@ -15,6 +15,7 @@
 				"{@pagebreak}"
 				"Having trouble? Consider creating a meteor compass."
 			]
+			icon: "ae2:meteorite_compass"
 			id: "6525C803A8BD105A"
 			rewards: [{
 				id: "6C93AB08262686C1"
@@ -76,12 +77,19 @@
 		}
 		{
 			dependencies: ["3C51ACFA7F2A04E8"]
+			description: ["The charger is used for creating, amongst other things, charged certus quartz which is used in many ae2 recipes. Attach the wooden crank and click it to charge items. You can also provide power over ae2 networks or with FE."]
 			id: "112725E86D8D3D75"
+			rewards: [{
+				id: "25A37A2FD88835D1"
+				item: "ae2:crank"
+				type: "item"
+			}]
 			tasks: [{
 				id: "53A8DEC2E3D507B4"
 				item: "ae2:charger"
 				type: "item"
 			}]
+			title: "Do you have a cable I could borrow?"
 			x: -2.5d
 			y: -2.0d
 		}

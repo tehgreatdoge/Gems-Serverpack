@@ -9,13 +9,14 @@
 	quest_links: [ ]
 	quests: [
 		{
+			description: ["This pack uses mekanisn and create for resources, sgjourney and ad astra for exploration, and botany pots + a custom tiered substrate system for resources."]
 			id: "39646520A484643F"
 			rewards: [{
 				id: "2508FBF82AF82FFE"
 				type: "xp"
 				xp: 20
 			}]
-			subtitle: "This pack uses mekanisn and create for resources, sgjourney and ad astra for exploration, and botany pots + a custom tiered substrate system for resources."
+			subtitle: "It's kinda thrown together"
 			tasks: [{
 				id: "25C2BBA1C0F6ADC2"
 				title: "Welcome to the SGJourney Community Pack"
@@ -83,11 +84,7 @@
 		}
 		{
 			dependencies: ["1B3E348B011762ED"]
-			description: [
-				"In order to grow iron, copper, and coal, you will need an Iron Substrate. Go ahead and craft one and use it as a botany pot soil."
-				"{@pagebreak}"
-				"This modpack uses a unique growth substrate system for growing ores. You can find a list of substrates by typing \"@sgj_community substrates\" into jei."
-			]
+			description: ["In order to grow iron, copper, and coal, you will need an Iron Substrate. Go ahead and craft one and use it as a botany pot soil."]
 			id: "7053517E4216FCD1"
 			rewards: [
 				{
@@ -109,6 +106,7 @@
 			tasks: [{
 				id: "7A6CE16DBC66AFE0"
 				item: "gems_server:iron_substrate"
+				title: "Craft Iron Substrate"
 				type: "item"
 			}]
 			title: "How do I grow ores?"
@@ -141,6 +139,41 @@
 			title: "Hop to it"
 			x: -5.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["7053517E4216FCD1"]
+			description: [
+				"This modpack uses a unique growth substrate system for growing ores in botany pots. Each tier of substrates can grow new materials and grow previous materials faster."
+				"(List of substrates on next page)"
+				"{@pagebreak}"
+				"Substrates:"
+				""
+				"Iron: iron, coal, copper"
+				"Gold: + gold"
+				"Diamond: + diamond, lapis, redstone"
+				"Netherite: + ancient debris"
+				"Kinetic: + certus quartz, nether quartz"
+				"Computational: just faster"
+				"Mekanised: + fluix"
+				"Reactive: + osmium"
+				"Deep Space: + tin, lead"
+				"Naquadria: + uranium, fluorine"
+				"Positronic: + naquadah"
+			]
+			id: "1DEBD297BF2D5EC6"
+			rewards: [{
+				id: "4EB0DE5242C60D08"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "5600081E3DFB3883"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "About Substrates"
+			x: -1.5d
+			y: 0.0d
 		}
 	]
 	title: "The Beginnings"
