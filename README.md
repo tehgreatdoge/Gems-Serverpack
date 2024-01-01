@@ -11,7 +11,7 @@ copy of the modpack, then install it into curseforge.<br>
 Now, make a file called localConfig.json in your local git repo and add your new instance's path. Here is an example file:
 ```json
 {
-    "instanceFolder": "/path/to/curseforge/instances/SGJCommunityPack"
+    "instanceFolder": "/path/to/curseforge/instances/minecraft/SGJCommunityPack"
 }
 ```
 This will tell the build tools where to make changes after you build dev (`grunt`)
