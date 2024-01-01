@@ -17,7 +17,7 @@ copy of the modpack, then install it into your favorite modrinth-supporting laun
 Now, make a file called localConfig.json in your local git repo and add your new instance's path. Here is an example file:
 ```json
 {
-    "instanceFolder": "/path/to/your/development/minecraft/instance"
+    "instanceFolder": "/path/to/loader/instances/SGJCommunityPack"
 }
 ```
 This will tell the build tools where to make changes after you build dev (`grunt`)
