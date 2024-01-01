@@ -110,5 +110,5 @@ module.exports = function(grunt) {
             fs.symlinkSync(path.join(process.cwd(),"./defaultconfigs"), path.join(config.instanceFolder,"defaultconfigs/"),"dir")
         })
         grunt.registerTask("default", ["makeSymlinks","babel", "dev"]);
-        grunt.registerTask("build", ["cleanScripts", "cleanDist","babel", "assemble"]);
+        grunt.registerTask("build", ["cleanScripts", "cleanDist","makeSymlinks","babel", "assemble"]);
 }
