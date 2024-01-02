@@ -1,0 +1,105 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "storage_drawers"
+	group: "3553DD7F726AE366"
+	id: "1F04AB80865DF168"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "2307221E1FFF3987"
+			tasks: [{
+				id: "14366B64A11E514E"
+				title: "Welcome to Storage Drawers!"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2307221E1FFF3987"]
+			description: ["Drawer upgrades can add all sorts of features to drawers, from voiding unnecessary items, to outputting redstone signals. However, the most useful upgrades are, of course, storage upgrades. Storage upgrades stack multiplicatively, allowing for hundres of thousands of items to be stored in just one drawer."]
+			id: "392EBD1D6F41CA7A"
+			rewards: [
+				{
+					count: 4
+					id: "4833DB344BA7E75F"
+					item: "storagedrawers:illumination_upgrade"
+					type: "item"
+				}
+				{
+					id: "6B71BF305436604C"
+					item: "storagedrawers:shroud_key"
+					type: "item"
+				}
+			]
+			subtitle: "Bigger on the Inside"
+			tasks: [{
+				count: 4L
+				id: "456B9A4002FF17B1"
+				item: "storagedrawers:upgrade_template"
+				type: "item"
+			}]
+			title: "Drawer Upgrades"
+			x: -7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "65481C0705FD95AD"
+			tasks: [{
+				id: "17DE1669D93EF9D5"
+				item: "storagedrawers:obsidian_storage_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["65481C0705FD95AD"]
+			id: "79FBDE2EFD3197CA"
+			tasks: [{
+				id: "623B6C12CF49FF11"
+				item: "storagedrawers:iron_storage_upgrade"
+				type: "item"
+			}]
+			x: -11.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["79FBDE2EFD3197CA"]
+			id: "1835DB4A1E968E78"
+			tasks: [{
+				id: "2902D4C527A1471B"
+				item: "storagedrawers:gold_storage_upgrade"
+				type: "item"
+			}]
+			x: -12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1835DB4A1E968E78"]
+			id: "29C7EB3A6500E62C"
+			tasks: [{
+				id: "0F078E3C61620C36"
+				item: "storagedrawers:diamond_storage_upgrade"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["29C7EB3A6500E62C"]
+			id: "42C99B2D00DBCFE0"
+			tasks: [{
+				id: "38A4A5A807DC5D3A"
+				item: "storagedrawers:emerald_storage_upgrade"
+				type: "item"
+			}]
+			x: -14.5d
+			y: 0.0d
+		}
+	]
+	title: "Storage Drawers"
+}

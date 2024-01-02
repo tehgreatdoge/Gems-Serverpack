@@ -54,6 +54,7 @@ ServerEvents.recipes((event) => {
             "G": Substrate.GOLD.getIdentifier()
         }
     )
+    event.smithing(Substrate.NETHERITE.getIdentifier(),"minecraft:netherite_upgrade_smithing_template", Substrate.DIAMOND.getIdentifier(), "minecraft:netherite_ingot")
     // Kinetic Substrate
     event.recipes.create.mechanical_crafting(Substrate.KINETIC.getIdentifier(),
     [
@@ -70,6 +71,15 @@ ServerEvents.recipes((event) => {
         "c": "create:large_cogwheel",
         "n": Substrate.NETHERITE.getIdentifier()
     })
+    // Mekanised Substrate
+
+    // Reactive Substrate
+
+    // Deep Space Substrate
+
+    // Naquadah Substrate
+
+    // Positronic Substrate
     // Be evil and remove all the easy ae2 circuit recipes
     event.remove([{id:"ae2:inscriber/engineering_processor"},{id:"ae2:inscriber/logic_processor"},{id:"ae2:inscriber/calculation_processor"},{id:"megacells:inscriber/accumulation_processor"}])
     // Replace them with harder recipes
@@ -78,7 +88,6 @@ ServerEvents.recipes((event) => {
     registerAE2InscriberRecipeTagMiddle(event, "ae2:calculation_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_calculation_processor", "ae2:printed_silicon"])
     registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_BASIC, "megacells:printed_accumulation_processor", "ae2:printed_silicon"])
     // Netherite Substrate
-    event.smithing(Substrate.NETHERITE.getIdentifier(),"minecraft:netherite_upgrade_smithing_template", Substrate.DIAMOND.getIdentifier(), "minecraft:netherite_ingot")
     // Create Vacuum Tube
     event.recipes.create.pressing(Item.SILICA_DUST.getIdentifier(), "minecraft:glass")
     event.recipes.create.pressing(Item.SAND_MOLD.getIdentifier(), "minecraft:sand")
