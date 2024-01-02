@@ -7,6 +7,8 @@ const babelConfig = {
       options: {
         sourceMap: false,
         plugins: [
+            "@babel/plugin-transform-parameters",
+            "@babel/plugin-transform-logical-assignment-operators",
             "@babel/plugin-transform-class-properties",
             "@babel/plugin-transform-classes",
             "@babel/plugin-transform-nullish-coalescing-operator",

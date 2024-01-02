@@ -5,6 +5,7 @@
 console.info('Loading Startup Scripts')
 
 // Register substrates
+
 StartupEvents.registry("block", (event) => {
     for (let key in Substrate) {
         let substrate = Substrate[key]
@@ -32,6 +33,9 @@ StartupEvents.registry("item", (event) => {
         }
         else {
             builder = event.create(item.getIdentifier())
+        }
+        for (let tag of item.builderOptions.tags) {
+            builder.tag(tag)
         }
         builder.displayName(item.getName())
     }

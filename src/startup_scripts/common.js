@@ -2,10 +2,10 @@
 // This file is automatically shared amongst the server and startup scripts
 var MODID = "sgcommunity_pack"
 var Tags = {
-    CIRCUIT: "#"+MODID+":circuit",
-    CIRCUIT_BASIC: "#"+MODID+":circuit_basic",
-    CIRCUIT_INTERMEDIATE: "#"+MODID+":circuit_intermediate",
-    CIRCUIT_ADVANCED: "#"+MODID+":circuit_advanced",
+    CIRCUIT: MODID+":circuit",
+    CIRCUIT_BASIC: MODID+":circuit_basic",
+    CIRCUIT_INTERMEDIATE: MODID+":circuit_intermediate",
+    CIRCUIT_ADVANCED: MODID+":circuit_advanced",
 }
 
 class Substrate {
@@ -33,8 +33,9 @@ class Substrate {
     }
 }
 class Item {
+    // Vacuum Tube
     static INCOMPLETE_VACUUM_TUBE = new Item("incomplete_vacuum_tube","Incomplete Vacuum Tube", { itemType: "create:sequenced_assembly"})
-    static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
+    static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube", {tags: [Tags.CIRCUIT_BASIC, Tags.CIRCUIT]})
     static GLASS_TUBE = new Item("glass_tube","Glass Tube")
     static SILICA_DUST = new Item("silica_dust","Silica Dust")
     static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket")
@@ -44,6 +45,7 @@ class Item {
         this.name = name
         this.identifier = identifier
         this.builderOptions = builderOptions ?? {}
+        this.builderOptions.tags ??= []
     }
     getName() {
         return this.name
@@ -51,7 +53,7 @@ class Item {
     getIdentifier() {
         return MODID+ ":" +this.identifier
     }
-    static of(item, count) {
+    static of(item, count = 1) {
         if (item instanceof Item) {
             item = item.getIdentifier()
         }
