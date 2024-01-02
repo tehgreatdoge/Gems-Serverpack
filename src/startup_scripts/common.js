@@ -83,19 +83,19 @@ class Fluid {
     }
 }
 class Tier {
-    static IRON = new Tier(Substrate.IRON, {coal: 1, iron: 0.5})
-    static GOLD = new Tier(Substrate.GOLD, {coal: 2, iron: 1, gold: 0.5})
-    static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5})
+    static IRON = new Tier(Substrate.IRON, {coal: 1, copper: 1, iron: 0.5})
+    static GOLD = new Tier(Substrate.GOLD, {coal: 2, copper: 2, iron: 1, gold: 0.5})
+    static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, copper: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5})
     // All tiers after this require the previous tier to craft
-    static NETHERITE = new Tier(Substrate.NETHERITE, {coal: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1})
-    static KINETIC = new Tier(Substrate.KINETIC, {coal: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1})
+    static NETHERITE = new Tier(Substrate.NETHERITE, {coal: 4, copper: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1})
+    static KINETIC = new Tier(Substrate.KINETIC, {coal: 4, copper: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1})
     static COMPUTATIONAL = new Tier(Substrate.COMPUTATIONAL, {coal: 4, iron: 4, gold: 4, diamond: 3, ancient_debris: 1, lapis: 3, redstone: 3, certus:2, nether_quartz: 2})
     // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
-    static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, certus:2, nether_quartz: 2, fluix:1})
-    static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:3, nether_quartz: 3, fluix:1, osmium:1})
-    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, tin:1, lead: 1})
-    static NAQUADRIA = new Tier(Substrate.REACTIVE, {coal: 8, iron: 8, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, certus: 4, nether_quartz: 4, fluix:4, osmium:4, tin:2, lead: 2, fluorine:1, uranium: 1})
-    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, iron: 8, gold: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, certus: 8, nether_quartz: 8, fluix:8, osmium:8, tin:4, lead: 4, fluorine:4, uranium: 4, naquadah: 1})
+    static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, copper: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, certus:2, nether_quartz: 2, fluix:1})
+    static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, copper: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:3, nether_quartz: 3, fluix:1, osmium:1})
+    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, copper: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, tin:1, lead: 1})
+    static NAQUADRIA = new Tier(Substrate.REACTIVE, {coal: 8, copper: 8, iron: 8, gold: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, certus: 4, nether_quartz: 4, fluix:4, osmium:4, tin:2, lead: 2, fluorine:1, uranium: 1})
+    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, copper: 8, iron: 8, gold: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, certus: 8, nether_quartz: 8, fluix:8, osmium:8, tin:4, lead: 4, fluorine:4, uranium: 4, naquadah: 1})
     constructor(substrate, materials) {
         this.substrate = substrate
         this.materials = materials
@@ -106,6 +106,11 @@ var Materials = {
         item: "minecraft:coal",
         display: "minecraft:coal_ore",
         drops: [{"item": "minecraft:coal",min:2, max:3}]
+    },
+    copper: {
+        item: "minecraft:copper_ingot",
+        display: "minecraft:copper_ore",
+        drops: [{"item": "minecraft:raw_copper",min:2, max:3}]
     },
     iron: {
         item: "minecraft:iron_ingot",
