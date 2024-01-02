@@ -1,11 +1,13 @@
-// priority: 1
+// priority: 10
 // This file is automatically shared amongst the server and startup scripts
+var MODID = "sgcommunity_pack"
+
 class Substrate {
     static IRON = new Substrate("iron_substrate", "Iron Substrate")
     static GOLD = new Substrate("gold_substrate", "Gold Substrate")
     static DIAMOND = new Substrate("diamond_substrate", "Diamond Substrate")
     static NETHERITE = new Substrate("netherite_substrate", "Netherite Substrate")
-    static VACUUM_TUBE = new Substrate("vacuum_tube_substrate", "Vacuum Tube Substrate")
+    static KINETIC = new Substrate("kinetic_substrate", "Kinetic Substrate")
     static COMPUTATIONAL = new Substrate("computational_substrate", "Computational Substrate", {lightLevel: 0.5})
     static MEKANISED = new Substrate("mekanised_substrate", "Mekanised Substrate")
     static REACTIVE = new Substrate("reactive_substrate", "Reactive Substrate")
@@ -21,7 +23,45 @@ class Substrate {
         return this.name
     }
     getIdentifier() {
-        return "gems_server:"+this.identifier
+        return MODID + ":"+this.identifier
+    }
+}
+class Item {
+    static INCOMPLETE_VACUUM_TUBE = new Item("incomplete_vacuum_tube","Incomplete Vacuum Tube", { itemType: "create:sequenced_assembly"})
+    static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube")
+    static GLASS_TUBE = new Item("glass_tube","Glass Tube")
+    static SILICA_DUST = new Item("silica_dust","Silica Dust")
+    static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket")
+    static SAND_MOLD = new Item("sand_mold","Sand Mold")
+    static IRON_FILAMENT = new Item("iron_filament", "Iron Filament")
+    constructor(identifier, name, builderOptions) {
+        this.name = name
+        this.identifier = identifier
+        this.builderOptions = builderOptions ?? {}
+    }
+    getName() {
+        return this.name
+    }
+    getIdentifier() {
+        return MODID+ ":" +this.identifier
+    }
+}
+class Fluid {
+    static toBucket(fluid) {
+        if (typeof fluid == "string") {
+            return({"fluid": fluid, "amount":1000})
+        }
+        else {
+            return (fluid.amount = 1000)
+        }
+    }
+    static toAmount(fluid,amount) {
+        if (typeof fluid == "string") {
+            return({"fluid": fluid, "amount":amount})
+        }
+        else {
+            return (fluid.amount = amount)
+        }
     }
 }
 class Tier {
@@ -30,7 +70,7 @@ class Tier {
     static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5})
     // All tiers after this require the previous tier to craft
     static NETHERITE = new Tier(Substrate.NETHERITE, {coal: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1})
-    static VACUUM_TUBE = new Tier(Substrate.VACUUM_TUBE, {coal: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1})
+    static KINETIC = new Tier(Substrate.KINETIC, {coal: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, certus:1, nether_quartz: 1})
     static COMPUTATIONAL = new Tier(Substrate.COMPUTATIONAL, {coal: 4, iron: 4, gold: 4, diamond: 3, ancient_debris: 1, lapis: 3, redstone: 3, certus:2, nether_quartz: 2})
     // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
     static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, iron: 4, gold: 4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, certus:2, nether_quartz: 2, fluix:1})
@@ -124,6 +164,4 @@ var Materials = {
         display: "sgjourney:naquadah_ore",
         drops: [{"item": "sgjourney:raw_naquadah",min:2, max:3}]
     },
-
-
 }
