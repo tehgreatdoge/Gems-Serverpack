@@ -1,6 +1,12 @@
 // priority: 10
 // This file is automatically shared amongst the server and startup scripts
 var MODID = "sgcommunity_pack"
+var Tags = {
+    CIRCUIT: "#"+MODID+":circuit",
+    CIRCUIT_BASIC: "#"+MODID+":circuit_basic",
+    CIRCUIT_INTERMEDIATE: "#"+MODID+":circuit_intermediate",
+    CIRCUIT_ADVANCED: "#"+MODID+":circuit_advanced",
+}
 
 class Substrate {
     static IRON = new Substrate("iron_substrate", "Iron Substrate")
@@ -28,7 +34,7 @@ class Substrate {
 }
 class Item {
     static INCOMPLETE_VACUUM_TUBE = new Item("incomplete_vacuum_tube","Incomplete Vacuum Tube", { itemType: "create:sequenced_assembly"})
-    static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube")
+    static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
     static GLASS_TUBE = new Item("glass_tube","Glass Tube")
     static SILICA_DUST = new Item("silica_dust","Silica Dust")
     static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket")
@@ -44,6 +50,18 @@ class Item {
     }
     getIdentifier() {
         return MODID+ ":" +this.identifier
+    }
+    static of(item, count) {
+        if (item instanceof Item) {
+            item = item.getIdentifier()
+        }
+        else if(item instanceof Substrate) {
+            item = item.getIdentifier()
+        }
+        else if (typeof item == "object") {
+            return { item:item.item, count: count}
+        }
+        return {item: item, count: count}
     }
 }
 class Fluid {
