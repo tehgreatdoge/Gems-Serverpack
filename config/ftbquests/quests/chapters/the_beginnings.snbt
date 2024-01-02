@@ -105,7 +105,7 @@
 			]
 			tasks: [{
 				id: "7A6CE16DBC66AFE0"
-				item: "gems_server:iron_substrate"
+				item: "sgcommunity_pack:iron_substrate"
 				title: "Craft Iron Substrate"
 				type: "item"
 			}]
@@ -173,6 +173,75 @@
 			}]
 			title: "About Substrates"
 			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			id: "695610BF2188A0C1"
+			tasks: [{
+				id: "30F2AE58489BE34E"
+				item: "minecraft:dirt"
+				type: "item"
+			}]
+			title: "Rich Soil"
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			description: ["This substrate introduces recipes for upgrading. Notice how you can save on gold by using the upgrade recipe."]
+			id: "4CE0D979E9A5681B"
+			rewards: [{
+				id: "1306ECB184360FBC"
+				item: "minecraft:golden_apple"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6B2C811BB3EBE4E6"
+				item: "sgcommunity_pack:gold_substrate"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4CE0D979E9A5681B"]
+			description: ["Pretty simple, just need 4 diamonds to upgrade a gold substrate or 5 to make from scratch. However, from now on, every substrate will be made by upgrading up from this one."]
+			id: "6BDAECDF847B5CE8"
+			rewards: [{
+				id: "1E54C2C1B6FFEB15"
+				item: {
+					Count: 1b
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "minecraft:sharpness"
+							lvl: 5s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "Iced Out!"
+			tasks: [{
+				id: "77ECB6D23D199FAF"
+				item: "sgcommunity_pack:diamond_substrate"
+				type: "item"
+			}]
+			title: "Diamond Substrate"
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6BDAECDF847B5CE8"]
+			description: ["Make sure to grab enough ancient debris for two ingots so that you can grow more once you get home."]
+			id: "66FA9D9F8A8C2B8C"
+			tasks: [{
+				id: "4F68C61ACF3CD01E"
+				item: "sgcommunity_pack:netherite_substrate"
+				type: "item"
+			}]
+			x: 4.5d
 			y: 0.0d
 		}
 	]
