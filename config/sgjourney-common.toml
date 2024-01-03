@@ -111,6 +111,8 @@
 			#The energy required to keep the Stargate open after exceeding the maximum open time is multiplied by this number
 			#Range: > 1
 			energy_bypass_multiplier = 100000
+			#Enables choosing the Address when first creating a Stargate by right-clicking it with a renamed Control Crystal
+			enable_address_choice = true
 
 	["Stargate Journey Common Config"."Naquadah Generator Config"]
 
@@ -151,24 +153,6 @@
 			random_addresses_from_seed = true
 			#Stargates Network will not consider DHDs when choosing preferred Stargate
 			disable_dhd_preference = false
-			#X chunk center offset of structures that contain a Stargate
-			#Range: -512 ~ 512
-			stargate_generation_center_x_chunk_offset = 0
-			#Z chunk center offset of structures that contain a Stargate
-			#Range: -512 ~ 512
-			stargate_generation_center_z_chunk_offset = 0
-			#X chunk bounds within which a Structure containing a Stargate may generate
-			#Range: 0 ~ 64
-			stargate_generation_x_bound = 64
-			#Z chunk bounds within which a Structure containing a Stargate may generate
-			#Range: 0 ~ 64
-			stargate_generation_z_bound = 64
-			#X chunk bounds within which a Buried Stargate may generate
-			#Range: 0 ~ 64
-			buried_stargate_generation_x_bound = 64
-			#Z chunk bounds within which a Buried Stargate may generate
-			#Range: 0 ~ 64
-			buried_stargate_generation_z_bound = 64
 
 	["Stargate Journey Common Config"."Tech Config"]
 
@@ -191,4 +175,26 @@
 			#Probability of the Ancient Gene Therapy working
 			#Range: 0 ~ 100
 			ata_gene_therapy_success_rate = 100
+
+	["Stargate Journey Common Config"."Generation Config"]
+
+		["Stargate Journey Common Config"."Generation Config".server]
+			#X chunk center offset of structures that contain a Stargate
+			#Range: -512 ~ 512
+			stargate_generation_center_x_chunk_offset = 0
+			#Z chunk center offset of structures that contain a Stargate
+			#Range: -512 ~ 512
+			stargate_generation_center_z_chunk_offset = 0
+			#X chunk bounds within which a Structure containing a Stargate may generate
+			#Range: 0 ~ 64
+			stargate_generation_x_bound = 64
+			#Z chunk bounds within which a Structure containing a Stargate may generate
+			#Range: 0 ~ 64
+			stargate_generation_z_bound = 64
+			#X chunk bounds within which a Buried Stargate may generate
+			#Range: 0 ~ 64
+			buried_stargate_generation_x_bound = 64
+			#Z chunk bounds within which a Buried Stargate may generate
+			#Range: 0 ~ 64
+			buried_stargate_generation_z_bound = 64
 
