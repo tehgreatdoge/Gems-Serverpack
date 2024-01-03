@@ -5,7 +5,7 @@
 	group: ""
 	icon: "botanypots:light_blue_glazed_terracotta_botany_pot"
 	id: "7EAC592E39C4CF7B"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{

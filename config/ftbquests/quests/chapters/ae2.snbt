@@ -52,6 +52,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["7542A74737AC4408"]
 			description: ["Applied Energistics 2 is a storage mod based around the idea of energy-mass equivalency. Your items get stored as \"energy\" inside cells which is then converted back to retrieve them. Ultimately, this means you can store a LOT of items."]
 			id: "3C51ACFA7F2A04E8"
 			rewards: [

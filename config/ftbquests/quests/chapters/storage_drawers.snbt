@@ -100,6 +100,143 @@
 			x: -14.5d
 			y: 0.0d
 		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "620D575230074233"
+			tasks: [{
+				id: "5F27B4B09C6521F9"
+				item: "storagedrawers:illumination_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "28F686FAA8D38D07"
+			tasks: [{
+				id: "1FEF201264D80226"
+				item: "storagedrawers:void_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "2230064B455C8EF7"
+			tasks: [{
+				id: "4C7214ADEB6D8109"
+				item: "storagedrawers:one_stack_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "0DF74DCB0623EA75"
+			tasks: [{
+				id: "7DF9ABB98D273FCE"
+				item: "storagedrawers:fill_level_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "4FCED4067E19AA01"
+			tasks: [{
+				id: "3217EEC39882AB76"
+				item: "storagedrawers:min_redstone_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "164A6CDEA9D637A5"
+			tasks: [{
+				id: "41FCA3195D5FDE9E"
+				item: "storagedrawers:max_redstone_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["392EBD1D6F41CA7A"]
+			id: "3726E95B92BF575D"
+			tasks: [{
+				id: "02BEF1D389EFB9D2"
+				item: "storagedrawers:redstone_upgrade"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["2307221E1FFF3987"]
+			dependency_requirement: "one_completed"
+			description: ["Tired of your friends (or yourself) messing up your storage drawers? Using the drawer key you can lock your drawers so that they will always hold the same items."]
+			id: "0C3AA25243E3713D"
+			tasks: [{
+				id: "47ADC2794EAF2F3C"
+				item: "storagedrawers:drawer_key"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2307221E1FFF3987"]
+			description: ["Drawer Controllers allow for inserting and extracting from all connected drawers in a 12 block (square) radius. You can also interact with it like a normal drawer, except it only allows inserting items. A group of drawers can only have one controller."]
+			id: "56F9BC918D222BF4"
+			tasks: [{
+				id: "3FDB14D98A6DA09C"
+				item: "storagedrawers:controller"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2307221E1FFF3987"]
+			description: ["Trims can be used to connect groups of drawers together, without needing to place more drawers."]
+			id: "4E3DFC2952A9B837"
+			tasks: [{
+				id: "51337D9393F8C759"
+				item: "storagedrawers:oak_trim"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["56F9BC918D222BF4"]
+			description: ["Drawer controller slaves allow for a controller to have multiple insertation/extration points."]
+			id: "3DB30192906DBE41"
+			tasks: [{
+				id: "289A054574CCE320"
+				item: "storagedrawers:controller_slave"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			description: ["Compacting Drawers automatically convert between nugget, ingot and block forms. They also work for various other materials with compacted variants."]
+			id: "3A9CA203BDCA6F88"
+			tasks: [{
+				id: "45D8756D5241A4D7"
+				item: "storagedrawers:compacting_drawers_3"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -2.0d
+		}
 	]
 	title: "Storage Drawers"
 }

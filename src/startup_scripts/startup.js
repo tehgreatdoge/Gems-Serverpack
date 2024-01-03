@@ -39,6 +39,7 @@ StartupEvents.registry("item", (event) => {
         }
         builder.displayName(item.getName())
     }
+    // TODO: Add tags for storage drawers
 })
 StartupEvents.registry("fluid", (event) => {
     event.create(MODID+":liquid_glass")

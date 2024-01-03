@@ -5,7 +5,7 @@
 	group: ""
 	hide_quest_until_deps_visible: true
 	id: "1CB3B5E3AA485E19"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
