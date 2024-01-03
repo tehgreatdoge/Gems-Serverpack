@@ -2,7 +2,7 @@
 
 // Visit the wiki for more info - https://kubejs.com/
 
-// TODO:Remove Fluixologist Trades
+// TODO:Remove Fluix Researcher Trades
 
 function registerBotanyCrop(event, substrate, multiplier, material) {
     let drops = []
@@ -43,16 +43,11 @@ function registerBotanySoil(event, substrate) {
     })
 }
 
-// TODO: Reverse the order so that multiple speed modifiers can map to the same recipe in jei
 ServerEvents.recipes((event) => {
     for (let tierName in Tier) {
         let tier = Tier[tierName]
-        console.log(tier.substrate)
         for (let materialName in tier.materials) {
             let materialValue = tier.materials[materialName]
-            console.log(materialName)
-            console.log(materialValue)
-            console.log(Materials[materialName])
             registerBotanyCrop(event, tier.substrate, materialValue, Materials[materialName])
         }
     }

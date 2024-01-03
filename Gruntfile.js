@@ -52,7 +52,7 @@ module.exports = function(grunt) {
             grunt.log.write("Copying config ")
             let ignoreFile = ignore()
             ignoreFile.add(fs.readFileSync(".gitignore").toString())
-            //fs.cpSync gives extended length paths but process.cwd doesnt
+            //fs.cpSync gives extended length paths but process.cwd doesn't
             if (path.win32 == path) {
                 //Convert cwd to extended length
                 let cwd = "\\\\?\\"+process.cwd()

@@ -72,7 +72,8 @@ class Fluid {
             return({"fluid": fluid, "amount":1000})
         }
         else {
-            return (fluid.amount = 1000)
+            fluid.amount = 1000
+            return (fluid)
         }
     }
     static toAmount(fluid,amount) {
