@@ -3,8 +3,8 @@
 
 ServerEvents.recipes((event) => {
     // Iron Substrate
-    event.shaped(Item.of(Substrate.IRON,1), [
-        "IbI",
+    event.shaped(Item.of(Substrate.IRON,1), 
+        ["IbI",
         "bBb",
         "IbI"],
         {
@@ -14,8 +14,8 @@ ServerEvents.recipes((event) => {
         }
     )
     // Gold Substrate
-    event.shaped(Item.of(Substrate.GOLD,1), [
-        "ggg",
+    event.shaped(Item.of(Substrate.GOLD,1), 
+        ["ggg",
         "GgG",
         "ggg"],
         {
@@ -23,8 +23,8 @@ ServerEvents.recipes((event) => {
             "G": "minecraft:gold_block"
         }
     )
-    event.shaped(Item.of(Substrate.GOLD,1), [
-        "nnn",
+    event.shaped(Item.of(Substrate.GOLD,1),
+        ["nnn",
         "bBb",
         "nnn"],
         {
@@ -34,8 +34,8 @@ ServerEvents.recipes((event) => {
         }
     )
     // Diamond Substrate
-    event.shaped(Item.of(Substrate.DIAMOND,1), [
-        "dbd",
+    event.shaped(Item.of(Substrate.DIAMOND,1), 
+        ["dbd",
         "GdG",
         "dbd"],
         {

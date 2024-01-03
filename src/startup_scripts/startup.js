@@ -9,8 +9,6 @@ console.info('Loading Startup Scripts')
 StartupEvents.registry("block", (event) => {
     for (let key in Substrate) {
         let substrate = Substrate[key]
-        console.log(key)
-        console.log(substrate)
         event.create(substrate.getIdentifier()) // Create a new block
             .displayName(substrate.getName()) // Set a custom name
             .mapColor("metal") // Set a material (affects the sounds and some properties)

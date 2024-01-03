@@ -81,7 +81,8 @@ class Fluid {
             return({"fluid": fluid, "amount":amount})
         }
         else {
-            return (fluid.amount = amount)
+            fluid.amount = amount
+            return (fluid)
         }
     }
 }
