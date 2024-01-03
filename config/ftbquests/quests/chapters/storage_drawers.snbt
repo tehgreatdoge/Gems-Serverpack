@@ -300,7 +300,7 @@
 		}
 		{
 			dependencies: ["2307221E1FFF3987"]
-			description: ["Trims can be used to connect groups of drawers together, without needing to place more drawers."]
+			description: ["Trims can be used to connect groups of drawers together without needing to place more drawers."]
 			id: "4E3DFC2952A9B837"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -310,9 +310,17 @@
 			}]
 			tasks: [{
 				id: "51337D9393F8C759"
-				item: "storagedrawers:oak_trim"
+				item: {
+					Count: 8b
+					id: "itemfilters:tag"
+					tag: {
+						value: "storagedrawers:trims"
+					}
+				}
+				title: "Any #storagedrawers:trims"
 				type: "item"
 			}]
+			title: "Trims"
 			x: -5.0d
 			y: 1.5d
 		}
