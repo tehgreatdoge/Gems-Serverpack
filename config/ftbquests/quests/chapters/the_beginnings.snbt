@@ -9,7 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["This pack uses mekanisn and create for resources, sgjourney and ad astra for exploration, and botany pots + a custom tiered substrate system for resources. If a &3quest is cyan&r, that means that you should try your best to automate it."]
+			description: ["This pack uses mekanism and create for resources, sgjourney and ad astra for exploration, and botany pots + a custom tiered substrate system for resources. If a &3quest is cyan&r, that means that you should try your best to automate it."]
 			id: "39646520A484643F"
 			rewards: [{
 				id: "2508FBF82AF82FFE"

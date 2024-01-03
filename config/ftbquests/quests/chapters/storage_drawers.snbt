@@ -25,7 +25,7 @@
 		}
 		{
 			dependencies: ["2307221E1FFF3987"]
-			description: ["Drawer upgrades can add all sorts of features to drawers, from voiding unnecessary items, to outputting redstone signals. However, the most useful upgrades are, of course, storage upgrades. Storage upgrades stack multiplicatively, allowing for hundres of thousands of items to be stored in just one drawer."]
+			description: ["Drawer upgrades can add all sorts of features to drawers, from voiding unnecessary items, to outputting redstone signals. However, the most useful upgrades are, of course, storage upgrades. Storage upgrades stack multiplicatively, allowing for hundreds of thousands of items to be stored in just one drawer."]
 			id: "392EBD1D6F41CA7A"
 			rewards: [
 				{
@@ -326,7 +326,7 @@
 		}
 		{
 			dependencies: ["56F9BC918D222BF4"]
-			description: ["Drawer controller slaves allow for a controller to have multiple insertation/extration points."]
+			description: ["Drawer controller slaves allow for a controller to have multiple insertion/extraction points."]
 			id: "3DB30192906DBE41"
 			rewards: [{
 				exclude_from_claim_all: true

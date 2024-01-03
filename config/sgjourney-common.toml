@@ -93,19 +93,19 @@
 			#The amount of energy cost of keeping the wormhole open each tick for intergalactic connections
 			#Range: 0 ~ 9223372036854775807
 			intergalactic_connection_energy_draw = 50000
-			#The amount of energy required to establish a connection inside a solar system
+			#The amount of energy required to estabilish a connection inside a solar system
 			#Range: 0 ~ 9223372036854775807
 			system_wide_connection_energy_cost = 50000
-			#The amount of energy required to establish a connection inside the galaxy
+			#The amount of energy required to estabilish a connection inside the galaxy
 			#Range: 0 ~ 9223372036854775807
 			interstellar_connection_energy_cost = 100000
-			#The amount of energy required to establish a connection outside the galaxy
+			#The amount of energy required to estabilish a connection outside the galaxy
 			#Range: 0 ~ 9223372036854775807
 			intergalactic_connection_energy_cost = 100000000000
 			#The maximum amount of energy the Stargate can hold
 			#Range: 0 ~ 9223372036854775807
 			stargate_energy_capacity = 1000000000000
-			#The maximum amount of energy the Stargate can receive at once
+			#The maximum amount of energy the Stargate can reveive at once
 			#Range: 0 ~ 9223372036854775807
 			stargate_energy_max_receive = 1000000000000
 			#The energy required to keep the Stargate open after exceeding the maximum open time is multiplied by this number
