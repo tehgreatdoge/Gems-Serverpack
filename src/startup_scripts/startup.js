@@ -22,6 +22,7 @@ StartupEvents.registry("block", (event) => {
             .tagBlock('minecraft:needs_iron_tool') // the tool tier must be at least iron
     }
 })
+
 StartupEvents.registry("item", (event) => {
     for (let e in Item) {
         let item = Item[e]
@@ -34,6 +35,9 @@ StartupEvents.registry("item", (event) => {
         }
         for (let tag of item.builderOptions.tags) {
             builder.tag(tag)
+        }
+        if (item.builderOptions.use) {
+            builder.use(item.builderOptions.use)
         }
         builder.displayName(item.getName())
     }

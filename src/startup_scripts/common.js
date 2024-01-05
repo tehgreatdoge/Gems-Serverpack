@@ -1,5 +1,6 @@
 // priority: 10
 // This file is automatically shared amongst the server and startup scripts
+let $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
 var MODID = "sgcommunity_pack"
 var Tags = {
     CIRCUIT: MODID+":circuit",
@@ -41,6 +42,34 @@ class Item {
     static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket")
     static SAND_MOLD = new Item("sand_mold","Sand Mold")
     static IRON_FILAMENT = new Item("iron_filament", "Iron Filament")
+    static INTERMEDIATE_TEST_CIRCUIT = new Item("intermediate_test_circuit", "test circuit I", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
+    // Pure quartz glass
+    static PURE_QUARTZ_GLASS = new Item("pure_quartz_glass", "Pure Quartz Glass")
+    //static INCOMPLETE_QUARTZ_GLASS = new Item("impure_quartz_glass", "Impure Quartz Glass", { itemType: "create:sequenced_assembly"}) - Missing support from create
+    // PCB Substrate
+    static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
+    // Rudimentary Processor
+    static ADDER = new Item("adder", "8 Bit Adder")
+    static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
+    static XOR = new Item("xor", "8 Bit XOR")
+    static INCOMPLETE_XOR = new Item("incomplete_xor", "Incomplete 8 Bit XOR", { itemType: "create:sequenced_assembly"})
+    static RSHIFT = new Item("rshift", "8 Bit RShift")
+    static INCOMPLETE_RSHIFT = new Item("incomplete_rshift", "Incomplete 8 Bit RShift", { itemType: "create:sequenced_assembly"})
+    static ALU = new Item("alu", "ALU")
+    static INCOMPLETE_ALU = new Item("incomplete_alu", "Incomplete ALU", { itemType: "create:sequenced_assembly"})
+    static CONTROL_UNIT = new Item("control_unit", "Control Unit")
+    static INCOMPLETE_CONTROL_UNIT = new Item("incomplete_control_unit", "Incomplete Control Unit", { itemType: "create:sequenced_assembly"})
+    static SMALL_CACHE = new Item("small_cache", "Small Cache")
+    static INCOMPLETE_SMALL_CACHE = new Item("incomplete_small_cache", "Incomplete Small Cache", { itemType: "create:sequenced_assembly"})
+
+    static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
+    // Computation Parts
+    // static RAM = new Item("ram", "RAM")
+    // static INCOMPLETE_RAM = new Item("incomplete_ram", "Incomplete RAM", { itemType: "create:sequenced_assembly"})
+    // static BASIC_COMPUTATION_UNIT = new Item("basic_computation_unit", "Basic Computation Unit")
+    // static INCOMPLETE_BASIC_COMPUTATION_UNIT = new Item("incomplete_basic_computation_unit", "Incomplete Basic Computation Unit", { itemType: "create:sequenced_assembly"})
+    // Ad Astra
+    static RCU = new Item("rocket_control_unit","Rocket Control Unit")
     constructor(identifier, name, builderOptions) {
         this.name = name
         this.identifier = identifier
@@ -87,9 +116,9 @@ class Fluid {
     }
 }
 class Tier {
-    static IRON = new Tier(Substrate.IRON, {coal: 1, copper: 1, iron: 0.5})
-    static GOLD = new Tier(Substrate.GOLD, {coal: 2, copper: 2, iron: 1, gold: 0.5})
-    static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, copper: 2, iron: 2, gold: 1, diamond: 0.5, lapis: 0.5, redstone: 0.5})
+    static IRON = new Tier(Substrate.IRON, {coal: 1, copper: 1, iron: 1})
+    static GOLD = new Tier(Substrate.GOLD, {coal: 2, copper: 2, iron: 2, gold: 1})
+    static DIAMOND = new Tier(Substrate.DIAMOND, {coal: 2, copper: 2, iron: 2, gold: 2, diamond: 0.5, lapis: 0.5, redstone: 0.5})
     // All tiers after this require the previous tier to craft
     static NETHERITE = new Tier(Substrate.NETHERITE, {coal: 4, copper: 4, iron: 2, gold: 2, diamond: 1, ancient_debris: 0.25, lapis: 1, redstone: 1, emerald: 0.5})
     static KINETIC = new Tier(Substrate.KINETIC, {coal: 4, copper: 4, iron: 4, gold: 2, diamond: 2, ancient_debris: 0.5, lapis: 2, redstone: 2, emerald: 1, certus:1, nether_quartz: 1})

@@ -16,6 +16,23 @@ function registerAE2InscriberRecipeTagMiddle(event, out, input) {
         }
     })
 }
+function registerAE2InscriberRecipe(event, out, input) {
+    let ingredients = {}
+    ingredients.middle = {item:input[0]}
+    if (input[1]) {
+        ingredients.top = {item:input[1]}
+    }
+    if (input[2]) {
+        ingredients.bottom = ({item:input[2]})
+    }
+    event.custom({
+        "type": "ae2:inscriber",
+        "ingredients": ingredients,
+        "result": {
+            item: out
+        }
+    })
+}
 
 function registerBotanyCrop(event, substrate, multiplier, material) {
     let drops = []
@@ -53,5 +70,17 @@ function registerBotanySoil(event, substrate) {
         },
         categories: [substrate.getName()],
         growthModifier: 1
+    })
+}
+function registerMetallurgicInfusing(event,inputChemicalIngredient, inputIngredient, outputItem) {
+    event.custom({
+        "type": "mekanism:metallurgic_infusing",
+        "chemicalInput": inputChemicalIngredient,
+        "itemInput": {
+          "ingredient": inputIngredient
+        },
+        "output": {
+          "item": outputItem
+        }
     })
 }
