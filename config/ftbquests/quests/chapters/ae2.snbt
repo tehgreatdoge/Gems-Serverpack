@@ -138,7 +138,7 @@
 		{
 			dependencies: [
 				"112725E86D8D3D75"
-				"3C2F77FB82C01124"
+				"4B7991C8ACBEEEA2"
 			]
 			description: ["Place down your ME Drive and insert the item cell. Then, connect your terminal to it with the cables. Finally, connect the Energy Acceptor to your ME system and a power source. Congrats, You have an ME system!"]
 			id: "61FF8BB395DDB761"
@@ -165,7 +165,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50A0EF9624CDF7D6"]
+			dependencies: ["61FF8BB395DDB761"]
 			description: [
 				"Now that you are getting into ME Storage, it's time we talked about &lBytes and Types&r. In AE2, every item cell can store up to 63 types. However, each type comes at a cost. For every type you add to a cell, you lose some bytes (up to half the drive for 63 types). But what is a byte? A byte is equivalent to 8 items or 8 buckets of fluid."
 				"{@pagebreak}"
@@ -203,6 +203,26 @@
 				}
 			]
 			title: "About storage"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["50A0EF9624CDF7D6"]
+			description: ["Unlike in vanilla AE2, you can't just craft processors with printed circuits and redstone. Instead, you need a basic circuit as well. In this case, we'll just be using Vacuum tubes, but later on you might want to consider switching to MOSFETs."]
+			id: "4B7991C8ACBEEEA2"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0BE6B7E904C8EF34"
+				table_id: 7428168543327068380L
+				type: "random"
+			}]
+			subtitle: "They nerfed that too?"
+			tasks: [{
+				id: "5CD6097BFD5DDA41"
+				title: "Making Circuits"
+				type: "checkmark"
+			}]
+			title: "Making Processors"
 			x: 2.5d
 			y: 1.5d
 		}
