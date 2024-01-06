@@ -104,7 +104,7 @@ ServerEvents.recipes((event) => {
     // Pure Quartz Glass Recipe
     event.recipes.create.sequenced_assembly([Item.WASHED_SILICA_DUST.getIdentifier()], Item.SILICA_DUST.getIdentifier(), [
         event.recipes.createFilling(Item.INCOMPLETE_SILICA_DUST.getIdentifier(), [Fluid.toBucket("minecraft:water"),Item.INCOMPLETE_SILICA_DUST.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_SILICA_DUST.getIdentifier()).loops(3)
+    ]).transitionalItem(Item.INCOMPLETE_SILICA_DUST.getIdentifier()).loops(32)
     event.recipes.createMixing(Item.IMPURE_QUARTZ_GLASS.getIdentifier(),Item.WASHED_SILICA_DUST.getIdentifier()).heated()
     event.blasting(Item.PURE_QUARTZ_GLASS.getIdentifier(),Item.IMPURE_QUARTZ_GLASS.getIdentifier())
     // PCB Substrate recipe

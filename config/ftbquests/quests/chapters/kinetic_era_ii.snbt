@@ -6,19 +6,159 @@
 	id: "4D239CF8E2B220AE"
 	order_index: 2
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["55FA04711F888480"]
-		description: ["The goal of Kinetic Era II is to obtain Rudimentary Processors which will allow you to create computers, unlock Mekanism, and more! However, the road ahead is a difficult one that will require a highly efficient manufacturing setup in order to surmount."]
-		id: "692BC266D99DADE9"
-		subtitle: "We don't need Surface Mount Technology"
-		tasks: [{
-			id: "49774F61C940FE54"
-			title: "Acknowledge"
-			type: "checkmark"
-		}]
-		title: "Where we're going"
-		x: -4.5d
-		y: -0.5d
-	}]
+	quests: [
+		{
+			dependencies: ["55FA04711F888480"]
+			description: ["The goal of Kinetic Era II is to obtain Rudimentary Processors which will allow you to create computers, unlock Mekanism, and more! However, the road ahead is a difficult one that will require a highly efficient manufacturing setup in order to surmount."]
+			id: "692BC266D99DADE9"
+			rewards: [{
+				id: "3A03FACAFBD72E78"
+				type: "xp"
+				xp: 20
+			}]
+			subtitle: "We don't need Surface Mount Technology"
+			tasks: [{
+				id: "49774F61C940FE54"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Where we're going"
+			x: -8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["692BC266D99DADE9"]
+			description: [
+				"In order to make higher quality circuits, you will need high purity quartz glass. Don't worry too much about sheer volume, as you will only need 5 per tier II circuit."
+				"{@pagebreak}"
+				"Consider using loops of belts and a mechanical arm"
+			]
+			id: "08D7A9160CF1D20C"
+			tasks: [{
+				count: 128L
+				id: "3490D155DD3F482A"
+				item: "sgcommunity_pack:pure_quartz_glass"
+				type: "item"
+			}]
+			title: "&3Plain Panes are Overrated"
+			x: -4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["08D7A9160CF1D20C"]
+			description: ["You should turn ~60% of your Pure Quartz Glass into PCB Substrates."]
+			id: "60117AE54A1F440D"
+			subtitle: "Only one step?"
+			tasks: [{
+				id: "6CF83246788BAE85"
+				item: "sgcommunity_pack:pcb_substrate"
+				type: "item"
+			}]
+			title: "&3Seems a bit simplified"
+			x: -4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"6CF83246788BAE85"
+				"692BC266D99DADE9"
+			]
+			id: "05C3248B70F1EADD"
+			tasks: [{
+				id: "375B96EAC1D33263"
+				item: "sgcommunity_pack:xor"
+				type: "item"
+			}]
+			title: "&38 Bit XOR"
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"08D7A9160CF1D20C"
+				"692BC266D99DADE9"
+			]
+			id: "3C31C7D1D5BA7C3A"
+			tasks: [{
+				id: "79A8658F2281E802"
+				item: "sgcommunity_pack:adder"
+				type: "item"
+			}]
+			title: "&38 Bit Adder"
+			x: -6.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["692BC266D99DADE9"]
+			id: "5B3ED1133DA7D3A7"
+			tasks: [{
+				id: "574FC8792695CD69"
+				item: "sgcommunity_pack:rshift"
+				type: "item"
+			}]
+			title: "&38 Bit RShift"
+			x: -9.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"60117AE54A1F440D"
+				"3C31C7D1D5BA7C3A"
+				"05C3248B70F1EADD"
+				"5B3ED1133DA7D3A7"
+			]
+			id: "494419E2B4AB7E80"
+			tasks: [{
+				id: "64951E7CB26E940C"
+				item: "sgcommunity_pack:alu"
+				type: "item"
+			}]
+			title: "&3ALU"
+			x: -5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["60117AE54A1F440D"]
+			id: "1AD45F5A1FB5B74D"
+			tasks: [{
+				id: "16E08156F503F2B3"
+				item: "sgcommunity_pack:control_unit"
+				type: "item"
+			}]
+			title: "&3Control Unit"
+			x: -4.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["60117AE54A1F440D"]
+			id: "3ECD50CBA1E3DAA6"
+			tasks: [{
+				id: "37E797BBFEC47F30"
+				item: "sgcommunity_pack:small_cache"
+				type: "item"
+			}]
+			title: "&3Small Cache"
+			x: -3.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"3ECD50CBA1E3DAA6"
+				"1AD45F5A1FB5B74D"
+				"494419E2B4AB7E80"
+			]
+			description: ["Now that you have created rudimentary processors, I'm gonna turn you lose to do some exploring throughout our solar system, and maybe even beyond."]
+			id: "44F5A44C5C13627A"
+			subtitle: "Wait till you see Tier 3!"
+			tasks: [{
+				id: "4F2C09767E5F6482"
+				item: "sgcommunity_pack:rudimentary_processor"
+				type: "item"
+			}]
+			title: "Thought that was a lot?"
+			x: -4.5d
+			y: 6.5d
+		}
+	]
 	title: "Kinetic Era II"
 }

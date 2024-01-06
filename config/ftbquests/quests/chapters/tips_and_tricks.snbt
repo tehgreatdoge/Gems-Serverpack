@@ -3,6 +3,7 @@
 	default_quest_shape: ""
 	filename: "tips_and_tricks"
 	group: ""
+	icon: "minecraft:book"
 	id: "5D60483138C53A9C"
 	order_index: 0
 	quest_links: [ ]
