@@ -1,0 +1,90 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tips_and_tricks"
+	group: ""
+	id: "5D60483138C53A9C"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "674A3D8C452C1D56"
+			rewards: [{
+				id: "4C541262C33C9990"
+				item: "minecraft:milk_bucket"
+				type: "item"
+			}]
+			subtitle: "That seems kinda unbalanced"
+			tasks: [{
+				id: "68FD294FE78EF91D"
+				item: "cookingforblockheads:sink"
+				type: "item"
+			}]
+			title: "Infinite Water"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			description: ["The Create hose allows for extracting or filling large bodies of fluids. It extracts everything at or above the height of it's nozzle and fills up to it's level. However, when the body of fluid is larger than 10000 blocks, the hose considers the pool to be infinite. This works for any fluid, so use that info however you would like."]
+			id: "723CFF1C353C5B85"
+			rewards: [{
+				id: "491E9579D36430AC"
+				item: "minecraft:lava_bucket"
+				type: "item"
+			}]
+			subtitle: "Ok, that's definitely not balanced"
+			tasks: [{
+				id: "1B78D909ACCA8D59"
+				item: "create:hose_pulley"
+				type: "item"
+			}]
+			title: "Infinite Lava"
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			description: ["If you come along a cyan &3automation recommended&r quest, you probably should listen. These quests are used for items that you will be using for the rest of the era in nearly everything."]
+			id: "7F70CDB4ABE376E8"
+			tasks: [{
+				id: "757168EF28526968"
+				title: "Craft Big, Automate Everything"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: ["The AE2 Guidebook contains nearly all there is to know about AE2. If you hover over an ae2 item and hold G, it will open the guidebook automatically. This is just here as an option for those who like physical books."]
+			icon: "ae2:guide"
+			id: "5822E75A31419923"
+			optional: true
+			rewards: [{
+				id: "561831CA8A3BD659"
+				item: "ae2:guide"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2500F89E9679E880"
+				title: "AE2 Guidebook"
+				type: "checkmark"
+			}]
+			title: "Better Than Quests"
+			x: -3.0d
+			y: -2.0d
+		}
+		{
+			description: ["Create has a large number of multi-faceted mechanisms. As such, it is probably wise for you to check out the &dPonder Index&r. The Ponder Index can be found under the goggle icon in the escape menu, or by holding W while hovering over a create item."]
+			id: "738EF626DC5C3C90"
+			tasks: [{
+				id: "12480A5D3FD71BA5"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Learning Create"
+			x: -1.0d
+			y: -2.0d
+		}
+	]
+	title: "Tips and Tricks"
+}

@@ -4,7 +4,45 @@
 	filename: "progression"
 	group: ""
 	id: "1222006A8A49597D"
-	order_index: 0
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: ["Tier 1"]
+			image: "#FFFFFF"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: ["Tier 2"]
+			image: "#FFFFFF"
+			rotation: 0.0d
+			width: 1.0d
+			x: -1.0d
+			y: 4.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: ["Tier 3"]
+			image: "#FFFFFF"
+			rotation: 0.0d
+			width: 1.0d
+			x: 0.0d
+			y: 4.0d
+		}
+	]
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -166,17 +204,59 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7542A74737AC4408"]
 			hide: false
 			hide_dependency_lines: true
+			hide_details_until_startable: false
 			id: "7064AC5CE730629B"
 			tasks: [{
 				id: "1FD45377B305EEF1"
 				item: "sgcommunity_pack:vacuum_tube"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 4.0d
+			title: "Vacuum Tubes"
+			x: -2.0d
+			y: 3.0d
+		}
+		{
+			id: "54B35B245C507076"
+			tasks: [{
+				id: "6583781DA9D906B3"
+				item: "sgcommunity_pack:rudimentary_processor"
+				type: "item"
+			}]
+			title: "Rudimentary Processors"
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			disable_toast: true
+			hide_details_until_startable: true
+			icon: "create:large_cogwheel"
+			id: "2D1E28252D69CABA"
+			optional: true
+			shape: "square"
+			tasks: [{
+				id: "22664F48683B7F0D"
+				type: "custom"
+			}]
+			title: "Kinetic Era"
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			disable_toast: true
+			hide_details_until_startable: true
+			icon: "mekanism:basic_control_circuit"
+			id: "260C678AAF5D3D3A"
+			optional: true
+			shape: "square"
+			tasks: [{
+				id: "729DB562A909E715"
+				type: "custom"
+			}]
+			title: "Mekanised Era"
+			x: -3.0d
+			y: 2.0d
 		}
 	]
 	title: "Progression"

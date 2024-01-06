@@ -39,6 +39,7 @@ StartupEvents.registry("item", (event) => {
         if (item.builderOptions.use) {
             builder.use(item.builderOptions.use)
         }
+        item.builderOptions.stackSize ? builder.maxStackSize(item.builderOptions.stackSize) : undefined
         builder.displayName(item.getName())
     }
 })

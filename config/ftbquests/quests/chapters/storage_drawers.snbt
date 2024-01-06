@@ -3,11 +3,13 @@
 	default_quest_shape: ""
 	filename: "storage_drawers"
 	group: "3553DD7F726AE366"
+	icon: "storagedrawers:oak_full_drawers_4"
 	id: "1F04AB80865DF168"
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
+			description: ["Storage drawers is a mod focused on making visually inspectable bulk storage. Right click to insert a handful. Double right click to insert all of your matching items into the drawer. Left click to take one. Shift + left click to take a stack. Shift + right click to open the drawer's inventory."]
 			id: "2307221E1FFF3987"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -25,7 +27,7 @@
 		}
 		{
 			dependencies: ["2307221E1FFF3987"]
-			description: ["Drawer upgrades can add all sorts of features to drawers, from voiding unnecessary items, to outputting redstone signals. However, the most useful upgrades are, of course, storage upgrades. Storage upgrades stack multiplicatively, allowing for hundreds of thousands of items to be stored in just one drawer."]
+			description: ["Drawer upgrades can add all sorts of features to drawers, from voiding unnecessary items, to outputting redstone signals. However, the most useful upgrades are, of course, storage upgrades. Storage upgrades stack additively, allowing for hundreds of thousands of items to be stored in just one drawer."]
 			id: "392EBD1D6F41CA7A"
 			rewards: [
 				{
@@ -359,6 +361,41 @@
 			}]
 			x: -4.0d
 			y: -1.5d
+		}
+		{
+			dependencies: ["0C3AA25243E3713D"]
+			id: "7D9571818239CFCB"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4BF2AF66BECADF2D"
+				table_id: 2387105148046165970L
+				type: "random"
+			}]
+			tasks: [{
+				id: "78E870F445E897DC"
+				item: "storagedrawers:quantify_key"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0C3AA25243E3713D"]
+			id: "2DF6A5F3D8042A58"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2894BE2B326AB8E4"
+				table_id: 2387105148046165970L
+				type: "random"
+			}]
+			subtitle: "What's in here again?"
+			tasks: [{
+				id: "79CD7F020B300B8B"
+				item: "storagedrawers:shroud_key"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 1.0d
 		}
 	]
 	title: "Storage Drawers"

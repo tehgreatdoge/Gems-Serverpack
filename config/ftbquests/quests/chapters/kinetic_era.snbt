@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "kinetic_era"
-	group: ""
+	group: "0B892AF6A2410D9F"
 	hide_quest_until_deps_visible: true
 	id: "1CB3B5E3AA485E19"
-	order_index: 2
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -31,6 +31,7 @@
 				title: "Welcome to the Kinetic Era"
 				type: "checkmark"
 			}]
+			title: "&6Welcome to the Kinetic Era"
 			x: -9.5d
 			y: 0.0d
 		}
@@ -83,7 +84,7 @@
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
-			title: "Creation"
+			title: "&6Creation"
 			x: -7.0d
 			y: 0.0d
 		}
@@ -96,7 +97,7 @@
 				item: "create:shaft"
 				type: "item"
 			}]
-			title: "Moving Rotation"
+			title: "&6Moving Rotation"
 			x: -4.5d
 			y: 0.0d
 		}
@@ -116,7 +117,7 @@
 				item: "create:water_wheel"
 				type: "item"
 			}]
-			title: "Getting Kinetic Energy"
+			title: "&6Getting Kinetic Energy"
 			x: -2.0d
 			y: 0.0d
 		}
@@ -136,6 +137,7 @@
 				title: "Experiment!"
 				type: "checkmark"
 			}]
+			title: "&6Experiment"
 			x: 0.5d
 			y: 0.0d
 		}
@@ -150,7 +152,7 @@
 				type: "item"
 			}]
 			title: "&3Glass Tubes"
-			x: 3.5d
+			x: 1.5d
 			y: -2.5d
 		}
 		{
@@ -164,7 +166,7 @@
 				type: "item"
 			}]
 			title: "&3Iron Filaments"
-			x: 7.5d
+			x: 5.5d
 			y: -2.5d
 		}
 		{
@@ -177,7 +179,7 @@
 				type: "item"
 			}]
 			title: "&3Copper Sheets"
-			x: 9.5d
+			x: 7.5d
 			y: -2.5d
 		}
 		{
@@ -190,7 +192,7 @@
 				type: "item"
 			}]
 			title: "&3Iron Sheets"
-			x: 5.5d
+			x: 3.5d
 			y: -2.5d
 		}
 		{
@@ -205,10 +207,11 @@
 			subtitle: "Wait, doesn't create have this?"
 			tasks: [{
 				id: "4CE42D67345EFC5E"
-				title: "Making your first electronic component"
+				title: "Acknowledge"
 				type: "checkmark"
 			}]
-			x: 6.5d
+			title: "&6Making your first electronic circuit"
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -231,9 +234,22 @@
 				type: "item"
 			}]
 			title: "&3Vacuum Tubes"
-			x: 6.5d
+			x: 4.5d
 			y: -5.0d
 		}
+		{
+			dependencies: ["7542A74737AC4408"]
+			description: ["You just automated the first of 5 circuits in this modpack! Now that you have Vacuum tubes, you have completed part I of the Kinetic Era. In order to progress further, you will need to &6follow the quests&r in the AE2 chapter. However, I recommend setting up autocrafting and other ammenities before beelining to the &dComputational Substrate&r as it isn't exactly gamechanging."]
+			id: "55FA04711F888480"
+			tasks: [{
+				id: "75908AC5740C8285"
+				title: "Well done!"
+				type: "checkmark"
+			}]
+			title: "&6Well Done!"
+			x: 4.5d
+			y: -7.0d
+		}
 	]
-	title: "Kinetic Era"
+	title: "Kinetic Era I"
 }

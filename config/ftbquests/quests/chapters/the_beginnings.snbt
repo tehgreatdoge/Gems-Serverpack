@@ -2,10 +2,11 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "the_beginnings"
-	group: ""
+	group: "0B892AF6A2410D9F"
+	hide_quest_until_deps_visible: true
 	icon: "botanypots:light_blue_glazed_terracotta_botany_pot"
 	id: "7EAC592E39C4CF7B"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -151,7 +152,7 @@
 				"Iron: iron, coal, copper"
 				"Gold: + gold"
 				"Diamond: + diamond, lapis, redstone"
-				"Netherite: + ancient debris"
+				"Netherite: + ancient debris, emerald"
 				"Kinetic: + certus quartz, nether quartz"
 				"Computational: just faster"
 				"Mekanised: + fluix"

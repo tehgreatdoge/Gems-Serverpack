@@ -1,0 +1,24 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "kinetic_era_ii"
+	group: "0B892AF6A2410D9F"
+	id: "4D239CF8E2B220AE"
+	order_index: 2
+	quest_links: [ ]
+	quests: [{
+		dependencies: ["55FA04711F888480"]
+		description: ["The goal of Kinetic Era II is to obtain Rudimentary Processors which will allow you to create computers, unlock Mekanism, and more! However, the road ahead is a difficult one that will require a highly efficient manufacturing setup in order to surmount."]
+		id: "692BC266D99DADE9"
+		subtitle: "We don't need Surface Mount Technology"
+		tasks: [{
+			id: "49774F61C940FE54"
+			title: "Acknowledge"
+			type: "checkmark"
+		}]
+		title: "Where we're going"
+		x: -4.5d
+		y: -0.5d
+	}]
+	title: "Kinetic Era II"
+}

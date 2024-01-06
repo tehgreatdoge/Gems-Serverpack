@@ -39,13 +39,15 @@ class Item {
     static VACUUM_TUBE = new Item("vacuum_tube","Vacuum Tube", {tags: [Tags.CIRCUIT_BASIC, Tags.CIRCUIT]})
     static GLASS_TUBE = new Item("glass_tube","Glass Tube")
     static SILICA_DUST = new Item("silica_dust","Silica Dust")
-    static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket")
+    static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket", {stackSize: 1})
     static SAND_MOLD = new Item("sand_mold","Sand Mold")
     static IRON_FILAMENT = new Item("iron_filament", "Iron Filament")
     static INTERMEDIATE_TEST_CIRCUIT = new Item("intermediate_test_circuit", "test circuit I", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Pure quartz glass
+    static INCOMPLETE_SILICA_DUST = new Item("incomplete_washed_silica_dust", "Incomplete Washed Silica Dust", { itemType: "create:sequenced_assembly"})
+    static WASHED_SILICA_DUST = new Item("washed_silica_dust", "Washed Silica Dust")
+    static IMPURE_QUARTZ_GLASS = new Item("impure_quartz_glass", "Impure Quartz Glass")
     static PURE_QUARTZ_GLASS = new Item("pure_quartz_glass", "Pure Quartz Glass")
-    //static INCOMPLETE_QUARTZ_GLASS = new Item("impure_quartz_glass", "Impure Quartz Glass", { itemType: "create:sequenced_assembly"}) - Missing support from create
     // PCB Substrate
     static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
     // Rudimentary Processor
