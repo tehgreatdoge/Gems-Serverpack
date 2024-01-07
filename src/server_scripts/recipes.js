@@ -282,4 +282,26 @@ ServerEvents.recipes((event) => {
     })
     // AE2WTLIB
     event.remove({id:"ae2wtlib:quantum_bridge_card"})
+    // SgJourney
+    event.remove({id: "sgjourney:basic_interface"})
+    event.remove({id: "sgjourney:reaction_chamber"})
+    event.shaped("sgjourney:reaction_chamber",[
+        "cnc",
+        "nbn",
+        "cnc"
+    ],{
+        "c": "#"+ Tags.CIRCUIT_INTERMEDIATE,
+        "n": "sgjourney:naquadah_alloy",
+        "b": "minecraft:blaze_powder"
+    })
+    event.shaped("sgjourney:basic_interface",[
+        "gii",
+        "cuu",
+        "gii"
+    ],{
+        "c": "#"+ Tags.CIRCUIT_INTERMEDIATE,
+        "i": "minecraft:iron_ingot",
+        "g": "minecraft:gold_ingot",
+        "u": "minecraft:copper_ingot"
+    })
 })
