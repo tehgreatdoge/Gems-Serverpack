@@ -1,0 +1,458 @@
+{
+	autofocus_id: "01F2718E1B5D83EA"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stargate_journey"
+	group: ""
+	icon: "sgjourney:classic_stargate"
+	id: "309097298251CA11"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.5d
+			hover: [ ]
+			image: "ftbquests:textures/shapes/gear/background.png"
+			rotation: 0.0d
+			width: 1.5d
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.5d
+			hover: [ ]
+			image: "ftbquests:textures/shapes/gear/outline.png"
+			rotation: 0.0d
+			width: 1.5d
+			x: -2.0d
+			y: 0.0d
+		}
+	]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["You found our Server and now you wana Visit other Worlds? This is where it starts!"]
+			id: "4E6747209BE4AB28"
+			rewards: [{
+				id: "2948B06942E77D27"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0B05DF068AE49848"
+				title: "Welcome to Stargate Journey"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["09FA2C5A93E513FB"]
+			description: ["To Start of we need to find a Goa'uld Temple and joink/steal the golden Idol found in them!"]
+			icon: "sgjourney:golden_idol"
+			id: "6320F7A73F1A7490"
+			rewards: [
+				{
+					id: "120BB1956F3ED83C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					exclude_from_claim_all: true
+					id: "7B114B4D32BB4E8E"
+					table_id: 5277493078733174414L
+					type: "random"
+				}
+			]
+			subtitle: "One of many!"
+			tasks: [
+				{
+					icon: "ftbquests:stage_barrier"
+					id: "19C65A70E70E429D"
+					structure: "#sgjourney:goauld_temple"
+					title: "Find a Goa'uld Temple"
+					type: "structure"
+				}
+				{
+					id: "0F3C0965FAFA6E6D"
+					item: "sgjourney:golden_idol"
+					type: "item"
+				}
+			]
+			title: "The Goa'uld Temple"
+			x: 1.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["6320F7A73F1A7490"]
+			description: [
+				"Next we need that Golden Idol we \"aquired\". Build a Archeology Table and get yourself a Villager. Trade the Golden Idol for a map to the Stargate!"
+				"(You need a Master Archeologist) "
+			]
+			icon: "sgjourney:classic_stargate"
+			id: "54391A5E4D2242AA"
+			rewards: [
+				{
+					id: "78B15A8ABE5BBF39"
+					type: "xp_levels"
+					xp_levels: 2
+				}
+				{
+					exclude_from_claim_all: true
+					id: "124B2F5FBAC39B36"
+					table_id: 5277493078733174414L
+					type: "random"
+				}
+			]
+			subtitle: "There it is!"
+			tasks: [
+				{
+					id: "44B5425774A8470B"
+					item: "sgjourney:archeology_table"
+					type: "item"
+				}
+				{
+					icon: "sgjourney:classic_stargate"
+					id: "5BC3F763F4AA4F19"
+					structure: "#sgjourney:buried_stargate"
+					title: "Find a Stargate"
+					type: "structure"
+				}
+			]
+			title: "Finding a Stargate"
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4E6747209BE4AB28"]
+			description: ["If you havent found your first Overworld Gate yet this will guide you to it!"]
+			id: "09FA2C5A93E513FB"
+			subtitle: "Findig the first Stargate"
+			tasks: [{
+				id: "2A9C4C0AD48C7F30"
+				type: "checkmark"
+			}]
+			title: "The Stargate (Optional)"
+			x: -0.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4E6747209BE4AB28"]
+			description: [
+				"Ready for your first trip?"
+				""
+				"Okay Let's get to Abydos!"
+				""
+				"For this we need to find our first Address, wich we can find in stone Cartouches around the Overworld."
+			]
+			id: "599F6842E886F3F7"
+			subtitle: "The first of Many!"
+			tasks: [{
+				icon: "sgjourney:stone_symbol"
+				id: "432E75030C75B2C5"
+				structure: "#sgjourney:cartouche"
+				type: "structure"
+			}]
+			title: "Many new Worlds"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["599F6842E886F3F7"]
+			id: "01F2718E1B5D83EA"
+			subtitle: "Is Daniel still here?"
+			tasks: [{
+				dimension: "sgjourney:abydos"
+				icon: "ftbquests:stage_barrier"
+				id: "11DF0D2CC8DA1840"
+				title: "Abydos"
+				type: "dimension"
+			}]
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["01F2718E1B5D83EA"]
+			id: "0492C297D479B578"
+			subtitle: "This is Heavy stuff..."
+			tasks: [
+				{
+					id: "255FE71CA6E58891"
+					item: "sgjourney:raw_naquadah"
+					type: "item"
+				}
+				{
+					id: "29CB373DAA367A1E"
+					item: "sgjourney:naquadah_alloy"
+					type: "item"
+				}
+				{
+					id: "4BA731FE6CC35E1D"
+					item: "sgjourney:pure_naquadah"
+					type: "item"
+				}
+				{
+					id: "52AEEF6D7553B0DA"
+					item: "sgjourney:naquadah"
+					type: "item"
+				}
+			]
+			title: "Refining Naquadah"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0492C297D479B578"]
+			id: "7714943990A3B354"
+			tasks: [{
+				id: "204D3E65917127D3"
+				item: "minecraft:netherite_upgrade_smithing_template"
+				type: "item"
+			}]
+			title: "Upgrading to Naquadah"
+			x: 0.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["01F2718E1B5D83EA"]
+			id: "0F25CB758F8FD72A"
+			subtitle: "Gona find them all!"
+			tasks: [{
+				id: "5D004D81B212A4AD"
+				structure: "sgjourney:cartouche/abydos_cartouche"
+				type: "structure"
+			}]
+			title: "Abydos Cartouche"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0F25CB758F8FD72A"]
+			id: "3D20E3791AAA6E64"
+			tasks: [{
+				dimension: "sgjourney:chulak"
+				id: "652CAEB2CC977329"
+				type: "dimension"
+			}]
+			title: "Chulack"
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0492C297D479B578"]
+			id: "729C7AF91524EB74"
+			tasks: [{
+				id: "2AA4696E962895F4"
+				item: "minecraft:netherite_upgrade_smithing_template"
+				type: "item"
+			}]
+			title: "Naquadah Armor"
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7714943990A3B354"]
+			id: "3DAB52B216060038"
+			tasks: [{
+				id: "3BEF9E5A2B848422"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7714943990A3B354"]
+			id: "17F045EFBAD1AE35"
+			tasks: [{
+				id: "20EC4896281F8D3B"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["7714943990A3B354"]
+			id: "6F312AC52571200D"
+			tasks: [{
+				id: "17E169EC1A34D62A"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7714943990A3B354"]
+			id: "3B7013FE43A89921"
+			tasks: [{
+				id: "4BE4779E1DE483EA"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_shovel"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7714943990A3B354"]
+			id: "4F3896FA9870A673"
+			tasks: [{
+				id: "7299BBC830FCBB4F"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_hoe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["729C7AF91524EB74"]
+			id: "3B90E31887CB96F6"
+			tasks: [{
+				id: "10BFB3FBB4DCE283"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["729C7AF91524EB74"]
+			id: "4B47CBAA4D0E4F65"
+			tasks: [{
+				id: "6186F5F0F152C87D"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["729C7AF91524EB74"]
+			id: "07826E2EA0F4C220"
+			tasks: [{
+				id: "53EDC7135442ECCE"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_leggings"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["729C7AF91524EB74"]
+			id: "2C6D1FFE8C511855"
+			tasks: [{
+				id: "28AFB545B2BD091D"
+				item: {
+					Count: 1b
+					id: "sgjourney:naquadah_boots"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0492C297D479B578"]
+			id: "5CAED868EE9C962D"
+			tasks: [{
+				id: "51D79431E4DD3E48"
+				item: {
+					Count: 1b
+					id: "sgjourney:matok"
+					tag: {
+						IsOpen: 0b
+					}
+				}
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0492C297D479B578"]
+			description: ["Lets get into making our own Gate for that we need the following, place them like you see in the picture!"]
+			icon: "sgjourney:classic_stargate"
+			id: "5D3879366DEA2932"
+			tasks: [
+				{
+					id: "184496A671C63738"
+					item: "sgjourney:classic_stargate_base_block"
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "2CC07986E0EA8070"
+					item: "sgjourney:classic_stargate_chevron_block"
+					type: "item"
+				}
+				{
+					count: 14L
+					id: "0BADEF3E4E6B0F28"
+					item: "sgjourney:classic_stargate_ring_block"
+					type: "item"
+				}
+			]
+			title: "Your own Gate"
+			x: 3.0d
+			y: 1.5d
+		}
+	]
+	title: "Stargate Journey"
+}
