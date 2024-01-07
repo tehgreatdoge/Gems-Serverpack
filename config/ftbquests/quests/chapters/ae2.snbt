@@ -547,6 +547,160 @@
 			x: -5.0d
 			y: -5.0d
 		}
+		{
+			dependencies: ["194423A49785391E"]
+			description: ["The &lPattern Access&r Terminal allows you to quickly move or add patterns to your network."]
+			id: "725863D132052C3F"
+			tasks: [{
+				id: "7A4A7035311E5E5E"
+				item: "ae2:pattern_access_terminal"
+				type: "item"
+			}]
+			title: "Managing Patterns"
+			x: 9.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["52144F96AAE9844A"]
+			description: ["AE2 contains many ways to decorate your base. From fancy display mounts, to hiding cables."]
+			hide_dependency_lines: true
+			id: "3BC462BDE65FA837"
+			subtitle: "What's the point of automating everything if it isn't stylish?"
+			tasks: [{
+				id: "07A911BC043D874A"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Aesthetics"
+			x: 0.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["3BC462BDE65FA837"]
+			description: ["Storage monitors allow you to see how much of an item you have in your ME network. They can also be upgraded to allow for barrel-like interaction, although they will consume channels after that."]
+			id: "6DAA999CEC7DEDF7"
+			subtitle: "It glows!"
+			tasks: [{
+				id: "66A968CEF91A1639"
+				item: "ae2:storage_monitor"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["6DAA999CEC7DEDF7"]
+			description: ["Want to quickly withdraw items without opening a ui? Then the Conversion Monitor is for you. The &lConversion Monitor&r allows you to insert and extract items from the me network as if it were a barrel. It also will open a crafting prompt if it runs out of items and a corresponding recipe is in the network."]
+			id: "23DBAFBE136E3B41"
+			subtitle: "Just another better monitor attempt"
+			tasks: [{
+				id: "1ECA0296F66B8A30"
+				item: "ae2:conversion_monitor"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["3BC462BDE65FA837"]
+			description: ["Tired of seeing ugly cables everywhere? Facades can be placed on cables to make them appear like other blocks. They can even be placed on faces that already have cable subparts."]
+			icon: {
+				Count: 1b
+				id: "ae2:facade"
+				tag: {
+					item: "minecraft:deepslate_diamond_ore"
+				}
+			}
+			id: "75A4658C0E2E2932"
+			subtitle: "The creeper has already breached our defenses"
+			tasks: [{
+				count: 16L
+				id: "41A78875D1A02258"
+				item: "ae2:cable_anchor"
+				type: "item"
+			}]
+			title: "Facades"
+			x: 2.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["69FBE320CFCDC2A6"]
+			id: "48FE0CC92C3583B7"
+			tasks: [{
+				id: "0E4AC1D3D73636B9"
+				item: "megacells:cell_component_1m"
+				type: "item"
+			}]
+			title: "Storing 1 Megabyte"
+			x: -7.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["48FE0CC92C3583B7"]
+			description: ["Tired of not having enough crafting storage to build the entire minecraft world? MEGA cells has you covered. You can craft MEGA Crafting Storage and MEGA Crafting Coprocessors"]
+			id: "5F67525D31BA8C02"
+			tasks: [{
+				id: "0A4239E59E9E5A84"
+				item: "megacells:1m_crafting_storage"
+				type: "item"
+			}]
+			title: "Crafting at a New Scale"
+			x: -7.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["69FBE320CFCDC2A6"]
+			description: ["MEGA Cells adds MEGA variants of the pattern provider and ME interface. However, the MEGA Pattern Provider can only be used for processing recipes."]
+			id: "1221A9C5A3B3F1D1"
+			tasks: [
+				{
+					id: "663874C45DBFCEAE"
+					item: "megacells:mega_pattern_provider"
+					type: "item"
+				}
+				{
+					id: "6ABB58D04FDBF5CC"
+					item: "megacells:mega_interface"
+					type: "item"
+				}
+			]
+			title: "MEGA Subparts"
+			x: -3.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["48FE0CC92C3583B7"]
+			description: ["MEGA item cells behave exactly the same as normal item cells, but they can store up to 2 trillion of a single item."]
+			id: "3532BD90C944D6E6"
+			tasks: [{
+				id: "72C9A9CF53F789C4"
+				item: {
+					Count: 1b
+					id: "megacells:item_storage_cell_1m"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "Storing More Items"
+			x: -9.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["48FE0CC92C3583B7"]
+			description: ["The &lMEGA Bulk Item Storage Cell&r can store an unlimited number of a single item."]
+			id: "56BEE440D9F4AEC1"
+			tasks: [{
+				id: "516C62FB51B93023"
+				item: {
+					Count: 1b
+					id: "megacells:bulk_item_cell"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -7.0d
+			y: -3.0d
+		}
 	]
 	title: "Applied Energistics"
 }

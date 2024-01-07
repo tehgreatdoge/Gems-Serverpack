@@ -3,13 +3,14 @@
 	default_quest_shape: ""
 	filename: "kinetic_era_ii"
 	group: "0B892AF6A2410D9F"
+	hide_quest_until_deps_visible: true
 	id: "4D239CF8E2B220AE"
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["55FA04711F888480"]
-			description: ["The goal of Kinetic Era II is to obtain Rudimentary Processors which will allow you to create computers, unlock Mekanism, and more! However, the road ahead is a difficult one that will require a highly efficient manufacturing setup in order to surmount."]
+			description: ["The goal of Kinetic Era II is to obtain &d&lRudimentary Processors&r which will allow you to create computers, unlock Mekanism, and more! Assuming you have a nice ME network and properly automated &3Vacuum Tubes&r, this shouldn't be too hard."]
 			id: "692BC266D99DADE9"
 			rewards: [{
 				id: "3A03FACAFBD72E78"
@@ -65,6 +66,7 @@
 			]
 			id: "05C3248B70F1EADD"
 			tasks: [{
+				count: 20L
 				id: "375B96EAC1D33263"
 				item: "sgcommunity_pack:xor"
 				type: "item"
@@ -80,6 +82,7 @@
 			]
 			id: "3C31C7D1D5BA7C3A"
 			tasks: [{
+				count: 20L
 				id: "79A8658F2281E802"
 				item: "sgcommunity_pack:adder"
 				type: "item"
@@ -109,6 +112,7 @@
 			]
 			id: "494419E2B4AB7E80"
 			tasks: [{
+				count: 20L
 				id: "64951E7CB26E940C"
 				item: "sgcommunity_pack:alu"
 				type: "item"
@@ -121,6 +125,7 @@
 			dependencies: ["60117AE54A1F440D"]
 			id: "1AD45F5A1FB5B74D"
 			tasks: [{
+				count: 20L
 				id: "16E08156F503F2B3"
 				item: "sgcommunity_pack:control_unit"
 				type: "item"
@@ -133,6 +138,7 @@
 			dependencies: ["60117AE54A1F440D"]
 			id: "3ECD50CBA1E3DAA6"
 			tasks: [{
+				count: 20L
 				id: "37E797BBFEC47F30"
 				item: "sgcommunity_pack:small_cache"
 				type: "item"
@@ -151,6 +157,7 @@
 			id: "44F5A44C5C13627A"
 			subtitle: "Wait till you see Tier 3!"
 			tasks: [{
+				count: 20L
 				id: "4F2C09767E5F6482"
 				item: "sgcommunity_pack:rudimentary_processor"
 				type: "item"
@@ -160,5 +167,5 @@
 			y: 6.5d
 		}
 	]
-	title: "Kinetic Era II"
+	title: "Kinetic II"
 }

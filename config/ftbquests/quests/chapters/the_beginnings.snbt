@@ -207,7 +207,7 @@
 		}
 		{
 			dependencies: ["4CE0D979E9A5681B"]
-			description: ["Pretty simple, just need 4 diamonds to upgrade a gold substrate or 5 to make from scratch. However, from now on, every substrate will be made by upgrading up from this one."]
+			description: ["Pretty simple, just need 4 diamonds to upgrade a gold substrate or 5 to make one from scratch. However, from now on, every substrate will be made by upgrading up from this one."]
 			id: "6BDAECDF847B5CE8"
 			rewards: [{
 				id: "1E54C2C1B6FFEB15"

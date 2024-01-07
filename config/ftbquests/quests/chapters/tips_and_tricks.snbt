@@ -26,7 +26,7 @@
 			y: 0.0d
 		}
 		{
-			description: ["The Create hose allows for extracting or filling large bodies of fluids. It extracts everything at or above the height of it's nozzle and fills up to it's level. However, when the body of fluid is larger than 10000 blocks, the hose considers the pool to be infinite. This works for any fluid, so use that info however you would like."]
+			description: ["The Create hose allows for extracting or filling large bodies of fluids. It extracts everything at or above the height of it's nozzle and fills up to it's level. However, when the body of fluid is larger than 10000 blocks, the hose considers the pool to be infinite. This works for water, honey, chocolate, and lava. If you want another fluid added to the list, just ask."]
 			id: "723CFF1C353C5B85"
 			rewards: [{
 				id: "491E9579D36430AC"
