@@ -1,6 +1,5 @@
 // priority: 10
 // This file is automatically shared amongst the server and startup scripts
-let $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
 var MODID = "sgcommunity_pack"
 var Tags = {
     CIRCUIT: MODID+":circuit",
