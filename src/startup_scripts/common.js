@@ -157,6 +157,11 @@ var Materials = {
         display: "minecraft:gold_ore",
         drops: [{"item": "minecraft:raw_gold",min:2, max:3}]
     },
+    zinc: {
+        item: "create:zinc_ingot",
+        display: "create:zinc_ore",
+        drops: [{"item": "create:raw_zinc",min:2, max:3}]
+    },
     diamond: {
         item: "minecraft:diamond",
         display: "minecraft:diamond_ore",
