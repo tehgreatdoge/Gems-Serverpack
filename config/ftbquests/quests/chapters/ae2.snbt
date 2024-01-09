@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "ae2"
 	group: "3553DD7F726AE366"
-	hide_quest_until_deps_visible: true
 	icon: "ae2:controller"
 	id: "130D8C64768FBA7D"
 	order_index: 0
@@ -17,6 +16,7 @@
 				"{@pagebreak}"
 				"Once you have found a meteor with certus quartz inside, gather the certus quartz blocks and take some skystone as well."
 			]
+			hide: true
 			icon: "ae2:meteorite_compass"
 			id: "6525C803A8BD105A"
 			rewards: [{
@@ -54,6 +54,7 @@
 		{
 			dependencies: ["7542A74737AC4408"]
 			description: ["Applied Energistics 2 is a storage mod based around the idea of energy-mass equivalency. Your items get stored as \"energy\" inside cells which is then converted back to retrieve them. Ultimately, this means you can store a LOT of items."]
+			hide: true
 			id: "3C51ACFA7F2A04E8"
 			rewards: [
 				{
@@ -429,7 +430,7 @@
 				""
 				"&lCovered Cables&r are the same as glass cables"
 				""
-				"&lDense Cables&r allow for transfering up to 32 channels on 1 cable! They also take priority in network pathfinding."
+				"&lDense Cables&r allow for transferring up to 32 channels on 1 cable! They also take priority in network pathfinding."
 				""
 				"&lSmart Cables&r allow you to see the exact places where channels are being used in cables."
 				""

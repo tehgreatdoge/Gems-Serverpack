@@ -58,13 +58,13 @@ ServerEvents.recipes((event) => {
     event.smithing(Substrate.NETHERITE.getIdentifier(),"minecraft:netherite_upgrade_smithing_template", Substrate.DIAMOND.getIdentifier(), "minecraft:netherite_ingot")
     // Kinetic Substrate
     event.recipes.create.mechanical_crafting(Substrate.KINETIC.getIdentifier(),
-    [
+    [   //spell-checker: disable
         "ppppp",
         "svvvs",
         "scncs",
         "sdvds",
         "sppps"
-    ],{
+    ],{ //spell-checker: enable
         "p": "minecraft:paper",
         "v": Item.VACUUM_TUBE.getIdentifier(),
         "s": "minecraft:stone",
@@ -100,7 +100,7 @@ ServerEvents.recipes((event) => {
     registerAE2InscriberRecipeTagMiddle(event, "ae2:engineering_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_engineering_processor", "ae2:printed_silicon"])
     registerAE2InscriberRecipeTagMiddle(event, "ae2:logic_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_logic_processor", "ae2:printed_silicon"])
     registerAE2InscriberRecipeTagMiddle(event, "ae2:calculation_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_calculation_processor", "ae2:printed_silicon"])
-    registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_INTERMEDIATE, "megacells:printed_accumulation_processor", "ae2:printed_silicon"])
+    registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_ADVANCED, "megacells:printed_accumulation_processor", "ae2:printed_silicon"])
     // Pure Quartz Glass Recipe
     event.recipes.create.sequenced_assembly([Item.WASHED_SILICA_DUST.getIdentifier()], Item.SILICA_DUST.getIdentifier(), [
         event.recipes.createFilling(Item.INCOMPLETE_SILICA_DUST.getIdentifier(), [Fluid.toBucket("minecraft:water"),Item.INCOMPLETE_SILICA_DUST.getIdentifier()])

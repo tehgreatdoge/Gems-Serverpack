@@ -239,7 +239,7 @@
 		}
 		{
 			dependencies: ["7542A74737AC4408"]
-			description: ["You just automated the first of 5 circuits in this modpack! Now that you have Vacuum tubes, you have completed part I of the Kinetic Era. In order to progress further, you will need to &6follow the quests&r in the AE2 chapter. However, I recommend setting up autocrafting and other ammenities before beelining to the &dComputational Substrate&r as it isn't exactly gamechanging."]
+			description: ["You just automated the first of 5 circuits in this modpack! Now that you have Vacuum tubes, you have completed part I of the Kinetic Era. In order to progress further, you will need to &6follow the quests&r in the AE2 chapter. However, I recommend setting up autocrafting and other amenities before crafting the &dComputational Substrate&r as it isn't exactly game-changing."]
 			id: "55FA04711F888480"
 			tasks: [{
 				id: "75908AC5740C8285"

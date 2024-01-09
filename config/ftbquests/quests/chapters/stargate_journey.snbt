@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "stargate_journey"
-	group: ""
+	group: "3553DD7F726AE366"
 	icon: "sgjourney:classic_stargate"
 	id: "309097298251CA11"
 	images: [
@@ -16,8 +16,8 @@
 			image: "ftbquests:textures/shapes/gear/background.png"
 			rotation: 0.0d
 			width: 1.5d
-			x: -2.0d
-			y: 0.0d
+			x: -1.5d
+			y: -1.0d
 		}
 		{
 			click: ""
@@ -28,32 +28,33 @@
 			image: "ftbquests:textures/shapes/gear/outline.png"
 			rotation: 0.0d
 			width: 1.5d
-			x: -2.0d
-			y: 0.0d
+			x: -1.5d
+			y: -1.0d
 		}
 	]
-	order_index: 3
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["You found our Server and now you wana Visit other Worlds? This is where it starts!"]
+			description: ["Stargate Journey is an exploration and transportation mod built around the idea of interstellar gates left behind by an ancient race. While you will initially have to scavenge to build a stargate network, eventually you will unlock the technology to build your own."]
 			id: "4E6747209BE4AB28"
 			rewards: [{
 				id: "2948B06942E77D27"
 				type: "xp"
-				xp: 100
+				xp: 20
 			}]
 			tasks: [{
 				id: "0B05DF068AE49848"
-				title: "Welcome to Stargate Journey"
+				title: "Acknowledge"
 				type: "checkmark"
 			}]
-			x: -2.0d
-			y: 0.0d
+			title: "Welcome to Stargate Journey"
+			x: -1.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["09FA2C5A93E513FB"]
-			description: ["To Start of we need to find a Goa'uld Temple and joink/steal the golden Idol found in them!"]
+			description: ["To start off, we need to find a Goa'uld Pyramid to get the golden idol. You should be able to take the ring panel down to where the treasure lies, unless it's a jungle pyramid."]
 			icon: "sgjourney:golden_idol"
 			id: "6320F7A73F1A7490"
 			rewards: [
@@ -65,7 +66,6 @@
 				{
 					exclude_from_claim_all: true
 					id: "7B114B4D32BB4E8E"
-					table_id: 5277493078733174414L
 					type: "random"
 				}
 			]
@@ -85,13 +85,13 @@
 				}
 			]
 			title: "The Goa'uld Temple"
-			x: 1.0d
-			y: -1.5d
+			x: 1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6320F7A73F1A7490"]
 			description: [
-				"Next we need that Golden Idol we \"aquired\". Build a Archeology Table and get yourself a Villager. Trade the Golden Idol for a map to the Stargate!"
+				"Next we need that Golden Idol we \"acquired\". Build a Archeology Table and get yourself a Villager. Trade the Golden Idol for a map to the Stargate!"
 				"(You need a Master Archeologist) "
 			]
 			icon: "sgjourney:classic_stargate"
@@ -105,7 +105,6 @@
 				{
 					exclude_from_claim_all: true
 					id: "124B2F5FBAC39B36"
-					table_id: 5277493078733174414L
 					type: "random"
 				}
 			]
@@ -125,30 +124,30 @@
 				}
 			]
 			title: "Finding a Stargate"
-			x: 2.5d
-			y: -1.5d
+			x: 3.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["4E6747209BE4AB28"]
-			description: ["If you havent found your first Overworld Gate yet this will guide you to it!"]
+			description: ["As you might have noticed, this modpack adds stargates all around the world. However, if you can't find a stargate, there is another way to discover them."]
 			id: "09FA2C5A93E513FB"
-			subtitle: "Findig the first Stargate"
+			subtitle: "More than two!"
 			tasks: [{
 				id: "2A9C4C0AD48C7F30"
 				type: "checkmark"
 			}]
-			title: "The Stargate (Optional)"
-			x: -0.5d
-			y: -1.5d
+			title: "Finding Stargates"
+			x: 0.0d
+			y: -1.0d
 		}
 		{
-			dependencies: ["4E6747209BE4AB28"]
+			dependencies: ["09FA2C5A93E513FB"]
 			description: [
 				"Ready for your first trip?"
 				""
 				"Okay Let's get to Abydos!"
 				""
-				"For this we need to find our first Address, wich we can find in stone Cartouches around the Overworld."
+				"For this we need to find our first Address, which we can find in stone Cartouches around the Overworld."
 			]
 			id: "599F6842E886F3F7"
 			subtitle: "The first of Many!"
@@ -158,8 +157,8 @@
 				structure: "#sgjourney:cartouche"
 				type: "structure"
 			}]
-			title: "Many new Worlds"
-			x: 0.0d
+			title: "An Ancient Address"
+			x: 1.5d
 			y: 0.0d
 		}
 		{
@@ -173,7 +172,7 @@
 				title: "Abydos"
 				type: "dimension"
 			}]
-			x: 1.5d
+			x: 4.0d
 			y: 0.0d
 		}
 		{
@@ -203,8 +202,8 @@
 				}
 			]
 			title: "Refining Naquadah"
-			x: 1.5d
-			y: 1.5d
+			x: 2.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0492C297D479B578"]
@@ -215,21 +214,21 @@
 				type: "item"
 			}]
 			title: "Upgrading to Naquadah"
-			x: 0.5d
-			y: 2.5d
+			x: 1.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["01F2718E1B5D83EA"]
 			id: "0F25CB758F8FD72A"
-			subtitle: "Gona find them all!"
+			subtitle: "Gotta find them all!"
 			tasks: [{
 				id: "5D004D81B212A4AD"
 				structure: "sgjourney:cartouche/abydos_cartouche"
 				type: "structure"
 			}]
 			title: "Abydos Cartouche"
-			x: 3.0d
-			y: 0.0d
+			x: 7.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0F25CB758F8FD72A"]
@@ -239,9 +238,9 @@
 				id: "652CAEB2CC977329"
 				type: "dimension"
 			}]
-			title: "Chulack"
-			x: 4.5d
-			y: 0.0d
+			title: "Chulak"
+			x: 12.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0492C297D479B578"]
@@ -252,8 +251,8 @@
 				type: "item"
 			}]
 			title: "Naquadah Armor"
-			x: 2.5d
-			y: 2.5d
+			x: 3.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7714943990A3B354"]
@@ -269,8 +268,8 @@
 				}
 				type: "item"
 			}]
-			x: -2.0d
-			y: 2.5d
+			x: -1.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7714943990A3B354"]
@@ -286,8 +285,8 @@
 				}
 				type: "item"
 			}]
-			x: -2.0d
-			y: 3.5d
+			x: -1.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["7714943990A3B354"]
@@ -303,8 +302,8 @@
 				}
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.5d
+			x: -0.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["7714943990A3B354"]
@@ -320,8 +319,8 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 5.0d
+			x: 0.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7714943990A3B354"]
@@ -337,8 +336,8 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 5.0d
+			x: 1.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["729C7AF91524EB74"]
@@ -354,8 +353,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 5.0d
+			x: 3.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["729C7AF91524EB74"]
@@ -371,8 +370,8 @@
 				}
 				type: "item"
 			}]
-			x: 3.5d
-			y: 4.5d
+			x: 4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["729C7AF91524EB74"]
@@ -388,8 +387,8 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 3.5d
+			x: 5.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["729C7AF91524EB74"]
@@ -405,11 +404,11 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
-			y: 2.5d
+			x: 6.0d
+			y: 4.5d
 		}
 		{
-			dependencies: ["0492C297D479B578"]
+			dependencies: ["729C7AF91524EB74"]
 			id: "5CAED868EE9C962D"
 			tasks: [{
 				id: "51D79431E4DD3E48"
@@ -422,8 +421,8 @@
 				}
 				type: "item"
 			}]
-			x: 1.5d
-			y: 6.0d
+			x: 6.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["0492C297D479B578"]
@@ -450,8 +449,8 @@
 				}
 			]
 			title: "Your own Gate"
-			x: 3.0d
-			y: 1.5d
+			x: 4.0d
+			y: 2.5d
 		}
 	]
 	title: "Stargate Journey"

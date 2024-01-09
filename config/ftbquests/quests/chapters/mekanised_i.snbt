@@ -126,7 +126,7 @@
 		}
 		{
 			dependencies: ["5FC5BD879525A286"]
-			description: ["The electrolytic seperator uses electrolysis to split fluids into parts. In this case, you will use it to split water into hydrogen and oxygen. To get rid of the excess hydrogen, you can either burn it in a generator or just use the dump feature of the electrolytic seperator."]
+			description: ["The electrolytic separator uses electrolysis to split fluids into parts. In this case, you will use it to split water into hydrogen and oxygen. To get rid of the excess hydrogen, you can either burn it in a generator or just use the dump feature of the electrolytic separator."]
 			id: "38B15EC74C314C3A"
 			tasks: [{
 				id: "29A90E1FFD88E833"
