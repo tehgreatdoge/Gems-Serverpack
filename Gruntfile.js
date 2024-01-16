@@ -12,7 +12,6 @@ const babelConfig = {
             "@babel/plugin-transform-class-properties",
             "@babel/plugin-transform-classes",
             "@babel/plugin-transform-nullish-coalescing-operator",
-            "@babel/plugin-transform-for-of",
             ["babel-plugin-preserve-comment-header",{
                 //This is regex for matching headers in KubeJS scripts so that babel doesn't push them to random places
                 pattern: "priority:"
