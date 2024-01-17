@@ -11,12 +11,17 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "SGJourney Community Pack",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Telemort",
   "files": [
     {
       "projectID": 289412,
       "fileID": 4926101,
+      "required": true
+    },
+    {
+      "projectID": 905040,
+      "fileID": 4860141,
       "required": true
     },
     {
@@ -26,7 +31,7 @@
     },
     {
       "projectID": 689083,
-      "fileID": 5010084,
+      "fileID": 5022988,
       "required": true
     },
     {
@@ -51,7 +56,7 @@
     },
     {
       "projectID": 223794,
-      "fileID": 4997114,
+      "fileID": 5032144,
       "required": true
     },
     {
@@ -60,18 +65,23 @@
       "required": true
     },
     {
-      "projectID": 225608,
-      "fileID": 4586218,
-      "required": true
-    },
-    {
       "projectID": 309674,
       "fileID": 4838266,
       "required": true
     },
     {
+      "projectID": 225608,
+      "fileID": 4586218,
+      "required": true
+    },
+    {
       "projectID": 71738,
       "fileID": 4859167,
+      "required": true
+    },
+    {
+      "projectID": 563928,
+      "fileID": 5008700,
       "required": true
     },
     {
@@ -86,7 +96,7 @@
     },
     {
       "projectID": 353928,
-      "fileID": 4956115,
+      "fileID": 5030156,
       "required": true
     },
     {
@@ -96,7 +106,7 @@
     },
     {
       "projectID": 865273,
-      "fileID": 5007989,
+      "fileID": 5017522,
       "required": true
     },
     {
@@ -106,12 +116,17 @@
     },
     {
       "projectID": 714059,
-      "fileID": 5001770,
+      "fileID": 5020441,
       "required": true
     },
     {
       "projectID": 704113,
-      "fileID": 4831434,
+      "fileID": 5024181,
+      "required": true
+    },
+    {
+      "projectID": 901344,
+      "fileID": 4769482,
       "required": true
     },
     {
@@ -125,8 +140,18 @@
       "required": true
     },
     {
+      "projectID": 667688,
+      "fileID": 4715137,
+      "required": true
+    },
+    {
       "projectID": 240630,
       "fileID": 4689044,
+      "required": true
+    },
+    {
+      "projectID": 509285,
+      "fileID": 4931859,
       "required": true
     },
     {
@@ -140,13 +165,23 @@
       "required": true
     },
     {
+      "projectID": 465575,
+      "fileID": 4769083,
+      "required": true
+    },
+    {
       "projectID": 400514,
       "fileID": 4942245,
       "required": true
     },
     {
       "projectID": 238086,
-      "fileID": 4948967,
+      "fileID": 5034251,
+      "required": true
+    },
+    {
+      "projectID": 421850,
+      "fileID": 4769522,
       "required": true
     },
     {
@@ -190,6 +225,11 @@
       "required": true
     },
     {
+      "projectID": 220318,
+      "fileID": 4617259,
+      "required": true
+    },
+    {
       "projectID": 361385,
       "fileID": 4687624,
       "required": true
@@ -202,6 +242,16 @@
     {
       "projectID": 429371,
       "fileID": 4884096,
+      "required": true
+    },
+    {
+      "projectID": 659011,
+      "fileID": 4807511,
+      "required": true
+    },
+    {
+      "projectID": 714958,
+      "fileID": 4819646,
       "required": true
     },
     {
@@ -222,6 +272,11 @@
     {
       "projectID": 858542,
       "fileID": 4779110,
+      "required": true
+    },
+    {
+      "projectID": 689238,
+      "fileID": 4883003,
       "required": true
     },
     {
@@ -255,8 +310,13 @@
       "required": true
     },
     {
+      "projectID": 510089,
+      "fileID": 4769431,
+      "required": true
+    },
+    {
       "projectID": 372534,
-      "fileID": 4580935,
+      "fileID": 5020789,
       "required": true
     },
     {
@@ -282,6 +342,16 @@
     {
       "projectID": 231484,
       "fileID": 4749420,
+      "required": true
+    },
+    {
+      "projectID": 491794,
+      "fileID": 4712194,
+      "required": true
+    },
+    {
+      "projectID": 252848,
+      "fileID": 4712189,
       "required": true
     },
     {
