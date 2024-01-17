@@ -65,5 +65,24 @@ StartupEvents.registry("fluid", (event) => {
         .thickTexture(0x0FFCCCC)
         .bucketColor(0xFFCCCC)
 })
+// mekanism registration
+// gonna be cursed
+const MekanismAPI = Java.loadClass('mekanism.api.MekanismAPI')
+const InfuseTypeBuilder = Java.loadClass('mekanism.api.chemical.infuse.InfuseTypeBuilder')
+const GasBuilder = Java.loadClass('mekanism.api.chemical.gas.GasBuilder')
+const GasClass = Java.loadClass('mekanism.api.chemical.gas.Gas')
+const MekanismGases = Java.loadClass("mekanism.common.registries.MekanismGases")
+const MekanismInfuseTypes = Java.loadClass('mekanism.common.registries.MekanismInfuseTypes')
+StartupEvents.registry("mekanism:gas",(event) => {
+    console.log(event)
+    //const GasRegistry = MekanismAPI.gasRegistry()
+    for (let gas of Object.values(Gasses)) {
+        let builder = GasBuilder.builder().tint(gas.getColor())
+        let gasInstance = GasClass(builder)
+        MekanismGases.GASES['register(java.lang.String,java.util.function.Supplier)'](gas.identifier,() =>gasInstance)
+        //GasRegistry['register(java.lang.String,java.lang.Object)'](gas.getIdentifier(), gasInstance)
+    }
+})
 
 console.info('Loaded Startup Scripts')
+
