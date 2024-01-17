@@ -21,6 +21,22 @@ StartupEvents.registry("block", (event) => {
             .tagBlock("mineable/pickaxe") // or a pickaxe
             .tagBlock('minecraft:needs_iron_tool') // the tool tier must be at least iron
     }
+    for (let block of Object.values(Blocks)) {
+        let builder = event.create(block.getIdentifier())
+            .displayName(block.getDisplayName())
+            .mapColor(block.getMapColor())
+            .soundType(block.getSoundType())
+            .hardness(block.getHardness())
+            .resistance(block.getBlastResistance())
+            .lightLevel(block.getLightLevel())
+            .requiresTool(block.getRequiresTool())
+        for (let tag of block.getBlockTags()) {
+            builder.tagBlock(tag)
+        }
+        for (let tag of block.getItemTags()) {
+            builder.tagItem(tag)
+        }
+    }
 })
 
 StartupEvents.registry("item", (event) => {

@@ -109,6 +109,8 @@ ServerEvents.recipes((event) => {
     event.blasting(Item.PURE_QUARTZ_GLASS.getIdentifier(),Item.IMPURE_QUARTZ_GLASS.getIdentifier())
     // PCB Substrate recipe
     registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"])
+    // Phosphorus
+    event.blasting(Item.PHOSPHORUS.getIdentifier(),Blocks.Phosphorite.getIdentifier())
     // Mekanism
     event.remove({id:"mekanism:metallurgic_infuser"})
     event.shaped("mekanism:metallurgic_infuser", [

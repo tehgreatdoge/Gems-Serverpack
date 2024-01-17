@@ -49,6 +49,8 @@ class Item {
     static PURE_QUARTZ_GLASS = new Item("pure_quartz_glass", "Pure Quartz Glass")
     // PCB Substrate
     static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
+    // Silicon Wafers
+    static PHOSPHORUS = new Item("phosphorus", "Phosphorus", {tags: ["forge:phosphorus"]})
     // Rudimentary Processor
     static ADDER = new Item("adder", "8 Bit Adder")
     static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
@@ -231,4 +233,124 @@ var Materials = {
         display: "sgjourney:naquadah_ore",
         drops: [{"item": "sgjourney:raw_naquadah",min:2, max:3}]
     },
+}
+class ToolType {
+    static PICKAXE = new ToolType("mineable/pickaxe")
+    constructor(identifier) {
+        this.identifier = identifier
+    }
+    getIdentifier() {
+        return this.identifier
+    }
+}
+class ToolTier {
+    static IRON = new ToolTier("minecraft:needs_iron_tool")
+    constructor(identifier) {
+        this.identifier = identifier
+    }
+    getIdentifier() {
+        return this.identifier
+    }
+}
+class MaterialType {
+    static STONE = new MaterialType("stone", "stone")
+    constructor(sound, color) {
+        this.sound = sound
+        this.color = color
+    }
+    getSound() {
+        return this.sound
+    }
+    getMapColor() {
+        return this.mapColor
+    }
+}
+class Block {
+    _blockTags = []
+    _itemTags = []
+    _hardness = 1
+    _blastResistance = 1
+    _lightLevel = 0
+    _requiresTool = false
+    _mapColor = "grass"
+    _soundType = "grass"
+    constructor(identifier, name) {
+        this.identifier = identifier
+        this.name = name
+    }
+    tagBlock(tag) {
+        this._blockTags.push(tag)
+        return this
+    }
+    tagItem(tag) {
+        this._itemTags.push(tag)
+        return this
+    }
+    tagBoth(tag) {
+        this.tagBlock(tag)
+        this.tagItem(tag)
+        return this
+    }
+    material(materialType) {
+        this._soundType = materialType.getSound()
+        this._mapColor = materialType.getMapColor()
+        return this
+    }
+    hardness(hardness) {
+        this._hardness = hardness
+        return this
+    }
+    blastResistance(blastResistance) {
+        this._blastResistance = blastResistance
+        return this
+    }
+    lightLevel(lightLevel) {
+        this._lightLevel = lightLevel
+        return this
+    }
+    requiresTool(requiresTool) {
+        this._requiresTool = requiresTool
+        return this
+    }
+    requireTier(toolTier) {
+        this.tagBlock(toolTier.getIdentifier())
+        return this
+    }
+    useTool(toolType) {
+        this.tagBlock(toolType.getIdentifier())
+        return this
+    }
+    getDisplayName() {
+        return this.name
+    }
+    getSoundType() {
+        return this._soundType
+    }
+    getMapColor() {
+        return this._mapColor
+    }
+    getIdentifier() {
+        return MODID+ ":" + this.identifier
+    }
+    getHardness() {
+        return this._hardness
+    }
+    getBlastResistance() {
+        return this._blastResistance
+    }
+    getLightLevel() {
+        return this._lightLevel
+    }
+    getRequiresTool() {
+        return this._requiresTool
+    }
+    getBlockTags() {
+        return this._blockTags
+    }
+    getItemTags() {
+        return this._itemTags
+    }
+}
+var Blocks = {
+    Phosphorite: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores")
 }
