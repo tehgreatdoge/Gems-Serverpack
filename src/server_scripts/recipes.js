@@ -1,6 +1,5 @@
 // priority 2
 // This is gonna be awful
-
 ServerEvents.recipes((event) => {
     // Iron Substrate
     event.shaped(Item.of(Substrate.IRON,1), 
@@ -110,7 +109,40 @@ ServerEvents.recipes((event) => {
     // PCB Substrate recipe
     registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"])
     // Phosphorus
-    event.blasting(Item.PHOSPHORUS.getIdentifier(),Blocks.Phosphorite.getIdentifier())
+    event.blasting(Item.PHOSPHORUS.getIdentifier(),Blocks.PHOSPHORITE.getIdentifier())
+    // Silicon Wafers
+    registerChemicalDissolutionRecipe(event, {"amount": 10000, chemicalType: "gas", "gas": "mekanism:silicon"},
+    {amount: 1, "gas": "mekanism:blaze_gas"},
+    {"amount": 10, ingredient: {"item": "ae2:silicon"}})
+    registerChemicalInfusionRecipe(event, {"amount": 10000, chemicalType: "gas", "gas": "mekanism:doped_silicon"},
+    {amount: 1, "gas": "mekanism:phosphorus"},
+    {amount: 100, "gas": "mekanism:silicon"})
+    registerCrystallizing(event, Item.SILICON_BOULE.getIdentifier(), {
+          "amount": 5000,
+          "gas": "mekanism:doped_silicon"
+        })
+    registerItemToGas(event,
+        {
+        "amount": 1000,
+        "gas": "mekanism:phosphorus"
+      },"forge:phosphorus",)
+    registerItemToGas(event,
+        {
+        "amount": 1000,
+        "gas": "mekanism:blaze_gas"
+    },"forge:rods/blaze",)
+    event.custom({
+        "type": "mekanism:sawing",
+        "input": {
+          "ingredient": {
+            "item": Item.SILICON_BOULE.getIdentifier()
+          }
+        },
+        "mainOutput": {
+          "count": 10,
+          "item": Item.SILICON_WAFER.getIdentifier()
+        }
+      })
     // Mekanism
     event.remove({id:"mekanism:metallurgic_infuser"})
     event.shaped("mekanism:metallurgic_infuser", [

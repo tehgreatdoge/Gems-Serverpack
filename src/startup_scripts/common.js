@@ -51,6 +51,8 @@ class Item {
     static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
     // Silicon Wafers
     static PHOSPHORUS = new Item("phosphorus", "Phosphorus", {tags: ["forge:phosphorus"]})
+    static SILICON_BOULE = new Item("silicon_boule", "Silicon Boule")
+    static SILICON_WAFER = new Item("silicon_wafer", "Silicon Wafer")
     // Rudimentary Processor
     static ADDER = new Item("adder", "8 Bit Adder")
     static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
@@ -352,5 +354,31 @@ class Block {
     }
 }
 var Blocks = {
-    Phosphorite: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores")
+    PHOSPHORITE: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores")
+}
+class Gas {
+    _color = 0x000000
+    constructor(identifier, name) {
+        this.identifier = identifier
+        this.name = name
+    }
+    color(color) {
+        this._color = color
+        return this
+    }
+    getIdentifier() {
+        return "mekanism:" + this.identifier
+    }
+    getDisplayName() {
+        return this.name
+    }
+    getColor() {
+        return this._color
+    }
+}
+var Gasses = {
+    BLAZE_GAS: new Gas("blaze_gas", "Blaze Gas").color(0xF18A22),
+    PHOSPHORUS_GAS: new Gas("phosphorus", "Phosphorus Gas").color(0xFFFFDD),
+    SILICON_GAS: new Gas("silicon", "Molten Silicon").color(0xEECCCC),
+    DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD)
 }
