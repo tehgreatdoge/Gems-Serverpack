@@ -115,6 +115,9 @@
 			enable_address_choice = true
 			#If true, allow the disintegration of Create Entities by Kawooshes
 			kawoosh_disintegrates_create_entities = false
+			#The maximum amount of blocks allowed within the ring area before Stargate becomes obstructed
+			#Range: 1 ~ 21
+			max_obstructive_blocks = 12
 
 	["Stargate Journey Common Config"."Naquadah Generator Config"]
 

@@ -29,3 +29,8 @@ src/server_scripts/common.js
 !/config/Advancedperipherals
 /config/Advancedperipherals/*
 !/config/Advancedperipherals/world.toml
+# apotheosis
+!/config/apotheosis
+/config/apotheosis/*
+!/config/apotheosis/names.cfg
+!/config/apotheosis/apotheosis.cfg
