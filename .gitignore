@@ -25,6 +25,8 @@ src/server_scripts/common.js
 !/config/ae2
 /config/ae2/*
 !/config/ae2/common.json
+# ad astra giselle edition
+!/config/ad_astra_giselle_addon.jsonc
 # advanced peripherals
 !/config/Advancedperipherals
 /config/Advancedperipherals/*
