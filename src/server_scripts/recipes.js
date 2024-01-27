@@ -338,7 +338,7 @@ ServerEvents.recipes((event) => {
         "g": "minecraft:gold_ingot",
         "u": "minecraft:copper_ingot"
     })
-    // Testing
+    // Blue Ice (testing recipe ig)
     new MultistepProcess()
         .addStep(new MekanismInjectingStep("Water Vapor Injecting", {
             "amount": 1,
@@ -354,6 +354,7 @@ ServerEvents.recipes((event) => {
         }, MultistepProcess.INTERMEDIATE_ITEM, "minecraft:blue_ice"))
         .usingItem("minecraft:ice")
         .register(event)
+    // Integrated Circuit
     new MultistepProcess()
         // Oxide layer
         .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 1,"tag": "mekanism:water_vapor"}, Item.SILICON_WAFER.getIdentifier()))
@@ -385,4 +386,17 @@ ServerEvents.recipes((event) => {
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
+    // Slicing
+    event.custom({
+        "type": "mekanism:sawing",
+        "input": {
+          "ingredient": {
+            "item": Item.INTEGRATED_CIRCUIT_WAFER.getIdentifier()
+          }
+        },
+        "mainOutput": {
+          "count": 8,
+          "item": Item.INTEGRATED_CIRCUIT.getIdentifier()
+        }
+      })
 })
