@@ -76,12 +76,17 @@ const MekanismInfuseTypes = Java.loadClass('mekanism.common.registries.MekanismI
 StartupEvents.registry("mekanism:gas",(event) => {
     console.log(event)
     //const GasRegistry = MekanismAPI.gasRegistry()
-    for (let gas of Object.values(Gasses)) {
+    for (let gas of Object.values(Gases)) {
         let builder = GasBuilder.builder().tint(gas.getColor())
         let gasInstance = GasClass(builder)
         MekanismGases.GASES['register(java.lang.String,java.util.function.Supplier)'](gas.identifier,() =>gasInstance)
         //GasRegistry['register(java.lang.String,java.lang.Object)'](gas.getIdentifier(), gasInstance)
     }
+    // for (let slurry of Object.values(Slurries)) {
+    //     let builder = SlurryBuilder.builder().tint(slurry.getColor())
+    //     let slurryInstance = SlurryClass(builder)
+    //     MekanismGases   
+    // }
 })
 
 console.info('Loaded Startup Scripts')

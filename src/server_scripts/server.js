@@ -4,6 +4,10 @@
 
 // TODO:Remove Fluix Researcher Trades
 
+for (let key of Object.keys(this)) {
+    console.log(key)
+}
+
 ServerEvents.recipes((event) => {
     for (let tierName in Tier) {
         let tier = Tier[tierName]

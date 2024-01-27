@@ -4,3 +4,6 @@ ServerEvents.tags("fluid", (event) => {
         event.add("create:bottomless/allow",tag)
     }
 })
+ServerEvents.tags("mekanism.slurries",(event) => {
+    console.log("Loaded mekanism stuff somehow?")
+})

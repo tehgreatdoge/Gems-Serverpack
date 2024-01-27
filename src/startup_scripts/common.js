@@ -49,6 +49,7 @@ class Item {
     static PURE_QUARTZ_GLASS = new Item("pure_quartz_glass", "Pure Quartz Glass")
     // PCB Substrate
     static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
+    static ADVANCED_PCB_SUBSTRATE = new Item("advanced_pcb_substrate", "Advanced PCB Substrate")
     // Silicon Wafers
     static PHOSPHORUS = new Item("phosphorus", "Phosphorus", {tags: ["forge:phosphorus"]})
     static SILICON_BOULE = new Item("silicon_boule", "Silicon Boule")
@@ -68,6 +69,11 @@ class Item {
     static INCOMPLETE_SMALL_CACHE = new Item("incomplete_small_cache", "Incomplete Small Cache", { itemType: "create:sequenced_assembly"})
 
     static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
+    // Mekanism Era Tier II
+    static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "IC Photomask")
+    static INCOMPLETE_IC = new Item("incomplete_integrated_circuit", "Incomplete Integrated Circuit Wafer")
+    static INTEGRATED_CIRCUIT_WAFER = new Item("integrated_circuit_wafer", "Integrated Circuit Wafer")
+    static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Computation Parts
     // static RAM = new Item("ram", "RAM")
     // static INCOMPLETE_RAM = new Item("incomplete_ram", "Incomplete RAM", { itemType: "create:sequenced_assembly"})
@@ -354,7 +360,8 @@ class Block {
     }
 }
 var Blocks = {
-    PHOSPHORITE: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores")
+    PHOSPHORITE: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores"),
+    BORAX: new Block("borax", "Borax").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/borax").tagBoth("forge:ores")
 }
 class Gas {
     _color = 0x000000
@@ -376,9 +383,12 @@ class Gas {
         return this._color
     }
 }
-var Gasses = {
+var Gases = {
     BLAZE_GAS: new Gas("blaze_gas", "Blaze Gas").color(0xF18A22),
     PHOSPHORUS_GAS: new Gas("phosphorus", "Phosphorus Gas").color(0xFFFFDD),
     SILICON_GAS: new Gas("silicon", "Molten Silicon").color(0xEECCCC),
-    DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD)
+    DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD),
+    RESIN: new Gas("photoresist", "Photoresist").color(0xCCBB33),
+    BORON_TRIFLUORIDE: new Gas("boron_trifluoride", "Boron Trifluoride").color(0xFFFFFF),
+    BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF)
 }
