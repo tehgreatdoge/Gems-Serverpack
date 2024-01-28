@@ -378,7 +378,7 @@ ServerEvents.recipes((event) => {
         // p-type implantation
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 1,"gas": "mekanism:boron"}))
+        .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 1,"gas": "mekanism:boron_trifluoride"}))
         // n-type implantation
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
@@ -399,4 +399,47 @@ ServerEvents.recipes((event) => {
           "item": Item.INTEGRATED_CIRCUIT.getIdentifier()
         }
       })
+    event.custom({
+      type: "mekanism:dissolution",
+      gasInput: {
+        amount: 5,
+        gas: "mekanism:sulfuric_acid"
+      },
+      itemInput: {
+        ingredient: {
+          tag: "forge:ores/borax"
+        }
+      },
+      output: {
+        amount: 5000,
+        chemicalType: "gas",
+        gas: "mekanism:borax_mixture"
+      }
+    })
+    event.custom({
+        type: "mekanism:centrifuging",
+        input: {
+            amount: 1,
+            gas: "mekanism:borax_mixture"
+        },
+        output: {
+            amount: 1,
+            gas: "mekanism:boron_trioxide"
+        }
+    })
+    event.custom({
+        type: "mekanism:chemical_infusing",
+        leftInput: {
+            amount: 6,
+            gas: "mekanism:hydrofluoric_acid"
+        },
+        output: {
+            amount: 2,
+            gas: "mekanism:boron_trifluoride"
+        },
+        rightInput: {
+            amount: 1,
+            gas: "mekanism:boron_trioxide"
+        }
+    })
 })

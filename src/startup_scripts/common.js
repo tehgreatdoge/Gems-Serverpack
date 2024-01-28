@@ -71,7 +71,7 @@ class Item {
     static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Mekanism Era Tier II
     static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "IC Photomask")
-    static INCOMPLETE_IC = new Item("incomplete_integrated_circuit", "Incomplete Integrated Circuit Wafer")
+    static INCOMPLETE_IC = new Item("incomplete_integrated_circuit_wafer", "Incomplete Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_WAFER = new Item("integrated_circuit_wafer", "Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Computation Parts
@@ -389,6 +389,7 @@ var Gases = {
     SILICON_GAS: new Gas("silicon", "Molten Silicon").color(0xEECCCC),
     DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD),
     RESIN: new Gas("photoresist", "Photoresist").color(0xCCBB33),
+    BORAX_MIXTURE: new Gas("borax_mixture", "Borax Mixture").color(0xFFFFFF),
     BORON_TRIFLUORIDE: new Gas("boron_trifluoride", "Boron Trifluoride").color(0xFFFFFF),
     BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF)
 }
