@@ -115,7 +115,7 @@ ServerEvents.recipes((event) => {
     {amount: 10, "gas": "mekanism:blaze_gas"},
     {"amount": 10, ingredient: {"item": "ae2:silicon"}})
     registerChemicalInfusionRecipe(event, {"amount": 10000, chemicalType: "gas", "gas": "mekanism:doped_silicon"},
-    {amount: 1, "gas": "mekanism:boron"},
+    {amount: 1, "gas": "mekanism:boron_trifluoride"},
     {amount: 100, "gas": "mekanism:silicon"})
     registerCrystallizing(event, Item.SILICON_BOULE.getIdentifier(), {
           "amount": 5000,
@@ -446,6 +446,28 @@ ServerEvents.recipes((event) => {
             gas: "mekanism:boron_trioxide"
         }
     })
+    // photoresist
+    event.custom({
+      "type": "mekanism:oxidizing",
+      "input": {
+        "ingredient": {
+          "tag": "minecraft:saplings"
+        }
+      },
+      "output": {
+        "amount": 1000,
+        "gas": "mekanism:tree_sap"
+      }
+    })
+    registerChemicalDissolutionRecipe(event, {
+        chemicalType: "gas",
+        "amount": 1000,
+        "gas": "mekanism:photoresist"
+      }, {
+        chemicalType: "gas",
+        "amount": 500,
+        "gas": "mekanism:tree_sap"
+      }, "minecraft:glowstone_dust")
     // Rebalance mekanism recipes to be easier (woah how nice of me)
     event.remove({id: "mekanism:chemical_injection_chamber"})
     event.shaped("mekanism:chemical_injection_chamber",[

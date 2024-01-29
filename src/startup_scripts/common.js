@@ -388,8 +388,9 @@ var Gases = {
     PHOSPHORUS_GAS: new Gas("phosphorus", "Phosphorus Gas").color(0xFFFFDD),
     SILICON_GAS: new Gas("silicon", "Molten Silicon").color(0xEECCCC),
     DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD),
-    RESIN: new Gas("photoresist", "Photoresist").color(0xCCBB33),
+    RESIN: new Gas("photoresist", "Photoresist").color(0xFF643C),
     BORAX_MIXTURE: new Gas("borax_mixture", "Borax Mixture").color(0xFFFFFF),
     BORON_TRIFLUORIDE: new Gas("boron_trifluoride", "Boron Trifluoride").color(0xFFFFFF),
-    BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF)
+    BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF),
+    TREE_SAP: new Gas("tree_sap", "Tree Sap").color(0xc06000),
 }
