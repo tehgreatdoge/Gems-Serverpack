@@ -45,7 +45,7 @@ function parseMekanismIngredient(input) {
 function registerChemicalDissolutionRecipe(event, output, gasInput, itemInput) {
     event.custom({
         type: "mekanism:dissolution",
-        itemInput: itemInput,
+        itemInput: parseMekanismIngredient(itemInput),
         gasInput: gasInput,
         output: output
     })
