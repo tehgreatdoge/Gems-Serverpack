@@ -461,6 +461,18 @@ ServerEvents.recipes((event) => {
         "gas": "mekanism:tree_sap"
       }
     })
+    event.custom({
+      "type": "mekanism:oxidizing",
+      "input": {
+        "ingredient": {
+          "tag": "pamhc2trees:maplesyrupitem"
+        }
+      },
+      "output": {
+        "amount": 1000,
+        "gas": "mekanism:tree_sap"
+      }
+    })
     registerChemicalDissolutionRecipe(event, {
         chemicalType: "gas",
         "amount": 1000,
