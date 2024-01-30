@@ -468,6 +468,14 @@ ServerEvents.recipes((event) => {
         "amount": 5,
         "gas": "mekanism:tree_sap"
       }, "minecraft:glowstone_dust")
+    // photomask
+    event.shaped(Item.IC_PHOTOMASK.getIdentifier(), [
+        "e  ",
+        "   ",
+        "   "
+    ], {
+        e: Item.PURE_QUARTZ_GLASS.getIdentifier()
+    })
     // Rebalance mekanism recipes to be easier (woah how nice of me)
     event.remove({id: "mekanism:chemical_injection_chamber"})
     event.shaped("mekanism:chemical_injection_chamber",[
