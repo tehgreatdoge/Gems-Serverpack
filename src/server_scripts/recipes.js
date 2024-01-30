@@ -491,4 +491,26 @@ ServerEvents.recipes((event) => {
         t: "mekanism:basic_chemical_tank",
         s: "mekanism:steel_casing"
     })
+    // AE2 Infinity Booster
+    event.remove({id: "aeinfinitybooster:infinity_card"})
+    event.shaped("aeinfinitybooster:infinity_card",[
+        "ece",
+        "csc",
+        "nnn"
+    ],{
+        e: "minecraft:ender_eye",
+        c: "#"+Tags.CIRCUIT_INTERMEDIATE,
+        s: "minecraft:nether_star",
+        n: "minecraft:netherite_ingot"
+    })
+    event.remove({id: "aeinfinitybooster:dimension_card"})
+    event.shaped("aeinfinitybooster:dimension_card",[
+        "isi",
+        "scs",
+        "isi"
+    ],{
+        c: "#"+Tags.CIRCUIT_ADVANCED,
+        s: "minecraft:nether_star",
+        n: "minecraft:netherite_ingot"
+    })
 })
