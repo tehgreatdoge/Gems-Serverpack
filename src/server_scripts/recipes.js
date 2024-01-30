@@ -389,6 +389,8 @@ ServerEvents.recipes((event) => {
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
+    registerAE2InscriberRecipe(event, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), ["mekanism:hdpe_sheet", "create:copper_sheet", "create:copper_sheet"])
+    registerAE2InscriberRecipe(event, Item.INTEGRATED_CIRCUIT.getIdentifier(), [Item.INTEGRATED_CIRCUIT_CHIP.getIdentifier(), Item.PURE_QUARTZ_GLASS.getIdentifier(), Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()])
     // Slicing
     event.custom({
         "type": "mekanism:sawing",
@@ -398,8 +400,8 @@ ServerEvents.recipes((event) => {
           }
         },
         "mainOutput": {
-          "count": 8,
-          "item": Item.INTEGRATED_CIRCUIT.getIdentifier()
+          "count": 4,
+          "item": Item.INTEGRATED_CIRCUIT_CHIP.getIdentifier()
         }
       })
     // Boron stuff

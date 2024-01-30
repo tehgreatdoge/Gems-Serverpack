@@ -70,9 +70,10 @@ class Item {
 
     static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Mekanism Era Tier II
-    static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "IC Photomask")
+    static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "Integrated Circuit Photomask")
     static INCOMPLETE_IC = new Item("incomplete_integrated_circuit_wafer", "Incomplete Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_WAFER = new Item("integrated_circuit_wafer", "Integrated Circuit Wafer")
+    static INTEGRATED_CIRCUIT_CHIP = new Item("integrated_circuit_chip", "Integrated Circuit Chip")
     static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Computation Parts
     // static RAM = new Item("ram", "RAM")
