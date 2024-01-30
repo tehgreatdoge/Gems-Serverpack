@@ -465,7 +465,7 @@ ServerEvents.recipes((event) => {
         "gas": "mekanism:photoresist"
       }, {
         chemicalType: "gas",
-        "amount": 500,
+        "amount": 5,
         "gas": "mekanism:tree_sap"
       }, "minecraft:glowstone_dust")
     // Rebalance mekanism recipes to be easier (woah how nice of me)
@@ -479,5 +479,16 @@ ServerEvents.recipes((event) => {
         a: "mekanism:alloy_reinforced",
         g: "minecraft:gold_ingot",
         p: "mekanism:purification_chamber"
+    })
+    event.remove({id: "mekanism:chemical_dissolution_chamber"})
+    event.shaped("mekanism:chemical_dissolution_chamber", [
+        "ctc",
+        "asa",
+        "ctc"
+    ],{
+        c: "mekanism:advanced_control_circuit",
+        a: "#forge:ingots/refined_obsidian",
+        t: "mekanism:basic_chemical_tank",
+        s: "mekanism:steel_casing"
     })
 })
