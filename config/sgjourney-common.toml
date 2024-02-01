@@ -4,7 +4,7 @@
 	["Stargate Journey Common Config".server]
 		#Stargate Journey General Config
 		#Disable energy requirements for blocks added by Stargate Journey
-		disable_energy_requirements = true
+		disable_energy_requirements = false
 
 	["Stargate Journey Common Config"."ZPM Config"]
 
