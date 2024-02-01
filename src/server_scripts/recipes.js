@@ -100,6 +100,29 @@ ServerEvents.recipes((event) => {
     registerAE2InscriberRecipeTagMiddle(event, "ae2:logic_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_logic_processor", "ae2:printed_silicon"])
     registerAE2InscriberRecipeTagMiddle(event, "ae2:calculation_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_calculation_processor", "ae2:printed_silicon"])
     registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_ADVANCED, "megacells:printed_accumulation_processor", "ae2:printed_silicon"])
+    // Make quantum bridge harder
+    event.remove([{id: "ae2:tranform/entangled_singularity"},{id: "ae2:tranform/entangled_singularity_from_pearl"}])
+    event.custom({
+      "type": "ae2:transform",
+      "circumstance": {
+        "type": "explosion"
+      },
+      "ingredients": [
+        {
+          "item": "ae2:singularity"
+        },
+        {
+          "tag": "forge:dusts/ender_pearl"
+        },
+        {
+          "tag": Tags.CIRCUIT_INTERMEDIATE
+        },
+      ],
+      "result": {
+        "count": 2,
+        "item": "ae2:quantum_entangled_singularity"
+      }
+    })
     // Pure Quartz Glass Recipe
     event.recipes.create.sequenced_assembly([Item.WASHED_SILICA_DUST.getIdentifier()], Item.SILICA_DUST.getIdentifier(), [
         event.recipes.createFilling(Item.INCOMPLETE_SILICA_DUST.getIdentifier(), [Fluid.toBucket("minecraft:water"),Item.INCOMPLETE_SILICA_DUST.getIdentifier()])
