@@ -47,22 +47,32 @@ module.exports = function(grunt) {
         grunt.registerTask("assemble", "Puts all the correct folders in /dist", () => {
             fs.mkdirSync("./dist")
             fs.mkdirSync("./dist/overrides")
+            fs.mkdirSync("./dist/overrides/kubejs")
             grunt.log.write("Copying kubejs ")
-            fs.cpSync("./kubejs/", "./dist/overrides/kubejs/", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./kubejs/assets", "./dist/overrides/kubejs/assets", {'errorOnExist': true, "recursive":true, filter: (src) => {
+                return path.extname(src) != ".kra"
+            }})
+            fs.cpSync("./kubejs/data", "./dist/overrides/kubejs/data", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./kubejs/server_scripts", "./dist/overrides/kubejs/server_scripts", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./kubejs/client_scripts", "./dist/overrides/kubejs/client_scripts", {'errorOnExist': true, "recursive":true})
+            fs.cpSync("./kubejs/startup_scripts", "./dist/overrides/kubejs/startup_scripts", {'errorOnExist': true, "recursive":true})
             grunt.log.ok()
-            grunt.log.write("Copying config ")
             let ignoreFile = ignore()
             ignoreFile.add(fs.readFileSync(".gitignore").toString())
             //fs.cpSync gives extended length paths but process.cwd doesn't
             if (path.win32 == path) {
                 //Convert cwd to extended length
                 let cwd = "\\\\?\\"+process.cwd()
+                grunt.log.write("Copying config ")
                 fs.cpSync("./config/", "./dist/overrides/config/", {'errorOnExist': true, "recursive":true, filter: (src) => {
                     src = path.relative(cwd,src)
                     return !ignoreFile.ignores(src)
                 }})
+                grunt.log.ok()
             }
-            grunt.log.ok()
+            else {
+                throw new Error("Unable to build, non-windows platforms aren't supported (it should be easy to add though)")
+            }
             grunt.log.write("Copying defaultconfigs ")
             fs.cpSync("./defaultconfigs/", "./dist/overrides/defaultconfigs/", {'errorOnExist': true, "recursive":true})
             grunt.log.ok()

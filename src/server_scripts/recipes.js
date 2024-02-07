@@ -85,9 +85,20 @@ ServerEvents.recipes((event) => {
         "c": "ae2:controller"
     })
     // Mekanised Substrate
-
+    registerMetallurgicInfusing(event, {
+        amount: 20, 
+        tag: "mekanism:refined_obsidian"
+    }, Substrate.COMPUTATIONAL.getIdentifier(), Substrate.MEKANISED.getIdentifier())
     // Reactive Substrate
-
+    event.shaped(Substrate.REACTIVE.getIdentifier(), [
+        "iui",
+        "usu",
+        "iui"
+    ], {
+        i: Item.ISOTOPIC_DECAY_OSCILLATOR.getIdentifier(),
+        u: "mekanism:ingot_uranium",
+        s: Substrate.MEKANISED.getIdentifier()
+    })
     // Deep Space Substrate
 
     // Naquadah Substrate
@@ -96,12 +107,12 @@ ServerEvents.recipes((event) => {
     // Be evil and remove all the easy ae2 circuit recipes
     event.remove([{id:"ae2:inscriber/engineering_processor"},{id:"ae2:inscriber/logic_processor"},{id:"ae2:inscriber/calculation_processor"},{id:"megacells:inscriber/accumulation_processor"}])
     // Replace them with harder recipes
-    registerAE2InscriberRecipeTagMiddle(event, "ae2:engineering_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_engineering_processor", "ae2:printed_silicon"])
-    registerAE2InscriberRecipeTagMiddle(event, "ae2:logic_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_logic_processor", "ae2:printed_silicon"])
-    registerAE2InscriberRecipeTagMiddle(event, "ae2:calculation_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_calculation_processor", "ae2:printed_silicon"])
-    registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_ADVANCED, "megacells:printed_accumulation_processor", "ae2:printed_silicon"])
+    registerAE2InscriberRecipeTagMiddle(event, "ae2:engineering_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_engineering_processor", "ae2:printed_silicon"], true)
+    registerAE2InscriberRecipeTagMiddle(event, "ae2:logic_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_logic_processor", "ae2:printed_silicon"], true)
+    registerAE2InscriberRecipeTagMiddle(event, "ae2:calculation_processor", [Tags.CIRCUIT_BASIC, "ae2:printed_calculation_processor", "ae2:printed_silicon"], true)
+    registerAE2InscriberRecipeTagMiddle(event, "megacells:accumulation_processor", [Tags.CIRCUIT_ADVANCED, "megacells:printed_accumulation_processor", "ae2:printed_silicon"], true)
     // Make quantum bridge harder
-    event.remove([{id: "ae2:tranform/entangled_singularity"},{id: "ae2:tranform/entangled_singularity_from_pearl"}])
+    event.remove([{id: "ae2:transform/entangled_singularity"},{id: "ae2:transform/entangled_singularity_from_pearl"}])
     event.custom({
       "type": "ae2:transform",
       "circumstance": {
@@ -124,15 +135,15 @@ ServerEvents.recipes((event) => {
       }
     })
     // Pure Quartz Glass Recipe
-    event.recipes.create.sequenced_assembly([Item.WASHED_SILICA_DUST.getIdentifier()], Item.SILICA_DUST.getIdentifier(), [
+    event.recipes.create.sequenced_assembly([Item.WASHED_SILICA_DUST.getIdentifier()],Item.SILICA_DUST.getIdentifier(), [
         event.recipes.createFilling(Item.INCOMPLETE_SILICA_DUST.getIdentifier(), [Fluid.toBucket("minecraft:water"),Item.INCOMPLETE_SILICA_DUST.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_SILICA_DUST.getIdentifier()).loops(32)
+    ]).transitionalItem(Item.INCOMPLETE_SILICA_DUST.getIdentifier()).loops(4)
     event.recipes.createMixing(Item.IMPURE_QUARTZ_GLASS.getIdentifier(),Item.WASHED_SILICA_DUST.getIdentifier()).heated()
     event.blasting(Item.PURE_QUARTZ_GLASS.getIdentifier(),Item.IMPURE_QUARTZ_GLASS.getIdentifier())
     // PCB Substrate recipe
-    registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"])
+    registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"], true)
     // Phosphorus
-    event.blasting(Item.PHOSPHORUS.getIdentifier(),Blocks.PHOSPHORITE.getIdentifier())
+    event.blasting({item: Item.PHOSPHORUS.getIdentifier(), count: 3},Blocks.PHOSPHORITE.getIdentifier())
     // Silicon Wafers
     registerChemicalDissolutionRecipe(event, {"amount": 10000, chemicalType: "gas", "gas": "mekanism:silicon"},
     {amount: 10, "gas": "mekanism:blaze_gas"},
@@ -162,7 +173,7 @@ ServerEvents.recipes((event) => {
           }
         },
         "mainOutput": {
-          "count": 10,
+          "count": 5,
           "item": Item.SILICON_WAFER.getIdentifier()
         }
       })
@@ -235,7 +246,7 @@ ServerEvents.recipes((event) => {
             event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
             event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
     ]).transitionalItem(Item.INCOMPLETE_SMALL_CACHE.getIdentifier()).loops(2)
-    registerAE2InscriberRecipe(event, Item.RUDIMENTARY_PROCESSOR.getIdentifier(), [Item.CONTROL_UNIT.getIdentifier(),Item.SMALL_CACHE.getIdentifier(),Item.ALU.getIdentifier()])
+    registerAE2InscriberRecipe(event, Item.RUDIMENTARY_PROCESSOR.getIdentifier(), [Item.CONTROL_UNIT.getIdentifier(),Item.SMALL_CACHE.getIdentifier(),Item.ALU.getIdentifier()], true)
     // Ad Astra
     event.shaped(Item.of(Item.RCU,1),[
         "SSS",
@@ -380,6 +391,45 @@ ServerEvents.recipes((event) => {
     // Gas upgrade sucks
     // - injecting
     // - dissolution
+    // MOSFET (ngl, i give up on making accurate recipes)
+    new MultistepProcess()
+        .addStep(new MekanismInjectingStep("Inject Silicon",{"amount": 5,"gas": "mekanism:silicon"}, Item.SILICON_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}))
+        .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+        .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 2,"gas": "mekanism:boron_trifluoride"}))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM, Item.MOSFET_WAFER.getIdentifier()))
+        .usingItem(Item.INCOMPLETE_MOSFET_WAFER.getIdentifier())
+        .register(event)
+    // Slicing
+    event.custom({
+        "type": "mekanism:sawing",
+        "input": {
+          "ingredient": {
+            "item": Item.MOSFET_WAFER.getIdentifier()
+          }
+        },
+        "mainOutput": {
+          "count": 32,
+          "item": Item.MOSFET_CHIP.getIdentifier()
+        }
+      })
+    event.custom({
+      "type": "mekanism:combining",
+      "extraInput": {
+        "ingredient": {
+          "item": "create:copper_sheet"
+        }
+      },
+      "mainInput": {
+        "ingredient": {
+          "item": Item.MOSFET_CHIP.getIdentifier()
+        }
+      },
+      "output": {
+        "count": 1,
+        "item": Item.MOSFET.getIdentifier()
+      }
+    })
     // Integrated Circuit
     new MultistepProcess()
         // Oxide layer
@@ -412,8 +462,8 @@ ServerEvents.recipes((event) => {
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
-    registerAE2InscriberRecipe(event, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), ["mekanism:hdpe_sheet", "create:copper_sheet", "create:copper_sheet"])
-    registerAE2InscriberRecipe(event, Item.INTEGRATED_CIRCUIT.getIdentifier(), [Item.INTEGRATED_CIRCUIT_CHIP.getIdentifier(), Item.PURE_QUARTZ_GLASS.getIdentifier(), Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()])
+    registerAE2InscriberRecipe(event, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), ["mekanism:hdpe_sheet", "create:copper_sheet", "create:copper_sheet"], true)
+    registerAE2InscriberRecipe(event, Item.INTEGRATED_CIRCUIT.getIdentifier(), [Item.INTEGRATED_CIRCUIT_CHIP.getIdentifier(), Item.PURE_QUARTZ_GLASS.getIdentifier(), Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()], true)
     // Slicing
     event.custom({
         "type": "mekanism:sawing",
@@ -442,19 +492,8 @@ ServerEvents.recipes((event) => {
       output: {
         amount: 5000,
         chemicalType: "gas",
-        gas: "mekanism:borax_mixture"
+        gas: "mekanism:boron_trioxide"
       }
-    })
-    event.custom({
-        type: "mekanism:centrifuging",
-        input: {
-            amount: 1,
-            gas: "mekanism:borax_mixture"
-        },
-        output: {
-            amount: 1,
-            gas: "mekanism:boron_trioxide"
-        }
     })
     event.custom({
         type: "mekanism:chemical_infusing",
@@ -488,7 +527,7 @@ ServerEvents.recipes((event) => {
       "type": "mekanism:oxidizing",
       "input": {
         "ingredient": {
-          "tag": "pamhc2trees:maplesyrupitem"
+          "item": "pamhc2trees:maplesyrupitem"
         }
       },
       "output": {
@@ -506,12 +545,30 @@ ServerEvents.recipes((event) => {
         "gas": "mekanism:tree_sap"
       }, "minecraft:glowstone_dust")
     // photomask
+    console.log(Item.IC_PHOTOMASK.getIdentifier())
     event.shaped(Item.IC_PHOTOMASK.getIdentifier(), [
-        "e  ",
+        "ek ",
         "   ",
         "   "
     ], {
-        e: Item.PURE_QUARTZ_GLASS.getIdentifier()
+        e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
+        k: "#ae2:knife"
+    })
+    event.shaped(Item.EP_PHOTOMASK.getIdentifier(), [
+        " k ",
+        " e ",
+        "   "
+    ], {
+        e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
+        k: "#ae2:knife"
+    })
+    event.shaped(Item.ISO_PHOTOMASK.getIdentifier(), [
+        " ke",
+        "   ",
+        "   "
+    ], {
+        e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
+        k: "#ae2:knife"
     })
     // Rebalance mekanism recipes to be easier (woah how nice of me)
     event.remove({id: "mekanism:chemical_injection_chamber"})
@@ -556,6 +613,238 @@ ServerEvents.recipes((event) => {
     ],{
         c: "#"+Tags.CIRCUIT_ADVANCED,
         s: "minecraft:nether_star",
-        n: "minecraft:netherite_ingot"
+        i: "aeinfinitybooster:infinity_card"
+    })
+    //====Edible Processor====\\
+    // Wafer recipe
+    new MultistepProcess()
+        .addStep(new CreateMixingStep("Cream Butter and Sugar", {input: ["minecraft:sugar","pamhc2foodcore:butteritem"]}))
+        .addStep(new CreateMixingStep("Add Eggs and Vanilla", {input: [MultistepProcess.INTERMEDIATE_ITEM, {item: "minecraft:egg", amount:2}, "pamhc2foodextended:vanillaitem"]}))
+        .addStep(new CreateMixingStep("Mix in some flour", {input: [MultistepProcess.INTERMEDIATE_ITEM, {tag: "forge:flour", amount:1}]}))
+        .addStep(new CreateMixingStep("Mix in some more flour", {input: [MultistepProcess.INTERMEDIATE_ITEM, {tag: "forge:flour", amount:1}]}))
+        .addStep(new CreateMixingStep("Mix in Sodium Bicarbonate", {input: [MultistepProcess.INTERMEDIATE_ITEM, Item.SODIUM_BICARBONATE]}))
+        .addStep(new MinecraftSmokingStep("Bake", { output: Item.WAFER }))
+        .usingItem(Item.WAFER_DOUGH.getIdentifier())
+        .register(event)
+    // Edible Processor Wafer
+    new MultistepProcess()
+        .addStep(new CreateFillingStep("Apply Honey", {input: [Item.WAFER,{fluid: "create:honey", amount: 500}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
+        .addStep(new CreateFillingStep("Etch Wafer with Milk",{input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "minecraft:milk", amount: 1000}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
+        .addStep(new CreateFillingStep("Apply Chocolate", {input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "create:chocolate", amount: 500}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
+        .addStep(new CreateFillingStep("Etch Wafer with Milk",{input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "minecraft:milk", amount: 1000}]}))
+        .addStep(new CreateDeployingStep("Sprinkle Sugar", {input: [MultistepProcess.INTERMEDIATE_ITEM, "minecraft:sugar"]}))
+        .addStep(new MinecraftSmokingStep("Caramelize Sugar", { output: Item.EDIBLE_PROCESSOR_WAFER }))
+        .usingItem(Item.INCOMPLETE_EDIBLE_PROCESSOR_WAFER.getIdentifier())
+        .register(event)
+    // Chips
+    event.custom({
+        type: "create:cutting",
+        ingredients: [
+            {
+                item: Item.EDIBLE_PROCESSOR_WAFER.getIdentifier()
+            }
+        ],
+        processingTime: 50,
+        results: [
+            {
+                item: Item.EDIBLE_PROCESSOR_CHIP.getIdentifier(),
+                amount: 4
+            }
+        ]
+    })
+    // Processors
+    registerAE2InscriberRecipe(event, Item.EDIBLE_PROCESSOR.getIdentifier(), [Item.EDIBLE_PROCESSOR_CHIP.getIdentifier(), "create:bar_of_chocolate", "create:bar_of_chocolate"], true)
+    // Baking Soda
+    event.custom({
+        type: "minecraft:smoking",
+        cookingtime: 100,
+        experience: 1.0,
+        ingredient: {
+            item: "minecraft:dried_kelp"
+        },
+        result: Item.KELP_ASH.getIdentifier()
+    })
+    event.custom({
+        "type": "create:splashing",
+        "ingredients": [{
+            "item": Item.KELP_ASH.getIdentifier()
+            }],
+        "results": [{
+            "item": Item.SODIUM_BICARBONATE.getIdentifier()
+            }]
+    })
+    //====Computation Core====\\
+    event.recipes.create.mechanical_crafting(Item.COMPUTATION_CORE.getIdentifier(),
+    [   //spell-checker: disable
+        "ussse",
+        "svvvs",
+        "svnvs",
+        "svvvs",
+        "esssu"
+    ],{ //spell-checker: enable
+        s: "ae2:cell_component_16k",
+        v: Item.INTEGRATED_CIRCUIT.getIdentifier(),
+        u: Item.ISOTOPIC_DECAY_OSCILLATOR.getIdentifier(),
+        e: Item.EDIBLE_PROCESSOR.getIdentifier(),
+        n: Item.COMPUTATION_CORE_FRAME.getIdentifier()
+    })
+    event.shaped(Item.COMPUTATION_CORE_FRAME.getIdentifier(),
+    [
+        "nnn",
+        "n n",
+        "nnn"
+    ], {
+        n: "sgjourney:naquadah_alloy"
+    })
+
+    //====RAM Stick====\\
+    // new MultistepProcess()
+    //     // Oxide layer
+    //     .addStep(new MekanismCombiningStep("Combine Wafer with Phantom Membrane", {inputItem: Item.SILICON_WAFER.getIdentifier(), extraItem: "minecraft:phantom_membrane"}))
+    //     .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}))
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+    //     //nWell
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"}))
+    //     //nMOS
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+    //     //grow oxide (idk a good way to represent this step so ima leave it out)
+    //     // polysilicon
+    //     .addStep(new MekanismInjectingStep("Inject Silicon",{"amount": 5,"gas": "mekanism:silicon"}))
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+    //     // p-type implantation
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 2,"gas": "mekanism:boron_trifluoride"}))
+    //     // n-type implantation
+    //     .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+    //     .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.RAM_PHOTOMASK.getIdentifier()}))
+    //     .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.RAM_MODULE_WAFER.getIdentifier()))
+
+    //     .usingItem(Item.INCOMPLETE_RAM_MODULE_WAFER.getIdentifier())
+    //     .register(event)
+    //     event.custom({
+    //         "type": "mekanism:sawing",
+    //         "input": {
+    //           "ingredient": {
+    //             "item": Item.RAM_MODULE_WAFER.getIdentifier()
+    //           }
+    //         },
+    //         "mainOutput": {
+    //           "count": 6,
+    //           "item": Item.RAM_MODULE_CHIP.getIdentifier()
+    //         }
+    //       })
+    //     registerAE2InscriberRecipe(event, Item.RAM_MODULE.getIdentifier(), [Item.RAM_MODULE_CHIP.getIdentifier(), Item.PURE_QUARTZ_GLASS.getIdentifier(), Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()])
+    //     registerMetallurgicInfusing(event, {amount:40, tag: "mekanism:gold"}, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), Item.RAM_PCB.getIdentifier())
+    //     event.custom({
+    //       "type": "mekanism:combining",
+    //       "extraInput": {
+    //         "amount": 8,
+    //         "ingredient": {
+    //           "item": Item.RAM_MODULE.getIdentifier()
+    //         }
+    //       },
+    //       "mainInput": {
+    //         "ingredient": {
+    //           "item": Item.RAM_PCB.getIdentifier()
+    //         }
+    //       },
+    //       "output": {
+    //         "count": 1,
+    //         "item": Item.RAM_STICK.getIdentifier()
+    //       }
+    //     })
+    //====Radioactive thingy====\\
+    event.custom({
+      "type": "mekanism:sawing",
+      "input": {
+        "ingredient": {
+          "item": "mekanism:block_uranium"
+        }
+      },
+      "mainOutput": {
+        "count": 4,
+        "item": Item.URANIUM_WAFER.getIdentifier()
+      }
+    })
+    new MultistepProcess()
+        // Oxide layer
+        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}, Item.URANIUM_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+        //nWell
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"}))
+        //nMOS
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+        //grow oxide (idk a good way to represent this step so ima leave it out)
+        // polysilicon
+        .addStep(new MekanismInjectingStep("Inject Silicon",{"amount": 5,"gas": "mekanism:silicon"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
+        // p-type implantation
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Inject Uranium Hexafluoride",{"amount": 2,"gas": "mekanism:uranium_hexafluoride"}))
+        // n-type implantation
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier()))
+
+        .usingItem(Item.INCOMPLETE_ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier())
+        .register(event)
+    event.custom({
+        "type": "mekanism:sawing",
+        "input": {
+            "ingredient": {
+            "item": Item.ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier()
+            }
+        },
+        "mainOutput": {
+            "count": 3,
+            "item": Item.ISOTOPIC_DECAY_OSCILLATOR_CHIP.getIdentifier()
+        }
+    })
+    registerAE2InscriberRecipe(event, Item.ISOTOPIC_DECAY_OSCILLATOR.getIdentifier(), [Item.ISOTOPIC_DECAY_OSCILLATOR_CHIP.getIdentifier(), "mekanism:block_lead", Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()], true)
+    // Mob Grinding Utils
+    event.remove([{id: "mob_grinding_utils:recipe_saw"},{id: "mob_grinding_utils:recipe_absorption_hopper"}])
+    event.shaped("mob_grinding_utils:saw", [
+        "sds",
+        "pcp",
+        "dcd"
+    ], {
+        s: "minecraft:iron_sword",
+        d: "minecraft:diamond",
+        c: "#" + Tags.CIRCUIT_INTERMEDIATE,
+        p: "mob_grinding_utils:spikes"
+    })
+    event.shaped("mob_grinding_utils:absorption_hopper",[
+        " e ",
+        "ioi",
+        "oho"
+    ], {
+        e: "minecraft:ender_eye",
+        i: "#" + Tags.CIRCUIT_INTERMEDIATE,
+        o: "minecraft:obsidian",
+        h: "minecraft:hopper"
     })
 })

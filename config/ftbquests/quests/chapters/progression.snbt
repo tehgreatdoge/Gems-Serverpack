@@ -11,7 +11,7 @@
 			dev: false
 			height: 1.0d
 			hover: ["Tier 1"]
-			image: "#FFFFFF"
+			image: "sgcommunity_pack:textures/quests/roman_one.png"
 			rotation: 0.0d
 			width: 1.0d
 			x: -2.0d
@@ -23,7 +23,7 @@
 			dev: false
 			height: 1.0d
 			hover: ["Tier 2"]
-			image: "#FFFFFF"
+			image: "sgcommunity_pack:textures/quests/roman_two.png"
 			rotation: 0.0d
 			width: 1.0d
 			x: -1.0d
@@ -35,7 +35,7 @@
 			dev: false
 			height: 1.0d
 			hover: ["Tier 3"]
-			image: "#FFFFFF"
+			image: "sgcommunity_pack:textures/quests/roman_three.png"
 			rotation: 0.0d
 			width: 1.0d
 			x: 0.0d
@@ -64,8 +64,8 @@
 		{
 			id: "707AAF433C9113A6"
 			rewards: [{
-				id: "6CD83F2394DB2EB1"
-				item: "createaddition:electrum_amulet"
+				id: "1584E0EF8C1D8EC4"
+				item: "create:clipboard"
 				type: "item"
 			}]
 			tasks: [{
@@ -79,9 +79,9 @@
 		{
 			id: "4023AC1A3D9CC942"
 			rewards: [{
-				count: 10
-				id: "27DA708A7DB7F01F"
-				item: "create:clipboard"
+				count: 5
+				id: "5DB53498213D9152"
+				item: "create:crafting_blueprint"
 				type: "item"
 			}]
 			tasks: [{
@@ -116,12 +116,6 @@
 		{
 			id: "3C65F3AFDFFCDA5A"
 			rewards: [
-				{
-					count: 5
-					id: "3033A3BDE43125B3"
-					item: "create:crafting_blueprint"
-					type: "item"
-				}
 				{
 					count: 2
 					id: "595DFBD7ECCE9A2A"
@@ -256,6 +250,26 @@
 			}]
 			title: "Mekanised Era"
 			x: -3.0d
+			y: 2.0d
+		}
+		{
+			id: "2460EC59F4FDAF9A"
+			tasks: [{
+				id: "037589660A2CB174"
+				item: "sgcommunity_pack:integrated_circuit"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 2.0d
+		}
+		{
+			id: "708A86111237377D"
+			tasks: [{
+				id: "3BBE59733B760ADE"
+				item: "sgcommunity_pack:computation_core"
+				type: "item"
+			}]
+			x: 0.0d
 			y: 2.0d
 		}
 	]

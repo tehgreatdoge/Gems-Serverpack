@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "kinetic_era"
 	group: "0B892AF6A2410D9F"
-	hide_quest_until_deps_visible: true
+	icon: "sgcommunity_pack:vacuum_tube"
 	id: "1CB3B5E3AA485E19"
 	order_index: 1
 	quest_links: [ ]
@@ -11,6 +11,7 @@
 		{
 			dependencies: ["3B0AA365C22B2922"]
 			description: ["Welcome to the Kinetic Era! We are now getting into our first tech mod: Create. If you are ever stuck wondering how something works, simply check out the Ponder Index. You can get there by holding W on any create item, or by clicking on the goggle icon in the menu screen."]
+			hide: true
 			id: "2283E12D506D17D1"
 			rewards: [
 				{
@@ -59,6 +60,7 @@
 		}
 		{
 			dependencies: ["2F7574E640879AA0"]
+			description: ["The deployed can be used in certain recipes, to place blocks and to interact with mobs and blocks."]
 			id: "12C36B05C19AB3F2"
 			tasks: [{
 				id: "1F3F8885C3089712"
@@ -71,6 +73,7 @@
 		{
 			dependencies: ["2283E12D506D17D1"]
 			description: ["Using that andesite you gathered earlier and some iron, make Andesite Alloy. Andesite alloy is one of the main materials of create, so you will almost always need more."]
+			hide: true
 			id: "1E5C949246BC1112"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -131,7 +134,7 @@
 				table_id: 6707801667765775512L
 				type: "random"
 			}]
-			subtitle: "Just try not to hurt yourself"
+			subtitle: "Just try not to get crushed"
 			tasks: [{
 				id: "5D85369FA6974C0B"
 				title: "Experiment!"
@@ -202,7 +205,7 @@
 			rewards: [{
 				id: "17F41B0634505725"
 				type: "xp"
-				xp: 100
+				xp: 20
 			}]
 			subtitle: "Wait, doesn't create have this?"
 			tasks: [{
@@ -227,6 +230,7 @@
 				"(If you didn't automate this, you are probably pretty mad right now. Too bad, you will need hundreds more just to get to the next era, it's for your own good.)"
 			]
 			id: "7542A74737AC4408"
+			size: 2.0d
 			tasks: [{
 				count: 256L
 				id: "59C1DB50AC19EA72"
@@ -239,8 +243,13 @@
 		}
 		{
 			dependencies: ["7542A74737AC4408"]
-			description: ["You just automated the first of 5 circuits in this modpack! Now that you have Vacuum tubes, you have completed part I of the Kinetic Era. In order to progress further, you will need to &6follow the quests&r in the AE2 chapter. However, I recommend setting up autocrafting and other amenities before crafting the &dComputational Substrate&r as it isn't exactly game-changing."]
+			description: ["You just automated the first of 5 circuits in this modpack! Now that you have Vacuum tubes, you have completed part I of the Kinetic Era. You are now free to explore Applied Energistics. However, I recommend setting up autocrafting and other amenities before crafting the &dComputational Substrate&r as it isn't exactly game-changing."]
 			id: "55FA04711F888480"
+			rewards: [{
+				id: "6499E1ED72113ABA"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "75908AC5740C8285"
 				title: "Well done!"

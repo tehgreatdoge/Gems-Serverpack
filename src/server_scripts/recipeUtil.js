@@ -1,5 +1,80 @@
 //priority: 9
-function registerAE2InscriberRecipeTagMiddle(event, out, input) {
+function parseItemStack(input) {
+    if (typeof(input) == "string") {
+        if (input.substring(0,1) == "#") {
+            return {
+                "tag": input.substring(1),
+                "amount": 1
+            }
+        }
+        else {
+            return {
+                "item": input,
+                "amount": 1
+            }
+        }
+    }
+    if (typeof(input) == "object") {
+        if (input instanceof Item) {
+            return parseItemStack(input.getIdentifier())
+        }
+        return input
+    }
+    throw new Error("Unable to parse ItemStack of unsupported type" + typeof(input))
+}
+function parseStack(entry) {
+    if (typeof(entry) == "string") {
+        if (entry.substring(0,1) == "#") {
+            return({
+                "tag": entry.substring(1),
+                "amount": 1
+            })
+        }
+        else {
+            return({
+                "item": entry,
+                "amount": 1
+            })
+        }
+    }
+    if (typeof(entry) == "object") {
+        if (entry instanceof Item) {
+            return(parseItemStack(entry.getIdentifier()))
+        }
+        return(entry)
+    }
+    throw new Error("Unable to parse Stack of unsupported type" + typeof(entry))
+}
+function parseStacks(input) {
+    let out = []
+    for (let entry of input) {
+        if (typeof(entry) == "string") {
+            if (entry.substring(0,1) == "#") {
+                out.push({
+                    "tag": entry.substring(1),
+                    "amount": 1
+                })
+            }
+            else {
+                out.push({
+                    "item": entry,
+                    "amount": 1
+                })
+            }
+            continue
+        }
+        if (typeof(entry) == "object") {
+            if (entry instanceof Item) {
+                out.push(parseItemStack(entry.getIdentifier()))
+                continue
+            }
+            out.push(entry)
+        }
+        throw new Error("Unable to parse Stack of unsupported type" + typeof(entry))
+    }
+    return out
+}
+function registerAE2InscriberRecipeTagMiddle(event, out, input, shouldPress = false) {
     let ingredients = {}
     ingredients.middle = {tag:input[0]}
     if (input[1]) {
@@ -13,25 +88,29 @@ function registerAE2InscriberRecipeTagMiddle(event, out, input) {
         "ingredients": ingredients,
         "result": {
             item: out
-        }
+        },
+        "mode": shouldPress ? "press" : "inscribe"
     })
 }
-function registerAE2InscriberRecipe(event, out, input) {
+function registerAE2InscriberRecipe(event, out, input, shouldPress = false) {
     let ingredients = {}
-    ingredients.middle = {item:input[0]}
+    ingredients.middle = parseItemStack(input[0])
     if (input[1]) {
-        ingredients.top = {item:input[1]}
+        ingredients.top = parseItemStack(input[1])
     }
     if (input[2]) {
-        ingredients.bottom = ({item:input[2]})
+        ingredients.bottom = parseItemStack(input[2])
     }
-    event.custom({
+    let recipe = {
         "type": "ae2:inscriber",
         "ingredients": ingredients,
         "result": {
             item: out
-        }
-    })
+        },
+        "mode": shouldPress ? "press" : "inscribe"
+    }
+    console.log(recipe)
+    event.custom(recipe)
 }
 
 function registerBotanyCrop(event, substrate, multiplier, material) {
@@ -70,17 +149,5 @@ function registerBotanySoil(event, substrate) {
         },
         categories: [substrate.getName()],
         growthModifier: 1
-    })
-}
-function registerMetallurgicInfusing(event,inputChemicalIngredient, inputIngredient, outputItem) {
-    event.custom({
-        "type": "mekanism:metallurgic_infusing",
-        "chemicalInput": inputChemicalIngredient,
-        "itemInput": {
-          "ingredient": inputIngredient
-        },
-        "output": {
-          "item": outputItem
-        }
     })
 }

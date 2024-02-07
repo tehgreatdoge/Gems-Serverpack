@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "the_beginnings"
 	group: "0B892AF6A2410D9F"
-	hide_quest_until_deps_visible: true
 	icon: "botanypots:light_blue_glazed_terracotta_botany_pot"
 	id: "7EAC592E39C4CF7B"
 	order_index: 0
@@ -29,6 +28,7 @@
 		{
 			dependencies: ["39646520A484643F"]
 			description: ["To start automating resources, you can use botany pots! You'll need to get some clay to make pots and terracotta. Once you have a pot and terracotta, you can make your first botany pot!"]
+			hide: true
 			id: "1B3E348B011762ED"
 			rewards: [
 				{

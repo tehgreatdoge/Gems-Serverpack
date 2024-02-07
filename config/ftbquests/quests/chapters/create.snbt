@@ -1,0 +1,12 @@
+{
+	always_invisible: true
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create"
+	group: "3553DD7F726AE366"
+	id: "2AB09A34CE1A5FC5"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Create"
+}

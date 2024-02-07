@@ -55,6 +55,8 @@ StartupEvents.registry("item", (event) => {
         if (item.builderOptions.use) {
             builder.use(item.builderOptions.use)
         }
+        item.builderOptions.texture ? builder.texture(item.builderOptions.texture) : undefined
+        item.builderOptions.food ? builder.food(item.builderOptions.food) : undefined
         item.builderOptions.stackSize ? builder.maxStackSize(item.builderOptions.stackSize) : undefined
         builder.displayName(item.getName())
     }
@@ -70,8 +72,11 @@ StartupEvents.registry("fluid", (event) => {
 const MekanismAPI = Java.loadClass('mekanism.api.MekanismAPI')
 const InfuseTypeBuilder = Java.loadClass('mekanism.api.chemical.infuse.InfuseTypeBuilder')
 const GasBuilder = Java.loadClass('mekanism.api.chemical.gas.GasBuilder')
+// const SlurryBuilder = Java.loadClass('mekanism.api.chemical.slurry.SlurryBuilder')
 const GasClass = Java.loadClass('mekanism.api.chemical.gas.Gas')
+// const SlurryClass = Java.loadClass('mekanism.api.chemical.slurry.Slurry')
 const MekanismGases = Java.loadClass("mekanism.common.registries.MekanismGases")
+// const MekanismSlurries = Java.loadClass("mekanism.common.registries.MekanismSlurries")
 const MekanismInfuseTypes = Java.loadClass('mekanism.common.registries.MekanismInfuseTypes')
 StartupEvents.registry("mekanism:gas",(event) => {
     console.log(event)
@@ -83,11 +88,10 @@ StartupEvents.registry("mekanism:gas",(event) => {
         //GasRegistry['register(java.lang.String,java.lang.Object)'](gas.getIdentifier(), gasInstance)
     }
     // for (let slurry of Object.values(Slurries)) {
-    //     let builder = SlurryBuilder.builder().tint(slurry.getColor())
+    //     let builder = SlurryBuilder.builder("mekanism:slurry/clean").tint(slurry.getColor())
     //     let slurryInstance = SlurryClass(builder)
-    //     MekanismGases   
+    //     MekanismSlurries.SLURRIES['register(java.lang.String,java.util.function.Supplier)'](slurry.identifier, () => slurryInstance)
     // }
 })
 
 console.info('Loaded Startup Scripts')
-

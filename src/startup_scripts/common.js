@@ -41,7 +41,7 @@ class Item {
     static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket", {stackSize: 1})
     static SAND_MOLD = new Item("sand_mold","Sand Mold")
     static IRON_FILAMENT = new Item("iron_filament", "Iron Filament")
-    static INTERMEDIATE_TEST_CIRCUIT = new Item("intermediate_test_circuit", "test circuit I", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
+    static ADVANCED_TEST_CIRCUIT = new Item("advanced_test_circuit", "test circuit III", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
     // Pure quartz glass
     static INCOMPLETE_SILICA_DUST = new Item("incomplete_washed_silica_dust", "Incomplete Washed Silica Dust", { itemType: "create:sequenced_assembly"})
     static WASHED_SILICA_DUST = new Item("washed_silica_dust", "Washed Silica Dust")
@@ -52,8 +52,6 @@ class Item {
     static ADVANCED_PCB_SUBSTRATE = new Item("advanced_pcb_substrate", "Advanced PCB Substrate")
     // Silicon Wafers
     static PHOSPHORUS = new Item("phosphorus", "Phosphorus", {tags: ["forge:phosphorus"]})
-    static SILICON_BOULE = new Item("silicon_boule", "Silicon Boule")
-    static SILICON_WAFER = new Item("silicon_wafer", "Silicon Wafer")
     // Rudimentary Processor
     static ADDER = new Item("adder", "8 Bit Adder")
     static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
@@ -69,17 +67,59 @@ class Item {
     static INCOMPLETE_SMALL_CACHE = new Item("incomplete_small_cache", "Incomplete Small Cache", { itemType: "create:sequenced_assembly"})
 
     static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
-    // Mekanism Era Tier II
+    // Photomasks
+    //static FET_PHOTOMASK = new Item("mosfet_photomask", "MOSFET Photomask")
     static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "Integrated Circuit Photomask")
+    static EP_PHOTOMASK = new Item("edible_processor_photomask", "Edible Processor Photomask")
+    static ISO_PHOTOMASK= new Item("isotopic_decay_oscillator_photomask", "Isotopic Decay Oscillator Photomask")
+    // Mekanism Era Tier I
+    static SILICON_BOULE = new Item("silicon_boule", "Silicon Boule")
+    static SILICON_WAFER = new Item("silicon_wafer", "Silicon Wafer")
+    static INCOMPLETE_MOSFET_WAFER = new Item("incomplete_mosfet_wafer", "Incomplete MOSFET Wafer")
+    static MOSFET_WAFER = new Item("mosfet_wafer", "MOSFET Wafer")
+    static MOSFET_CHIP = new Item("mosfet_chip", "MOSFET Chip")
+    static MOSFET = new Item("mosfet", "MOSFET", {tags: [Tags.CIRCUIT_BASIC, Tags.CIRCUIT]})
+    // Mekanism Era Tier II
     static INCOMPLETE_IC = new Item("incomplete_integrated_circuit_wafer", "Incomplete Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_WAFER = new Item("integrated_circuit_wafer", "Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_CHIP = new Item("integrated_circuit_chip", "Integrated Circuit Chip")
     static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
-    // Computation Parts
-    // static RAM = new Item("ram", "RAM")
-    // static INCOMPLETE_RAM = new Item("incomplete_ram", "Incomplete RAM", { itemType: "create:sequenced_assembly"})
-    // static BASIC_COMPUTATION_UNIT = new Item("basic_computation_unit", "Basic Computation Unit")
-    // static INCOMPLETE_BASIC_COMPUTATION_UNIT = new Item("incomplete_basic_computation_unit", "Incomplete Basic Computation Unit", { itemType: "create:sequenced_assembly"})
+    //====MEKANISM ERA TIER III===\\
+    // Edible Processor
+    static KELP_ASH = new Item("kelp_ash", "Kelp Ash")
+    static SODIUM_BICARBONATE = new Item("sodium_bicarbonate", "Baking Soda")
+    static WAFER_DOUGH = new Item("wafer_dough","Wafer Dough")
+    static WAFER = new Item("wafer","Wafer", {food: (foodBuilder) => {foodBuilder.hunger(5).saturation(1)}})
+    static INCOMPLETE_EDIBLE_PROCESSOR_WAFER = new Item("incomplete_edible_processor_wafer","Incomplete Edible Processor Wafer", {food: (foodBuilder) => {foodBuilder.hunger(5).saturation(1)}})
+    static EDIBLE_PROCESSOR_WAFER = new Item("edible_processor_wafer","Edible Processor Wafer", {food: (foodBuilder) => {foodBuilder.hunger(10).saturation(3)}})
+    static EDIBLE_PROCESSOR_CHIP = new Item("edible_processor_chip","Edible Processor Chip", {food: (foodBuilder) => {foodBuilder.hunger(5).saturation(2)}})
+    static EDIBLE_PROCESSOR = new Item("edible_processor","Edible Processor", {food: (foodBuilder) => {foodBuilder.hunger(9).saturation(2)}})
+    // Isotopic Decay Oscillator (terrible name)
+    static URANIUM_WAFER = new Item("uranium_wafer", "Uranium Wafer")
+    static INCOMPLETE_ISOTOPIC_DECAY_OSCILLATOR_WAFER = new Item("incomplete_isotopic_decay_oscillator_wafer", "Incomplete Isotopic Decay Oscillator Wafer")
+    static ISOTOPIC_DECAY_OSCILLATOR_WAFER = new Item("isotopic_decay_oscillator_wafer", "Isotopic Decay Oscillator Wafer")
+    static ISOTOPIC_DECAY_OSCILLATOR_CHIP = new Item("isotopic_decay_oscillator_chip", "Isotopic Decay Oscillator Chip")
+    static ISOTOPIC_DECAY_OSCILLATOR = new Item("isotopic_decay_oscillator", "Isotopic Decay Oscillator")
+
+    // RAM Stick (read: RESOURCE AMPLIFICATION and MULTIPLICATION stick)
+    // static RAM_PHOTOMASK = new Item("ram_module_photomask", "RAM Module Photomask")
+    // static INCOMPLETE_RAM_MODULE_WAFER = new Item("incomplete_ram_module_wafer","Incomplete RAM Module Wafer")
+    // static RAM_MODULE_WAFER = new Item("ram_module_wafer","RAM Module Wafer")
+    // static RAM_MODULE_CHIP = new Item("ram_module_chip","RAM Module Chip")
+    // static RAM_MODULE = new Item("ram_module","RAM Module")
+    // static RAM_PCB = new Item("ram_pcb","RAM PCB")
+    // static RAM_STICK = new Item("ram_stick","RAM Stick")
+    
+    // Computation Processor (totally not an excuse for resource multiplication)
+    // static COMPUTATION_PROCESSOR_PHOTOMASK = new Item("computation_processor_photomask", "Computation Processor Photomask")
+    // static INCOMPLETE_COMPUTATION_PROCESSOR = new Item("incomplete_computation_processor_wafer", "Incomplete Computation Processor Wafer")
+    // static COMPUTATION_PROCESSOR_WAFER = new Item("computation_processor_wafer", "Computation Processor Wafer")
+    // static COMPUTATION_PROCESSOR_CHIP = new Item("computation_processor_chip", "Computation Processor Chip")
+    // static COMPUTATION_PROCESSOR = new Item("computation_processor", "Computation Processor")
+    
+    // Computation Core
+    static COMPUTATION_CORE = new Item("computation_core", "Computation Core", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
+    static COMPUTATION_CORE_FRAME= new Item("computation_core_frame","Computation Core Frame")
     // Ad Astra
     static RCU = new Item("rocket_control_unit","Rocket Control Unit")
     constructor(identifier, name, builderOptions) {
@@ -138,9 +178,9 @@ class Tier {
     // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
     static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, copper: 4, iron: 4, gold: 4, zinc:4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, emerald: 2, certus:2, nether_quartz: 2, fluix:1})
     static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 2, certus:3, nether_quartz: 3, fluix:1, osmium:1})
-    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, tin:1, lead: 1})
-    static NAQUADRIA = new Tier(Substrate.REACTIVE, {coal: 8, copper: 8, iron: 8, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, emerald: 4, certus: 4, nether_quartz: 4, fluix:4, osmium:4, tin:2, lead: 2, fluorine:1, uranium: 1})
-    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, copper: 8, iron: 8, gold: 8, zinc: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, emerald: 4, certus: 8, nether_quartz: 8, fluix:8, osmium:8, tin:4, lead: 4, fluorine:4, uranium: 4, naquadah: 1})
+    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, tin:1, lead: 1, borax: 1})
+    static NAQUADRIA = new Tier(Substrate.REACTIVE, {coal: 8, copper: 8, iron: 8, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, emerald: 4, certus: 4, nether_quartz: 4, fluix:4, osmium:4, tin:2, lead: 2, borax: 2, fluorine:1, uranium: 1})
+    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, copper: 8, iron: 8, gold: 8, zinc: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, emerald: 4, certus: 8, nether_quartz: 8, fluix:8, osmium:8, tin:4, lead: 4, borax: 3, fluorine:4, uranium: 4, naquadah: 2})
     constructor(substrate, materials) {
         this.substrate = substrate
         this.materials = materials
@@ -227,15 +267,20 @@ var Materials = {
         display: "mekanism:lead_ore",
         drops: [{"item": "mekanism:raw_lead",min:2, max:3}]
     },
+    borax: {
+        item: MODID + ":borax",
+        display: MODID + ":borax",
+        drops: [{"item": MODID + ":borax",min:2, max:3}]
+    },
     fluorine: {
         item: "mekanism:fluorite_gem",
         display: "mekanism:fluorite_ore",
         drops: [{"item": "mekanism:fluorite_gem",min:2, max:3}]
     },
     uranium: {
-        item: "mekanism:ingot_lead",
-        display: "mekanism:lead_ore",
-        drops: [{"item": "mekanism:raw_lead",min:2, max:3}]
+        item: "mekanism:ingot_uranium",
+        display: "mekanism:uranium_ore",
+        drops: [{"item": "mekanism:raw_uranium",min:2, max:3}]
     },
     naquadah: {
         item: "sgjourney:pure_naquadah",
@@ -254,6 +299,7 @@ class ToolType {
 }
 class ToolTier {
     static IRON = new ToolTier("minecraft:needs_iron_tool")
+    static DIAMOND = new ToolTier("minecraft:needs_diamond_tool")
     constructor(identifier) {
         this.identifier = identifier
     }
@@ -362,7 +408,7 @@ class Block {
 }
 var Blocks = {
     PHOSPHORITE: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores"),
-    BORAX: new Block("borax", "Borax").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/borax").tagBoth("forge:ores")
+    BORAX: new Block("borax", "Borax").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/borax").tagBoth("forge:ores"),
 }
 class Gas {
     _color = 0x000000
@@ -390,7 +436,6 @@ var Gases = {
     SILICON_GAS: new Gas("silicon", "Molten Silicon").color(0xEECCCC),
     DOPED_SILICON_GAS: new Gas("doped_silicon", "Doped Molten Silicon").color(0xFFCCDD),
     RESIN: new Gas("photoresist", "Photoresist").color(0xFF643C),
-    BORAX_MIXTURE: new Gas("borax_mixture", "Borax Mixture").color(0xFFFFFF),
     BORON_TRIFLUORIDE: new Gas("boron_trifluoride", "Boron Trifluoride").color(0xFFFFFF),
     BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF),
     TREE_SAP: new Gas("tree_sap", "Tree Sap").color(0xc06000),

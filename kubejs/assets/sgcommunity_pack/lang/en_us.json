@@ -3,9 +3,9 @@
     "gas.mekanism.phosphorus": "Phosphorus",
     "gas.mekanism.boron_trifluoride": "Boron Trifluoride",
     "gas.mekanism.boron_trioxide": "Boron Trioxide",
-    "gas.mekanism.boron_mixture": "Boron Mixture",
     "gas.mekanism.silicon": "Silicon",
     "gas.mekanism.doped_silicon": "Doped Silicon",
     "gas.mekanism.tree_sap": "Tree Sap",
+    "gas.mekanism.photoresist": "Photoresist",
     "item.pamhc2trees.maplesyrupitem": "Maple Syrup"
 }

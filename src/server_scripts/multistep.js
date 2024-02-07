@@ -115,6 +115,357 @@ class MekanismInjectingStep extends MultistepProcessStep {
         })
     }
 }
+class MekanismCombiningStep extends MultistepProcessStep {
+    constructor(title,{inputItem = MultistepProcess.INTERMEDIATE_ITEM, extraItem = MultistepProcess.INTERMEDIATE_ITEM, outputItem = MultistepProcess.INTERMEDIATE_ITEM}) {
+        super(title)
+        this.inputItem = inputItem
+        this.specialItem = extraItem
+        this.outputItem = outputItem
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input
+        let special
+        let output
+        if (this.inputItem == MultistepProcess.INTERMEDIATE_ITEM) {
+            if (!stepIn) {
+                throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+            }
+            input = {
+                "ingredient": {
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                }
+            }
+        }
+        else {
+            input = parseMekanismIngredient(this.inputItem)
+        }
+        if (this.specialItem == MultistepProcess.INTERMEDIATE_ITEM) {
+            if (!stepIn) {
+                throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+            }
+            special = {
+                "ingredient": {
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                }
+            }
+        }
+        else {
+            special = parseMekanismIngredient(this.specialItem)
+        }
+        if (this.outputItem == MultistepProcess.INTERMEDIATE_ITEM) {
+            if (!stepOut) {
+                throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+            }
+            output = {
+                type: "forge:nbt",
+                item: intermediate,
+                nbt: JSON.stringify({
+                    display: stepOutLore,
+                    step: stepOut
+                })
+            }
+        }
+        else {
+            output = parseMekanismIngredient(this.outputItem).ingredient
+        }
+        event.custom({
+          type: "mekanism:combining",
+          extraInput: special,
+          mainInput: input,
+          output: output
+        })
+    }
+}
+class MinecraftSmokingStep extends MultistepProcessStep {
+    constructor(title, {input = MultistepProcess.INTERMEDIATE_ITEM, output = MultistepProcess.INTERMEDIATE_ITEM, cookingTime = 100, experience = 0.5}) {
+        super(title)
+        this.input = input
+        this.output = output
+        this.cookingTime = cookingTime
+        this.experience = experience
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input
+        let output
+        if (this.input == MultistepProcess.INTERMEDIATE_ITEM) {
+            if (!stepIn) {
+                throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+            }
+            input = {
+                type: "forge:nbt",
+                item: intermediate,
+                nbt: JSON.stringify({
+                    display: this.getLore(stepIn),
+                    step: stepIn
+                })
+            }
+        }
+        else {
+            input = parseStack(this.input)
+        }
+        if (this.output == MultistepProcess.INTERMEDIATE_ITEM) {
+            if (!stepOut) {
+                throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+            }
+            output = {
+                item: intermediate,
+                nbt: JSON.stringify({
+                    display: stepOutLore,
+                    step: stepOut
+                })
+            }
+        }
+        else {
+            output = parseStack(this.output)
+        }
+        let recipe = {
+            type: "minecraft:smoking",
+            category: "food",
+            cookingtime: this.cookingTime,
+            experience: this.experience,
+            ingredient: input,
+            result: output
+        }
+        event.custom(recipe)
+    }
+}
+class CreateDeployingStep extends MultistepProcessStep {
+    constructor(title, {input = [MultistepProcess.INTERMEDIATE_ITEM], output = [MultistepProcess.INTERMEDIATE_ITEM]}) {
+        super(title)
+        this.input = input
+        this.output = output
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input = []
+        let output = []
+        for (let item of this.input) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepIn) {
+                    throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+                }
+                input.push({
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                })
+            }
+            else {
+                input.push(parseStack(item))
+            }
+        }
+        for (let item of this.output) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepOut) {
+                    throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+                }
+                output.push({
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: stepOutLore,
+                        step: stepOut
+                    })
+                })
+            }
+            else {
+                output.push(parseStack(item))
+            }
+        }
+        let recipe = {
+            type: "create:deploying",
+            ingredients: input,
+            results: output
+        }
+        event.custom(recipe)
+    }
+}
+class CreateMixingStep extends MultistepProcessStep {
+    constructor(title, {input = [MultistepProcess.INTERMEDIATE_ITEM], output = [MultistepProcess.INTERMEDIATE_ITEM]}) {
+        super(title)
+        this.input = input
+        this.output = output
+        this.heatRequirement = 0
+    }
+    heated() {
+        this.heated = 1
+        return this
+    }
+    superheated() {
+        this.heated = 2
+        return this
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input = []
+        let output = []
+        for (let item of this.input) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepIn) {
+                    throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+                }
+                input.push({
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                })
+            }
+            else {
+                input.push(parseStack(item))
+            }
+        }
+        for (let item of this.output) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepOut) {
+                    throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+                }
+                output.push({
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: stepOutLore,
+                        step: stepOut
+                    })
+                })
+            }
+            else {
+                output.push(parseStack(item))
+            }
+        }
+        let recipe = {
+            type: "create:mixing",
+            ingredients: input,
+            results: output
+        }
+        switch (this.heatRequirement) {
+            case 1:
+                recipe.heatRequirement = "heated"
+                break;
+            case 2:
+                recipe.heatRequirement = "superheated"
+                break;
+            default:
+                break;
+        }
+        event.custom(recipe)
+    }
+}
+class CreateFillingStep extends MultistepProcessStep {
+    constructor(title, {input = [MultistepProcess.INTERMEDIATE_ITEM], output = [MultistepProcess.INTERMEDIATE_ITEM]}) {
+        super(title)
+        this.input = input
+        this.output = output
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input = []
+        let output = []
+        for (let item of this.input) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepIn) {
+                    throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+                }
+                input.push({
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                })
+            }
+            else {
+                input.push(parseStack(item))
+            }
+        }
+        for (let item of this.output) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepOut) {
+                    throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+                }
+                output.push({
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: stepOutLore,
+                        step: stepOut
+                    })
+                })
+            }
+            else {
+                output.push(parseStack(item))
+            }
+        }
+        let recipe = {
+            type: "create:filling",
+            ingredients: input,
+            results: output
+        }
+        event.custom(recipe)
+    }
+}
+class CreateSplashingStep extends MultistepProcessStep {
+    constructor(title, {input = [MultistepProcess.INTERMEDIATE_ITEM], output = [MultistepProcess.INTERMEDIATE_ITEM]}) {
+        super(title)
+        this.input = input
+        this.output = output
+    }
+    register(event, intermediate, stepIn, stepOut, stepOutLore) {
+        let input = []
+        let output = []
+        for (let item of this.input) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepIn) {
+                    throw new Error("The first step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an input");
+                }
+                input.push({
+                    type: "forge:nbt",
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: this.getLore(stepIn),
+                        step: stepIn
+                    })
+                })
+            }
+            else {
+                input.push(parseStack(item))
+            }
+        }
+        for (let item of this.output) {
+            if (item == MultistepProcess.INTERMEDIATE_ITEM) {
+                if (!stepOut) {
+                    throw new Error("The last step in a MultistepProcess cannot use INTERMEDIATE_ITEM as an output");
+                }
+                output.push({
+                    item: intermediate,
+                    nbt: JSON.stringify({
+                        display: stepOutLore,
+                        step: stepOut
+                    })
+                })
+            }
+            else {
+                output.push(parseStack(item))
+            }
+        }
+        let recipe = {
+            type: "create:splashing",
+            ingredients: input,
+            results: output
+        }
+        event.custom(recipe)
+    }
+}
 class Ae2InscribingStep extends MultistepProcessStep {
     constructor(title, {middle = MultistepProcess.INTERMEDIATE_ITEM, top, bottom, output = MultistepProcess.INTERMEDIATE_ITEM}) {
         super(title)

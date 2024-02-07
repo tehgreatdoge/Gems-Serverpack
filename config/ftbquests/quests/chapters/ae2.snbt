@@ -5,7 +5,7 @@
 	group: "3553DD7F726AE366"
 	icon: "ae2:controller"
 	id: "130D8C64768FBA7D"
-	order_index: 0
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -47,7 +47,7 @@
 					type: "item"
 				}
 			]
-			title: "&6Meteor Hunter"
+			title: "Meteor Hunter"
 			x: -3.0d
 			y: 0.0d
 		}
@@ -75,7 +75,7 @@
 				title: "Acknowledge"
 				type: "checkmark"
 			}]
-			title: "&6e = mc^2"
+			title: "e = mc^2"
 			x: -5.0d
 			y: 0.0d
 		}
@@ -93,7 +93,7 @@
 				item: "ae2:charger"
 				type: "item"
 			}]
-			title: "&6Do you have a cable I could borrow?"
+			title: "Do you have a cable I could borrow?"
 			x: -1.0d
 			y: -1.5d
 		}
@@ -112,7 +112,7 @@
 				item: "ae2:inscriber"
 				type: "item"
 			}]
-			title: "&6Write it down"
+			title: "Write it down"
 			x: -1.0d
 			y: 1.5d
 		}
@@ -132,7 +132,7 @@
 				title: "We need to Crystalize"
 				type: "checkmark"
 			}]
-			title: "&6We Need To Crystallize"
+			title: "We Need To Crystallize"
 			x: 1.0d
 			y: -1.5d
 		}
@@ -166,7 +166,7 @@
 					type: "item"
 				}
 			]
-			title: "&6Basic Storage"
+			title: "Basic Storage"
 			x: 3.0d
 			y: 0.0d
 		}
@@ -201,7 +201,7 @@
 				}
 				type: "item"
 			}]
-			title: "&6About storage"
+			title: "About storage"
 			x: 5.0d
 			y: 0.0d
 		}
@@ -221,7 +221,7 @@
 				title: "Making Circuits"
 				type: "checkmark"
 			}]
-			title: "&6Making Processors"
+			title: "Making Processors"
 			x: 1.0d
 			y: 1.5d
 		}
@@ -247,7 +247,7 @@
 		}
 		{
 			dependencies: ["17013D97CFC43A4D"]
-			description: ["With the upgraded Wireless Crafting Terminal, you can access your storage from afar!"]
+			description: ["With the upgraded &dWireless Crafting Terminal&r, you can access your storage from afar and &lcraft&r items as well!"]
 			id: "4C6141A2B280D0A6"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -266,6 +266,7 @@
 		}
 		{
 			dependencies: ["01A11F434A489617"]
+			description: ["The &dInfinity Range Booster&r allows your ME network to have &linfinite range&r."]
 			id: "727BFEF5CAE31314"
 			subtitle: "Just kill the wither"
 			tasks: [{
@@ -278,6 +279,7 @@
 		}
 		{
 			dependencies: ["727BFEF5CAE31314"]
+			description: ["The &dDimension Card&r allows your ME network to have &linfinite&r range and to reach &lacross dimensions&r."]
 			id: "7AA20CA2776F5FAB"
 			subtitle: "Now do it 8 times"
 			tasks: [{
@@ -290,7 +292,7 @@
 		}
 		{
 			dependencies: ["7A971DD8D64507A6"]
-			description: ["The Wireless Booster allows for your Wireless Access Point to reach further. Up to 64 can be stacked inside an Access Point."]
+			description: ["The &dWireless Booster&r allows for your &lWireless Access Point&r to reach &lfurther&r. Up to 64 can be stacked inside an Access Point."]
 			id: "01A11F434A489617"
 			tasks: [{
 				id: "144365E09B977BA7"
@@ -302,6 +304,7 @@
 		}
 		{
 			dependencies: ["7A971DD8D64507A6"]
+			description: ["The most basic of Wireless Terminals. Allows you to insert and extract items from your network on the go."]
 			id: "17013D97CFC43A4D"
 			tasks: [{
 				id: "769B740FF67A1CE8"
@@ -317,6 +320,7 @@
 				"0E63D44A2698DDD9"
 				"4C6141A2B280D0A6"
 			]
+			description: ["Craft any combination of terminals together to make them into one."]
 			id: "1645802228D598D0"
 			min_required_dependencies: 2
 			subtitle: "And in the darkness bind them... To your ME system"
@@ -371,13 +375,18 @@
 				item: "ae2:controller"
 				type: "item"
 			}]
-			title: "&6Making a Real Network"
+			title: "Making a Real Network"
 			x: 7.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["52144F96AAE9844A"]
-			description: ["To autocraft in ae2, you need three things: Crafting storage, Pattern Providers, and Patterns. To make crafting storage, all you need to do is make a cuboid of Crafting Storage blocks and connect them to your network. Pattern providers atomically output their inventories to an adjacent inventory when they receive a crafting request. They require patterns in order to do this, which can be made using the Pattern Encoding Terminal."]
+			description: [
+				"To autocraft in ae2, you need three things: Crafting storage, Pattern Providers, and Patterns. To make crafting storage, all you need to do is make a cuboid of Crafting Storage blocks and connect them to your network. Pattern providers atomically output their inventories to an adjacent inventory when they receive a crafting request. They require patterns in order to do this, which can be made using the Pattern Encoding Terminal."
+				""
+				"{@pagebreak}"
+				"When Pattern Providers are adjacent to Molecular Assemblers, they can utilize crafting recipes."
+			]
 			id: "194423A49785391E"
 			rewards: [
 				{
@@ -449,7 +458,7 @@
 				item: "ae2:fluix_covered_cable"
 				type: "item"
 			}]
-			title: "&6Better Cables"
+			title: "Better Cables"
 			x: 7.0d
 			y: 2.0d
 		}
@@ -466,8 +475,8 @@
 				}
 				type: "item"
 			}]
-			title: "&6Storing Power"
-			x: 9.5d
+			title: "Storing Power"
+			x: 9.0d
 			y: 0.0d
 		}
 		{
@@ -482,8 +491,8 @@
 				}
 				type: "item"
 			}]
-			title: "&6Storing Even More Power"
-			x: 11.5d
+			title: "Storing Even More Power"
+			x: 11.0d
 			y: 0.0d
 		}
 		{
@@ -502,9 +511,9 @@
 				item: "ae2:fluix_smart_cable"
 				type: "item"
 			}]
-			title: "&6Smart Cables"
+			title: "Smart Cables"
 			x: 7.0d
-			y: 3.5d
+			y: 4.0d
 		}
 		{
 			dependencies: [
@@ -518,9 +527,9 @@
 				item: "sgcommunity_pack:computational_substrate"
 				type: "item"
 			}]
-			title: "&6Not Worth It"
-			x: 11.5d
-			y: 3.5d
+			title: "Not Worth It"
+			x: 11.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["52144F96AAE9844A"]
@@ -538,7 +547,7 @@
 		}
 		{
 			dependencies: ["46F88139E0CC8428"]
-			description: ["The Accumulation Processor is the main ingredient of MEGA Cells. It is used in nearly all the recipes. Unlike the other processors, this one requires a Tier II circuit."]
+			description: ["The Accumulation Processor is the main ingredient of MEGA Cells. It is used in nearly all the recipes. Unlike the other processors, this one requires a Tier III circuit."]
 			id: "69FBE320CFCDC2A6"
 			tasks: [{
 				id: "40E29673822ED360"
@@ -558,7 +567,7 @@
 				type: "item"
 			}]
 			title: "Managing Patterns"
-			x: 9.5d
+			x: 5.0d
 			y: -2.0d
 		}
 		{
@@ -573,8 +582,8 @@
 				type: "checkmark"
 			}]
 			title: "Aesthetics"
-			x: 0.5d
-			y: -7.5d
+			x: 0.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["3BC462BDE65FA837"]
@@ -586,8 +595,8 @@
 				item: "ae2:storage_monitor"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -6.0d
+			x: 0.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["6DAA999CEC7DEDF7"]
@@ -599,8 +608,8 @@
 				item: "ae2:conversion_monitor"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -4.5d
+			x: 0.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["3BC462BDE65FA837"]
@@ -621,8 +630,8 @@
 				type: "item"
 			}]
 			title: "Facades"
-			x: 2.0d
-			y: -7.5d
+			x: 1.5d
+			y: -8.0d
 		}
 		{
 			dependencies: ["69FBE320CFCDC2A6"]
@@ -701,6 +710,35 @@
 			}]
 			x: -7.0d
 			y: -3.0d
+		}
+		{
+			dependencies: ["69FBE320CFCDC2A6"]
+			id: "6102BE9B5836748D"
+			tasks: [{
+				id: "216824F023B31B9D"
+				item: {
+					Count: 1b
+					id: "megacells:mega_energy_cell"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -5.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["3BC462BDE65FA837"]
+			description: ["Colored cables can influence the color of connected cable subparts. For example, Terminals will turn the color of their cables."]
+			icon: "ae2:red_smart_cable"
+			id: "4D999C0A1E529844"
+			tasks: [{
+				id: "310FA93A6E10F757"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Colored Cables"
+			x: -1.5d
+			y: -8.0d
 		}
 	]
 	title: "Applied Energistics"

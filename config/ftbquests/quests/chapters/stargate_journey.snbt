@@ -1,417 +1,380 @@
 {
-	autofocus_id: "01F2718E1B5D83EA"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "stargate_journey"
 	group: "3553DD7F726AE366"
-	icon: "sgjourney:classic_stargate"
-	id: "309097298251CA11"
-	images: [
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 1.5d
-			hover: [ ]
-			image: "ftbquests:textures/shapes/gear/background.png"
-			rotation: 0.0d
-			width: 1.5d
-			x: -1.5d
-			y: -1.0d
+	icon: {
+		Count: 1b
+		id: "sgjourney:milky_way_stargate"
+		tag: {
+			BlockEntityTag: {
+				AddToNetwork: 0b
+			}
 		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 1.5d
-			hover: [ ]
-			image: "ftbquests:textures/shapes/gear/outline.png"
-			rotation: 0.0d
-			width: 1.5d
-			x: -1.5d
-			y: -1.0d
-		}
-	]
-	order_index: 2
+	}
+	id: "389F85CCD37EF0BA"
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["Stargate Journey is an exploration and transportation mod built around the idea of interstellar gates left behind by an ancient race. While you will initially have to scavenge to build a stargate network, eventually you will unlock the technology to build your own."]
-			id: "4E6747209BE4AB28"
-			rewards: [{
-				id: "2948B06942E77D27"
-				type: "xp"
-				xp: 20
-			}]
+			description: ["Stargate Journey is a mod focused around ancient stargates left behind by an ancient race. Stargates allow for instantaneous and stylish interstellar travel."]
+			id: "7E26E25094A8FA06"
 			tasks: [{
-				id: "0B05DF068AE49848"
+				id: "0247EBD081364E20"
 				title: "Acknowledge"
 				type: "checkmark"
 			}]
-			title: "Welcome to Stargate Journey"
-			x: -1.5d
-			y: -1.0d
+			title: "Welcome to Stargate Journey!"
+			x: -4.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["09FA2C5A93E513FB"]
-			description: ["To start off, we need to find a Goa'uld Pyramid to get the golden idol. You should be able to take the ring panel down to where the treasure lies, unless it's a jungle pyramid."]
-			icon: "sgjourney:golden_idol"
-			id: "6320F7A73F1A7490"
-			rewards: [
-				{
-					id: "120BB1956F3ED83C"
-					type: "xp"
-					xp: 100
-				}
-				{
-					exclude_from_claim_all: true
-					id: "7B114B4D32BB4E8E"
-					type: "random"
-				}
-			]
-			subtitle: "One of many!"
-			tasks: [
-				{
-					icon: "ftbquests:stage_barrier"
-					id: "19C65A70E70E429D"
-					structure: "#sgjourney:goauld_temple"
-					title: "Find a Goa'uld Temple"
-					type: "structure"
-				}
-				{
-					id: "0F3C0965FAFA6E6D"
-					item: "sgjourney:golden_idol"
-					type: "item"
-				}
-			]
-			title: "The Goa'uld Temple"
-			x: 1.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["6320F7A73F1A7490"]
+			dependencies: ["59E8FE3300D4D830"]
 			description: [
-				"Next we need that Golden Idol we \"acquired\". Build a Archeology Table and get yourself a Villager. Trade the Golden Idol for a map to the Stargate!"
-				"(You need a Master Archeologist) "
+				"Now that you have all the blocks, you need to build your gate!"
+				""
+				"{image:sgcommunity_pack:textures/quests/classic_stargate.png width:100 height:100 align:1}"
 			]
-			icon: "sgjourney:classic_stargate"
-			id: "54391A5E4D2242AA"
-			rewards: [
-				{
-					id: "78B15A8ABE5BBF39"
-					type: "xp_levels"
-					xp_levels: 2
+			id: "0121A93E06C5577B"
+			tasks: [{
+				id: "2FBCC592281CDECD"
+				item: {
+					Count: 1b
+					id: "sgjourney:classic_stargate"
+					tag: {
+						BlockEntityTag: {
+							AddToNetwork: 0b
+						}
+					}
 				}
-				{
-					exclude_from_claim_all: true
-					id: "124B2F5FBAC39B36"
-					type: "random"
-				}
-			]
-			subtitle: "There it is!"
+				type: "item"
+			}]
+			title: "Some Assembly Required"
+			x: 10.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7E26E25094A8FA06"]
+			description: ["Steal the golden idol from a pyramid (not just in the desert!) and use it to make the Archaeology Table, a villager workstation for the archaeologist. Then, you can trade for a map to a buried stargate"]
+			id: "7FFEAEE440BD9D16"
 			tasks: [
 				{
-					id: "44B5425774A8470B"
+					id: "28195144FA362B0B"
 					item: "sgjourney:archeology_table"
 					type: "item"
 				}
 				{
-					icon: "sgjourney:classic_stargate"
-					id: "5BC3F763F4AA4F19"
-					structure: "#sgjourney:buried_stargate"
-					title: "Find a Stargate"
-					type: "structure"
+					id: "267FA137336B5639"
+					item: "sgjourney:golden_idol"
+					type: "item"
 				}
 			]
-			title: "Finding a Stargate"
-			x: 3.0d
+			title: "Archaeologist"
+			x: -2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["48DE720CF5133F9F"]
+			hide: false
+			id: "59E8FE3300D4D830"
+			tasks: [
+				{
+					count: 14L
+					id: "1317882CC8C3439E"
+					item: "sgjourney:classic_stargate_ring_block"
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "07DF36D2D31E2B83"
+					item: "sgjourney:classic_stargate_chevron_block"
+					type: "item"
+				}
+				{
+					id: "0EE8793EA0E71DC4"
+					item: "sgjourney:classic_stargate_base_block"
+					type: "item"
+				}
+			]
+			title: "Build your Own"
+			x: 10.0d
 			y: -2.0d
 		}
 		{
-			dependencies: ["4E6747209BE4AB28"]
-			description: ["As you might have noticed, this modpack adds stargates all around the world. However, if you can't find a stargate, there is another way to discover them."]
-			id: "09FA2C5A93E513FB"
-			subtitle: "More than two!"
+			dependencies: ["7FFEAEE440BD9D16"]
+			description: ["Make sure to dig up all the sandstone so that you don't miss anything. The Cartouche contains the address for another planet, and the DHD is how you will dial there."]
+			id: "2C7C485B69C7DFDF"
 			tasks: [{
-				id: "2A9C4C0AD48C7F30"
-				type: "checkmark"
-			}]
-			title: "Finding Stargates"
-			x: 0.0d
-			y: -1.0d
-		}
-		{
-			dependencies: ["09FA2C5A93E513FB"]
-			description: [
-				"Ready for your first trip?"
-				""
-				"Okay Let's get to Abydos!"
-				""
-				"For this we need to find our first Address, which we can find in stone Cartouches around the Overworld."
-			]
-			id: "599F6842E886F3F7"
-			subtitle: "The first of Many!"
-			tasks: [{
-				icon: "sgjourney:stone_symbol"
-				id: "432E75030C75B2C5"
-				structure: "#sgjourney:cartouche"
+				id: "08F42B88E64B6DE5"
+				structure: "#sgjourney:buried_stargate"
 				type: "structure"
 			}]
-			title: "An Ancient Address"
-			x: 1.5d
+			title: "Unearth a Stargate"
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"2C7C485B69C7DFDF"
+				"38DC3646EA8F8BDB"
+			]
+			dependency_requirement: "one_completed"
+			description: ["Time to explore this new planet"]
+			id: "4F1A70A84D97EAB3"
+			tasks: [{
+				dimension: "sgjourney:abydos"
+				id: "433D02E932F329C7"
+				type: "dimension"
+			}]
+			title: "You made it!"
+			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["599F6842E886F3F7"]
-			id: "01F2718E1B5D83EA"
-			subtitle: "Is Daniel still here?"
+			dependencies: ["7E26E25094A8FA06"]
+			description: ["While Stargate Journey usually only generates two stargates, this modpack uses the Common Stargates datapack which adds stargate pedestals every 64 chunks."]
+			id: "4683E1E82F7377E8"
 			tasks: [{
-				dimension: "sgjourney:abydos"
-				icon: "ftbquests:stage_barrier"
-				id: "11DF0D2CC8DA1840"
-				title: "Abydos"
-				type: "dimension"
+				id: "2ECF6CC4D845FA25"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "More than Two"
+			x: -2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4683E1E82F7377E8"]
+			id: "38DC3646EA8F8BDB"
+			tasks: [{
+				id: "045DE5981C07553A"
+				structure: "#common_stargates:common_stargate"
+				type: "structure"
+			}]
+			title: "Found One!"
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4F1A70A84D97EAB3"]
+			hide: true
+			id: "01B3305D87971A7E"
+			tasks: [{
+				id: "0658DCC079FC8F0D"
+				title: "Welcome to Abydos!"
+				type: "checkmark"
 			}]
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["01F2718E1B5D83EA"]
-			id: "0492C297D479B578"
-			subtitle: "This is Heavy stuff..."
-			tasks: [
-				{
-					id: "255FE71CA6E58891"
-					item: "sgjourney:raw_naquadah"
-					type: "item"
-				}
-				{
-					id: "29CB373DAA367A1E"
-					item: "sgjourney:naquadah_alloy"
-					type: "item"
-				}
-				{
-					id: "4BA731FE6CC35E1D"
-					item: "sgjourney:pure_naquadah"
-					type: "item"
-				}
-				{
-					id: "52AEEF6D7553B0DA"
-					item: "sgjourney:naquadah"
-					type: "item"
-				}
-			]
-			title: "Refining Naquadah"
-			x: 2.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["0492C297D479B578"]
-			id: "7714943990A3B354"
+			dependencies: ["01B3305D87971A7E"]
+			description: ["Naquadah in found throughout abydos and is used in nearly every part of Stargate Journey."]
+			id: "4211165EF22FE2C5"
 			tasks: [{
-				id: "204D3E65917127D3"
-				item: "minecraft:netherite_upgrade_smithing_template"
+				count: 64L
+				id: "12207CCE4CCB9EC6"
+				item: "sgjourney:raw_naquadah"
 				type: "item"
 			}]
-			title: "Upgrading to Naquadah"
-			x: 1.5d
-			y: 3.5d
+			title: "Channeling Energy"
+			x: 6.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["01F2718E1B5D83EA"]
-			id: "0F25CB758F8FD72A"
-			subtitle: "Gotta find them all!"
+			dependencies: ["4211165EF22FE2C5"]
+			description: ["The Naquadah Liquidizer is used to make liquid naquadah, which is used as a power source for weapons and in the crafting of various crystals."]
+			id: "66AC30166E889FD6"
 			tasks: [{
-				id: "5D004D81B212A4AD"
-				structure: "sgjourney:cartouche/abydos_cartouche"
-				type: "structure"
-			}]
-			title: "Abydos Cartouche"
-			x: 7.5d
-			y: -0.5d
-		}
-		{
-			dependencies: ["0F25CB758F8FD72A"]
-			id: "3D20E3791AAA6E64"
-			tasks: [{
-				dimension: "sgjourney:chulak"
-				id: "652CAEB2CC977329"
-				type: "dimension"
-			}]
-			title: "Chulak"
-			x: 12.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["0492C297D479B578"]
-			id: "729C7AF91524EB74"
-			tasks: [{
-				id: "2AA4696E962895F4"
-				item: "minecraft:netherite_upgrade_smithing_template"
+				id: "22AB60CC960D3913"
+				item: "sgjourney:naquadah_liquidizer"
 				type: "item"
 			}]
-			title: "Naquadah Armor"
-			x: 3.5d
-			y: 3.5d
+			x: 8.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["7714943990A3B354"]
-			id: "3DAB52B216060038"
+			dependencies: ["66AC30166E889FD6"]
+			description: ["The Crystallizer is used to produce crystals which are used in crafting recipes and as well as to augment the power of the DHDs."]
+			id: "48DE720CF5133F9F"
 			tasks: [{
-				id: "3BEF9E5A2B848422"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_sword"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "6EBBACCF4FAE22FB"
+				item: "sgjourney:crystallizer"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 3.5d
+			title: "The Crystallizer"
+			x: 10.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["7714943990A3B354"]
-			id: "17F045EFBAD1AE35"
+			dependencies: ["48DE720CF5133F9F"]
+			description: ["Interfaces can be used to provide gates with power and to control them via Computers."]
+			id: "2A3A616F755BB410"
 			tasks: [{
-				id: "20EC4896281F8D3B"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_pickaxe"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "10263A243B8EB0DA"
+				item: "sgjourney:basic_interface"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 4.5d
+			x: 10.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["7714943990A3B354"]
-			id: "6F312AC52571200D"
+			dependencies: ["2A3A616F755BB410"]
+			id: "3B443B9CD916D086"
 			tasks: [{
-				id: "17E169EC1A34D62A"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_axe"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "778797C3C69A5BD3"
+				item: "sgjourney:crystal_interface"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 5.5d
+			x: 10.0d
+			y: 4.0d
 		}
 		{
-			dependencies: ["7714943990A3B354"]
-			id: "3B7013FE43A89921"
+			dependencies: ["63D8F4937E64F978"]
+			description: ["The Advanced Crystal Interface allows for DHD-like dialing as well as adding a few methods for getting addresses for a given dimension."]
+			id: "1876697DF3ED680C"
 			tasks: [{
-				id: "4BE4779E1DE483EA"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_shovel"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "532C437CB8DCC5D4"
+				item: "sgjourney:advanced_crystal_interface"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 6.0d
+			x: 12.5d
+			y: 2.0d
 		}
 		{
-			dependencies: ["7714943990A3B354"]
-			id: "4F3896FA9870A673"
+			dependencies: ["4211165EF22FE2C5"]
+			description: ["Weapons Grade Naquadah is used as an ingredient in all the weapons, tools, and armor from Stargate Journey."]
+			id: "39E558233976B7C6"
 			tasks: [{
-				id: "7299BBC830FCBB4F"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_hoe"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 1.5d
-			y: 6.5d
-		}
-		{
-			dependencies: ["729C7AF91524EB74"]
-			id: "3B90E31887CB96F6"
-			tasks: [{
-				id: "10BFB3FBB4DCE283"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_helmet"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 3.5d
-			y: 6.5d
-		}
-		{
-			dependencies: ["729C7AF91524EB74"]
-			id: "4B47CBAA4D0E4F65"
-			tasks: [{
-				id: "6186F5F0F152C87D"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_chestplate"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 4.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["729C7AF91524EB74"]
-			id: "07826E2EA0F4C220"
-			tasks: [{
-				id: "53EDC7135442ECCE"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_leggings"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 5.5d
-			y: 5.5d
-		}
-		{
-			dependencies: ["729C7AF91524EB74"]
-			id: "2C6D1FFE8C511855"
-			tasks: [{
-				id: "28AFB545B2BD091D"
-				item: {
-					Count: 1b
-					id: "sgjourney:naquadah_boots"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "17CAE14365175A89"
+				item: "sgjourney:naquadah"
 				type: "item"
 			}]
 			x: 6.0d
-			y: 4.5d
+			y: -4.0d
 		}
 		{
-			dependencies: ["729C7AF91524EB74"]
-			id: "5CAED868EE9C962D"
+			dependencies: ["39E558233976B7C6"]
+			id: "6AC133E658CD129F"
+			tasks: [
+				{
+					id: "145D0D11A855EA9E"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "26EBF9A0A188B379"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "14E8A91EF2EF914D"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0015F257B3CF2BC6"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_shovel"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3FEE80849C1FD475"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Naquadah Tools"
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["39E558233976B7C6"]
+			id: "6BA177CE54C241F7"
+			tasks: [
+				{
+					id: "3D3A80ADD368915E"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4388E6E31CF6CAA8"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6C1FB94D2D510B00"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1663DBB3F080688C"
+					item: {
+						Count: 1b
+						id: "sgjourney:naquadah_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["39E558233976B7C6"]
+			description: ["The staff weapon is fueled with liquid naquadah and can fire plasma bolts that deal 14 damage."]
+			id: "41E03B50C0421DD7"
 			tasks: [{
-				id: "51D79431E4DD3E48"
+				id: "3E216C8EFB7E20E6"
 				item: {
 					Count: 1b
 					id: "sgjourney:matok"
@@ -421,36 +384,197 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
-			y: 3.5d
+			x: 8.0d
+			y: -4.0d
 		}
 		{
-			dependencies: ["0492C297D479B578"]
-			description: ["Lets get into making our own Gate for that we need the following, place them like you see in the picture!"]
-			icon: "sgjourney:classic_stargate"
-			id: "5D3879366DEA2932"
-			tasks: [
-				{
-					id: "184496A671C63738"
-					item: "sgjourney:classic_stargate_base_block"
-					type: "item"
+			dependencies: ["39E558233976B7C6"]
+			description: ["The Hand Device has two modes. Terror and Knockback. Knockback knocks the clicked entity back while terror inflicts wither, slowness, and blindness."]
+			id: "2BD1231813D33819"
+			tasks: [{
+				id: "17C80FFBF60063F4"
+				item: "sgjourney:kara_kesh"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["48DE720CF5133F9F"]
+			id: "63D8F4937E64F978"
+			tasks: [{
+				id: "49F6A6B9144CE4E4"
+				item: "sgjourney:advanced_crystallizer"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["48DE720CF5133F9F"]
+			hide_dependency_lines: true
+			id: "4012A1B20D669E58"
+			tasks: [{
+				id: "1F21F8699F6EA9D5"
+				item: "sgjourney:crystal_base"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4012A1B20D669E58"]
+			description: ["The&d Communication Crystal&r increases the range of DHDs by 16 blocks"]
+			id: "073321159B45758E"
+			tasks: [{
+				id: "3A9F73BB9FB474FF"
+				item: {
+					Count: 1b
+					id: "sgjourney:communication_crystal"
+					tag: {
+						Frequency: 0
+					}
 				}
-				{
-					count: 9L
-					id: "2CC07986E0EA8070"
-					item: "sgjourney:classic_stargate_chevron_block"
-					type: "item"
+				type: "item"
+			}]
+			x: 16.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4012A1B20D669E58"]
+			description: ["Energy Crystals increase the amount of energy a DHD will try to fill a stargate to."]
+			id: "6D63646BB54D20DF"
+			tasks: [{
+				id: "7427F95D60449A42"
+				item: {
+					Count: 1b
+					id: "sgjourney:energy_crystal"
+					tag: {
+						Energy: 0
+					}
 				}
-				{
-					count: 14L
-					id: "0BADEF3E4E6B0F28"
-					item: "sgjourney:classic_stargate_ring_block"
-					type: "item"
+				type: "item"
+			}]
+			x: 17.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4012A1B20D669E58"]
+			description: ["Transfer Crystals increase the amount of energy produced by DHDs to reach the target stargate energy."]
+			id: "3F5D3448A34C75B4"
+			tasks: [{
+				id: "518420523FFA1A52"
+				item: {
+					Count: 1b
+					id: "sgjourney:transfer_crystal"
+					tag: {
+						TransferLimit: 2500
+					}
 				}
-			]
-			title: "Your own Gate"
-			x: 4.0d
+				type: "item"
+			}]
+			x: 19.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4012A1B20D669E58"]
+			description: ["The Large Control Crystal enables advanced protocols, which currently means that the Stargate will automatically close."]
+			id: "47C818B66D4880FD"
+			tasks: [{
+				id: "545010AE35E51EC9"
+				item: "sgjourney:large_control_crystal"
+				type: "item"
+			}]
+			x: 20.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["63D8F4937E64F978"]
+			description: ["Advanced Crystals are needed for Pegasus DHDs, but they can also be used in Milky Way DHDs"]
+			hide_dependency_lines: true
+			id: "3A6651977FEBF57D"
+			tasks: [{
+				id: "65F751161DF0669A"
+				item: "sgjourney:advanced_crystal_base"
+				type: "item"
+			}]
+			x: 18.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3A6651977FEBF57D"]
+			id: "79D6E7CD00E5A396"
+			tasks: [{
+				id: "2D604F1D167AE7EE"
+				item: {
+					Count: 1b
+					id: "sgjourney:advanced_communication_crystal"
+					tag: {
+						Frequency: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 16.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3A6651977FEBF57D"]
+			id: "5B611A05B34231C8"
+			tasks: [{
+				id: "1148AD5DBB18098D"
+				item: {
+					Count: 1b
+					id: "sgjourney:advanced_energy_crystal"
+					tag: {
+						Energy: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 17.0d
 			y: 2.5d
+		}
+		{
+			dependencies: ["3A6651977FEBF57D"]
+			id: "12E182E23AAD5A32"
+			tasks: [{
+				id: "4DB984CFAE3DA133"
+				item: {
+					Count: 1b
+					id: "sgjourney:advanced_transfer_crystal"
+					tag: {
+						TransferLimit: 5000
+					}
+				}
+				type: "item"
+			}]
+			x: 19.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3A6651977FEBF57D"]
+			id: "0ACCCEFDDF55A234"
+			tasks: [{
+				id: "6128F6C626EF468B"
+				item: "sgjourney:advanced_control_crystal"
+				type: "item"
+			}]
+			x: 20.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4211165EF22FE2C5"]
+			description: ["In order to return home, you will need to find an overworld cartouche. These can be found in structures that look like small sandstone rocks made out of slabs."]
+			id: "6EC62B1F9F534FDF"
+			tasks: [{
+				id: "02851F32109D5457"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Returning Home"
+			x: 6.0d
+			y: 2.0d
 		}
 	]
 	title: "Stargate Journey"

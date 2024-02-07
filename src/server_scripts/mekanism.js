@@ -34,7 +34,7 @@ function parseMekanismIngredient(input) {
             if (input.tag) {
                 return {
                     "ingredient": {
-                        "tag": input.item
+                        "tag": input.tag
                     },
                     "amount": input.amount ?? 1
                 }
@@ -48,6 +48,14 @@ function registerChemicalDissolutionRecipe(event, output, gasInput, itemInput) {
         itemInput: parseMekanismIngredient(itemInput),
         gasInput: gasInput,
         output: output
+    })
+}
+function registerChemicalInjectionRecipe(event, chemicalInput, itemOutput, itemInput) {
+    event.custom({
+        type: "mekanism:injecting",
+        itemInput: parseMekanismIngredient(itemInput),
+        chemicalInput: chemicalInput,
+        output: parseMekanismIngredient(itemOutput)
     })
 }
 function registerChemicalInfusionRecipe(event, output, leftInput, rightInput) {
@@ -78,4 +86,14 @@ function registerCrystallizing(event, output, input) {
             item: output
         }
       })
+}
+function registerMetallurgicInfusing(event,inputChemicalIngredient, inputIngredient, outputItem) {
+    event.custom({
+        "type": "mekanism:metallurgic_infusing",
+        "chemicalInput": inputChemicalIngredient,
+        "itemInput": parseMekanismIngredient(inputIngredient),
+        "output": {
+          "item": outputItem
+        }
+    })
 }
