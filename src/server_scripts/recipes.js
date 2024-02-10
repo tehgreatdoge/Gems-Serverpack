@@ -826,7 +826,7 @@ ServerEvents.recipes((event) => {
     })
     registerAE2InscriberRecipe(event, Item.ISOTOPIC_DECAY_OSCILLATOR.getIdentifier(), [Item.ISOTOPIC_DECAY_OSCILLATOR_CHIP.getIdentifier(), "mekanism:block_lead", Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()], true)
     // Mob Grinding Utils
-    event.remove([{id: "mob_grinding_utils:recipe_saw"},{id: "mob_grinding_utils:recipe_absorption_hopper"}])
+    event.remove([{id: "mob_grinding_utils:recipe_saw"},{id: "mob_grinding_utils:recipe_absorbtion_hopper"}])
     event.shaped("mob_grinding_utils:saw", [
         "sds",
         "pcp",
@@ -847,4 +847,19 @@ ServerEvents.recipes((event) => {
         o: "minecraft:obsidian",
         h: "minecraft:hopper"
     })
+    // BoP
+    event.custom({
+      "type": "create:sandpaper_polishing",
+      "ingredients": [
+        {
+          "item": "biomesoplenty:rose_quartz_chunk"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:polished_rose_quartz"
+        }
+      ]
+    })
+    event.remove({id:"mekanism:teleportation_core"})
 })
