@@ -26,7 +26,7 @@
 			}]
 			title: "Where we're going"
 			x: -8.0d
-			y: -0.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["692BC266D99DADE9"]
@@ -40,75 +40,13 @@
 				type: "item"
 			}]
 			title: "&3Plain Panes are Overrated"
-			x: -4.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["08D7A9160CF1D20C"]
-			description: ["You should turn ~60% of your Pure Quartz Glass into PCB Substrates."]
-			hide: false
-			id: "60117AE54A1F440D"
-			subtitle: "Only one step?"
-			tasks: [{
-				id: "6CF83246788BAE85"
-				item: "sgcommunity_pack:pcb_substrate"
-				type: "item"
-			}]
-			title: "&3Seems a bit simplified"
-			x: -4.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["692BC266D99DADE9"]
-			hide: true
-			id: "05C3248B70F1EADD"
-			tasks: [{
-				count: 20L
-				id: "375B96EAC1D33263"
-				item: "sgcommunity_pack:xor"
-				type: "item"
-			}]
-			title: "&38 Bit XOR"
-			x: -8.0d
-			y: 1.5d
+			x: -9.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
 				"08D7A9160CF1D20C"
-				"692BC266D99DADE9"
-			]
-			dependency_requirement: "one_completed"
-			hide: true
-			id: "3C31C7D1D5BA7C3A"
-			tasks: [{
-				count: 20L
-				id: "79A8658F2281E802"
-				item: "sgcommunity_pack:adder"
-				type: "item"
-			}]
-			title: "&38 Bit Adder"
-			x: -6.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["692BC266D99DADE9"]
-			hide: true
-			id: "5B3ED1133DA7D3A7"
-			tasks: [{
-				id: "574FC8792695CD69"
-				item: "sgcommunity_pack:rshift"
-				type: "item"
-			}]
-			title: "&38 Bit RShift"
-			x: -9.5d
-			y: 1.5d
-		}
-		{
-			dependencies: [
-				"60117AE54A1F440D"
-				"3C31C7D1D5BA7C3A"
-				"05C3248B70F1EADD"
-				"5B3ED1133DA7D3A7"
+				"0817B9B5962CA4F0"
 			]
 			hide: false
 			id: "494419E2B4AB7E80"
@@ -119,11 +57,14 @@
 				type: "item"
 			}]
 			title: "&3ALU"
-			x: -6.0d
-			y: 5.5d
+			x: -9.0d
+			y: 3.0d
 		}
 		{
-			dependencies: ["60117AE54A1F440D"]
+			dependencies: [
+				"08D7A9160CF1D20C"
+				"0817B9B5962CA4F0"
+			]
 			id: "1AD45F5A1FB5B74D"
 			tasks: [{
 				count: 20L
@@ -132,25 +73,11 @@
 				type: "item"
 			}]
 			title: "&3Control Unit"
-			x: -4.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["60117AE54A1F440D"]
-			id: "3ECD50CBA1E3DAA6"
-			tasks: [{
-				count: 20L
-				id: "37E797BBFEC47F30"
-				item: "sgcommunity_pack:small_cache"
-				type: "item"
-			}]
-			title: "&3Small Cache"
-			x: -3.0d
-			y: 5.5d
+			x: -7.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
-				"3ECD50CBA1E3DAA6"
 				"1AD45F5A1FB5B74D"
 				"494419E2B4AB7E80"
 			]
@@ -165,8 +92,22 @@
 				type: "item"
 			}]
 			title: "&3Thought that was a lot?"
-			x: -4.5d
-			y: 7.0d
+			x: -8.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["692BC266D99DADE9"]
+			description: ["To act as a backing for our circuits, craft some electrum with gold, copper, and iron."]
+			hide: true
+			id: "0817B9B5962CA4F0"
+			tasks: [{
+				id: "4DC768038EFFBAB9"
+				item: "createaddition:electrum_sheet"
+				type: "item"
+			}]
+			title: "It's Pretty"
+			x: -7.0d
+			y: 1.0d
 		}
 	]
 	title: "Kinetic II"

@@ -48,23 +48,23 @@ class Item {
     static IMPURE_QUARTZ_GLASS = new Item("impure_quartz_glass", "Impure Quartz Glass")
     static PURE_QUARTZ_GLASS = new Item("pure_quartz_glass", "Pure Quartz Glass")
     // PCB Substrate
-    static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
-    static ADVANCED_PCB_SUBSTRATE = new Item("advanced_pcb_substrate", "Advanced PCB Substrate")
+    // static PCB_SUBSTRATE = new Item("pcb_substrate", "PCB Substrate")
+    static ADVANCED_PCB_SUBSTRATE = new Item("advanced_pcb_substrate", "PCB Substrate")
     // Silicon Wafers
     static PHOSPHORUS = new Item("phosphorus", "Phosphorus", {tags: ["forge:phosphorus"]})
     // Rudimentary Processor
-    static ADDER = new Item("adder", "8 Bit Adder")
-    static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
-    static XOR = new Item("xor", "8 Bit XOR")
-    static INCOMPLETE_XOR = new Item("incomplete_xor", "Incomplete 8 Bit XOR", { itemType: "create:sequenced_assembly"})
-    static RSHIFT = new Item("rshift", "8 Bit RShift")
-    static INCOMPLETE_RSHIFT = new Item("incomplete_rshift", "Incomplete 8 Bit RShift", { itemType: "create:sequenced_assembly"})
+    // static ADDER = new Item("adder", "8 Bit Adder")
+    // static INCOMPLETE_ADDER = new Item("incomplete_adder", "Incomplete 8 Bit Adder", { itemType: "create:sequenced_assembly"})
+    // static XOR = new Item("xor", "8 Bit XOR")
+    // static INCOMPLETE_XOR = new Item("incomplete_xor", "Incomplete 8 Bit XOR", { itemType: "create:sequenced_assembly"})
+    // static RSHIFT = new Item("rshift", "8 Bit RShift")
+    // static INCOMPLETE_RSHIFT = new Item("incomplete_rshift", "Incomplete 8 Bit RShift", { itemType: "create:sequenced_assembly"})
     static ALU = new Item("alu", "ALU")
     static INCOMPLETE_ALU = new Item("incomplete_alu", "Incomplete ALU", { itemType: "create:sequenced_assembly"})
     static CONTROL_UNIT = new Item("control_unit", "Control Unit")
     static INCOMPLETE_CONTROL_UNIT = new Item("incomplete_control_unit", "Incomplete Control Unit", { itemType: "create:sequenced_assembly"})
-    static SMALL_CACHE = new Item("small_cache", "Small Cache")
-    static INCOMPLETE_SMALL_CACHE = new Item("incomplete_small_cache", "Incomplete Small Cache", { itemType: "create:sequenced_assembly"})
+    // static SMALL_CACHE = new Item("small_cache", "Small Cache")
+    // static INCOMPLETE_SMALL_CACHE = new Item("incomplete_small_cache", "Incomplete Small Cache", { itemType: "create:sequenced_assembly"})
 
     static RUDIMENTARY_PROCESSOR = new Item("rudimentary_processor", "Rudimentary Processor",  {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
     // Photomasks

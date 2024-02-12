@@ -146,7 +146,7 @@
 		}
 		{
 			dependencies: ["1785914BD68AC89E"]
-			description: ["Glass tubes are the hardest component of the vacuum tube. In order to make them, you need will need sand. Yeah, that's it. The processing however? Have fun :)"]
+			description: ["Glass tubes are the hardest component of the vacuum tube. In order to make them, you need will need sand. Yeah, that's it."]
 			id: "09934CB76FADA45B"
 			tasks: [{
 				count: 128L
@@ -162,7 +162,6 @@
 			dependencies: ["1785914BD68AC89E"]
 			id: "1D92274424B0EDFA"
 			tasks: [{
-				consume_items: true
 				count: 384L
 				id: "7A1449FF1D63E5B7"
 				item: "sgcommunity_pack:iron_filament"

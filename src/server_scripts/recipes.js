@@ -141,7 +141,7 @@ ServerEvents.recipes((event) => {
     event.recipes.createMixing(Item.IMPURE_QUARTZ_GLASS.getIdentifier(),Item.WASHED_SILICA_DUST.getIdentifier()).heated()
     event.blasting(Item.PURE_QUARTZ_GLASS.getIdentifier(),Item.IMPURE_QUARTZ_GLASS.getIdentifier())
     // PCB Substrate recipe
-    registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"], true)
+    // registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"], true)
     // Phosphorus
     event.blasting({item: Item.PHOSPHORUS.getIdentifier(), count: 3},Blocks.PHOSPHORITE.getIdentifier())
     // Silicon Wafers
@@ -203,6 +203,7 @@ ServerEvents.recipes((event) => {
     event.recipes.create.deploying(Item.SILICA_DUST_BUCKET.getIdentifier(), ["minecraft:bucket",Item.SILICA_DUST.getIdentifier()])
     event.recipes.create.filling(MODID + ":liquid_glass_bucket", [Fluid.toBucket(MODID + ":liquid_glass"),"minecraft:bucket"])
     event.recipes.create.filling(Item.GLASS_TUBE.getIdentifier(), [Fluid.toBucket(MODID + ":liquid_glass"),Item.SAND_MOLD.getIdentifier()])
+    event.recipes.create.mixing([Fluid.toAmount(MODID + ":liquid_glass", 800)], [Item.SILICA_DUST.getIdentifier()]).heated()
     event.blasting(MODID + ":liquid_glass_bucket",Item.SILICA_DUST_BUCKET.getIdentifier())
     event.recipes.create.sequenced_assembly([
         Item.VACUUM_TUBE.getIdentifier()
@@ -222,34 +223,39 @@ ServerEvents.recipes((event) => {
         }
     })
     // Rudimentary Processor
-    event.recipes.create.sequenced_assembly([Item.ADDER.getIdentifier()], Item.PURE_QUARTZ_GLASS.getIdentifier(), [
-        event.recipes.createDeploying(Item.INCOMPLETE_ADDER.getIdentifier(),[Item.INCOMPLETE_ADDER.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_ADDER.getIdentifier()).loops(8)
-    event.recipes.create.sequenced_assembly([Item.XOR.getIdentifier()], "create:iron_sheet", [
-        event.recipes.createDeploying(Item.INCOMPLETE_XOR.getIdentifier(),[Item.INCOMPLETE_XOR.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_XOR.getIdentifier()).loops(8)
-    event.recipes.create.sequenced_assembly([Item.RSHIFT.getIdentifier()], "create:copper_sheet", [
-            event.recipes.createDeploying(Item.INCOMPLETE_RSHIFT.getIdentifier(),[Item.INCOMPLETE_RSHIFT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_RSHIFT.getIdentifier()).loops(8)
-    event.recipes.create.sequenced_assembly([Item.ALU.getIdentifier()], Item.PCB_SUBSTRATE.getIdentifier(), [
-            event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.ADDER.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.XOR.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.RSHIFT.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.PURE_QUARTZ_GLASS.getIdentifier()])
-    ]).transitionalItem(Item.INCOMPLETE_ALU.getIdentifier()).loops(1)
-    event.recipes.create.sequenced_assembly([Item.CONTROL_UNIT.getIdentifier()], Item.PCB_SUBSTRATE.getIdentifier(), [
+    // event.recipes.create.sequenced_assembly([Item.ADDER.getIdentifier()], Item.PURE_QUARTZ_GLASS.getIdentifier(), [
+    //     event.recipes.createDeploying(Item.INCOMPLETE_ADDER.getIdentifier(),[Item.INCOMPLETE_ADDER.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
+    // ]).transitionalItem(Item.INCOMPLETE_ADDER.getIdentifier()).loops(8)
+    // event.recipes.create.sequenced_assembly([Item.XOR.getIdentifier()], "create:iron_sheet", [
+    //     event.recipes.createDeploying(Item.INCOMPLETE_XOR.getIdentifier(),[Item.INCOMPLETE_XOR.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
+    // ]).transitionalItem(Item.INCOMPLETE_XOR.getIdentifier()).loops(8)
+    // event.recipes.create.sequenced_assembly([Item.RSHIFT.getIdentifier()], "create:copper_sheet", [
+    //         event.recipes.createDeploying(Item.INCOMPLETE_RSHIFT.getIdentifier(),[Item.INCOMPLETE_RSHIFT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()])
+    // ]).transitionalItem(Item.INCOMPLETE_RSHIFT.getIdentifier()).loops(8)
+    event.recipes.create.sequenced_assembly([Item.ALU.getIdentifier()], "createaddition:electrum_sheet", [
+      event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+      event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+      event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+      event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+      event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.PURE_QUARTZ_GLASS.getIdentifier()])
+    ]).transitionalItem(Item.INCOMPLETE_ALU.getIdentifier()).loops(2)
+    event.recipes.create.sequenced_assembly([Item.CONTROL_UNIT.getIdentifier()], "createaddition:electrum_sheet", [
         event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),"minecraft:redstone"]),
         event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
-        event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),"createaddition:copper_wire"])
-    ]).transitionalItem(Item.CONTROL_UNIT.getIdentifier()).loops(3)
-    event.recipes.create.sequenced_assembly([Item.SMALL_CACHE.getIdentifier()], Item.PCB_SUBSTRATE.getIdentifier(), [
-            event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),"createaddition:copper_wire"]),
-            event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
-            event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
-    ]).transitionalItem(Item.INCOMPLETE_SMALL_CACHE.getIdentifier()).loops(2)
-    registerAE2InscriberRecipe(event, Item.RUDIMENTARY_PROCESSOR.getIdentifier(), [Item.CONTROL_UNIT.getIdentifier(),Item.SMALL_CACHE.getIdentifier(),Item.ALU.getIdentifier()], true)
+        event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+        event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),"createaddition:copper_wire"]),
+        event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+        event.recipes.createDeploying(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),[Item.INCOMPLETE_CONTROL_UNIT.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+        event.recipes.createDeploying(Item.INCOMPLETE_ALU.getIdentifier(),[Item.INCOMPLETE_ALU.getIdentifier(),Item.PURE_QUARTZ_GLASS.getIdentifier()])
+    ]).transitionalItem(Item.INCOMPLETE_CONTROL_UNIT.getIdentifier()).loops(3)
+    // event.recipes.create.sequenced_assembly([Item.SMALL_CACHE.getIdentifier()], Item.PCB_SUBSTRATE.getIdentifier(), [
+    //         event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),"createaddition:copper_wire"]),
+    //         event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+    //         event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+    //         event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+    //         event.recipes.createDeploying(Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),[Item.INCOMPLETE_SMALL_CACHE.getIdentifier(),Item.VACUUM_TUBE.getIdentifier()]),
+    // ]).transitionalItem(Item.INCOMPLETE_SMALL_CACHE.getIdentifier()).loops(2)
+    registerAE2InscriberRecipe(event, Item.RUDIMENTARY_PROCESSOR.getIdentifier(), ["createaddition:electrum_sheet",Item.CONTROL_UNIT.getIdentifier(),Item.ALU.getIdentifier()], true)
     // Ad Astra
     event.shaped(Item.of(Item.RCU,1),[
         "SSS",
@@ -929,4 +935,6 @@ ServerEvents.recipes((event) => {
       b: Ingredient.of(["minecraft:cornflower","biomesoplenty:blue_hydrangea","biomesoplenty:icy_iris","minecraft:blue_orchid"]),
       p: Ingredient.of(["biomesoplenty:lavender","biomesoplenty:tall_lavender","biomesoplenty:violet","biomesoplenty:wildflower","minecraft:lilac","minecraft:allium"])
     })
+    // Electrum
+    event.recipes.create.mixing("createaddition:electrum_ingot", ["minecraft:copper_ingot","minecraft:gold_ingot", "minecraft:iron_ingot"]).heated()
 })
