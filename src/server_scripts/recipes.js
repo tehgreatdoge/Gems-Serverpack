@@ -65,7 +65,7 @@ ServerEvents.recipes((event) => {
         "sppps"
     ],{ //spell-checker: enable
         "p": "minecraft:paper",
-        "v": Item.VACUUM_TUBE.getIdentifier(),
+        "v": "#" + Tags.CIRCUIT_BASIC,
         "s": "minecraft:stone",
         "d": "create:mechanical_drill",
         "c": "create:large_cogwheel",
@@ -178,6 +178,9 @@ ServerEvents.recipes((event) => {
         }
       })
     // Mekanism
+    event.remove({id:"mekanism:teleporter"})
+    event.remove({id:"mekanism:teleporter_frame"})
+    event.remove({id: "mekanism:portable_teleporter"})
     event.remove({id:"mekanism:metallurgic_infuser"})
     event.shaped("mekanism:metallurgic_infuser", [
         "ifi",
@@ -861,5 +864,5 @@ ServerEvents.recipes((event) => {
         }
       ]
     })
-    event.remove({id:"mekanism:teleportation_core"})
+    event.recipes.create.mixing([Ingredient.of("biomesoplenty:white_sand",4)],[Ingredient.of("minecraft:sand",2), Ingredient.of("#balm:white_dyes",2)])
 })
