@@ -585,6 +585,19 @@ ServerEvents.recipes((event) => {
         g: "minecraft:gold_ingot",
         p: "mekanism:purification_chamber"
     })
+    event.remove({id: "mekanism:chemical_crystallizer"})
+    event.shaped("mekanism:chemical_crystallizer",[
+        "ofo",
+        "csc",
+        "ofo"
+      ],{
+        "f": "#forge:gems/fluorite",
+        "c": "mekanism:advanced_control_circuit",
+        "o": {
+          "tag": "forge:ingots/refined_obsidian"
+        },
+        "s": "mekanism:steel_casing"
+      })
     event.remove({id: "mekanism:chemical_dissolution_chamber"})
     event.shaped("mekanism:chemical_dissolution_chamber", [
         "ctc",
