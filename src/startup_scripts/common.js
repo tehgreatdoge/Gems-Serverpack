@@ -290,6 +290,7 @@ var Materials = {
 }
 class ToolType {
     static PICKAXE = new ToolType("mineable/pickaxe")
+    static SHOVEL = new ToolType("mineable/shovel")
     constructor(identifier) {
         this.identifier = identifier
     }
@@ -309,6 +310,7 @@ class ToolTier {
 }
 class MaterialType {
     static STONE = new MaterialType("stone", "stone")
+    static DIRT = new MaterialType("gravel", "dirt")
     constructor(sound, color) {
         this.sound = sound
         this.color = color
@@ -409,6 +411,10 @@ class Block {
 var Blocks = {
     PHOSPHORITE: new Block("phosphorite", "Phosphorite").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/phosphorus").tagBoth("forge:ores"),
     BORAX: new Block("borax", "Borax").material(MaterialType.STONE).useTool(ToolType.PICKAXE).requireTier(ToolTier.IRON).tagBoth("forge:ores/borax").tagBoth("forge:ores"),
+    COMPOST_FLORAL: new Block("floral_compost", "Floral Compost").material(MaterialType.DIRT).useTool(ToolType.SHOVEL),
+    COMPOST_MULCH: new Block("mulch_compost", "Mulch").material(MaterialType.DIRT).useTool(ToolType.SHOVEL),
+    COMPOST_ORGANIC: new Block("organic_compost", "Organic Compost").material(MaterialType.DIRT).useTool(ToolType.SHOVEL),
+    COMPOST_CORAL: new Block("coral_compost", "Coral Compost").material(MaterialType.DIRT).useTool(ToolType.PICKAXE),
 }
 class Gas {
     _color = 0x000000

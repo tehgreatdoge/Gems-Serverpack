@@ -548,7 +548,6 @@ ServerEvents.recipes((event) => {
         "gas": "mekanism:tree_sap"
       }, "minecraft:glowstone_dust")
     // photomask
-    console.log(Item.IC_PHOTOMASK.getIdentifier())
     event.shaped(Item.IC_PHOTOMASK.getIdentifier(), [
         "ek ",
         "   ",
@@ -877,5 +876,57 @@ ServerEvents.recipes((event) => {
         }
       ]
     })
-    event.recipes.create.mixing([Ingredient.of("biomesoplenty:white_sand",4)],[Ingredient.of("minecraft:sand",2), Ingredient.of("#balm:white_dyes",2)])
+    event.recipes.create.mixing([KItem.of("biomesoplenty:white_sand",8)],[Ingredient.of("minecraft:sand",8), Ingredient.of("#balm:white_dyes",1)])
+    event.recipes.create.mixing([KItem.of("biomesoplenty:black_sand",8)],[Ingredient.of("minecraft:sand",8), Ingredient.of("#balm:black_dyes",1)])
+    event.recipes.create.mixing([KItem.of("biomesoplenty:orange_sand",8)],[Ingredient.of("minecraft:sand",8), Ingredient.of("#balm:orange_dyes",1)])
+    // COMPOSTS
+    event.shaped(Blocks.COMPOST_MULCH.getIdentifier(),[
+      "ded",
+      "mfb",
+      "dsd"
+    ],{
+      d: "#minecraft:dirt",
+      e: Ingredient.of(["biomesoplenty:hellbark_sapling", "biomesoplenty:umbran_sapling"]),
+      m: Ingredient.of(["biomesoplenty:magic_sapling", "biomesoplenty:rainow_birch_sapling"]),
+      b: Ingredient.of(["minecraft:jungle_sapling","biomesoplenty:fir_sapling","biomesoplenty:redwood_sapling"]),
+      f: Ingredient.of(["biomesoplenty:willow_sapling", "biomesoplenty:dead_sapling", "biomesoplenty:palm_sapling"]),
+      s: Ingredient.of(["biomesoplenty:flowering_oak_sapling", "biomesoplenty:yellow_autumn_sapling","biomesoplenty:orange_autumn_sapling"]),
+    })
+    event.shaped(Blocks.COMPOST_ORGANIC.getIdentifier(), [
+      'gfp',
+      'ddd',
+      'lcm'
+    ], {
+      d: "#minecraft:dirt",
+      g: "#forge:grain",
+      f: "#forge:fruits",
+      p: "#forge:paper_plants",
+      l: "#forge:leafyvegetables",
+      c: "#forge:cactus_plants",
+      m: "#forge:mushrooms"
+    })
+    event.shaped(Blocks.COMPOST_CORAL.getIdentifier(), [
+      'bsa',
+      'sss',
+      'psi'
+    ], {
+      s: "minecraft:sand",
+      b: Ingredient.of(["minecraft:tube_coral_block","minecraft:bubble_coral_block","minecraft:brain_coral_block"]),
+      i: Ingredient.of(["minecraft:tube_coral","minecraft:bubble_coral","minecraft:brain_coral"]),
+      p: Ingredient.of(["minecraft:fire_coral_block","minecraft:horn_coral_block"]),
+      a: Ingredient.of(["minecraft:fire_coral","minecraft:horn_coral"])
+    })
+    event.shaped(Blocks.COMPOST_FLORAL.getIdentifier(), [
+      "roy",
+      "mmm",
+      "gbp"
+    ], {
+      m: "minecraft:moss_block",
+      r: Ingredient.of(["minecraft:poppy","minecraft:rose_bush","minecraft:red_tulip","biomesoplenty:waterlily","biomesoplenty:rose"]),
+      o: Ingredient.of(["minecraft:orange_tulip","biomesoplenty:orange_cosmos","biomesoplenty:burning_blossom","minecraft:torchflower"]),
+      y: Ingredient.of(["minecraft:dandelion","minecraft:sunflower","biomesoplenty:goldenrod"]),
+      g: Ingredient.of(["minecraft:grass","minecraft:fern"]),
+      b: Ingredient.of(["minecraft:cornflower","biomesoplenty:blue_hydrangea","biomesoplenty:icy_iris","minecraft:blue_orchid"]),
+      p: Ingredient.of(["biomesoplenty:lavender","biomesoplenty:tall_lavender","biomesoplenty:violet","biomesoplenty:wildflower","minecraft:lilac","minecraft:allium"])
+    })
 })

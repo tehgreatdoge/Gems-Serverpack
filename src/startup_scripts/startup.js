@@ -79,7 +79,6 @@ const MekanismGases = Java.loadClass("mekanism.common.registries.MekanismGases")
 // const MekanismSlurries = Java.loadClass("mekanism.common.registries.MekanismSlurries")
 const MekanismInfuseTypes = Java.loadClass('mekanism.common.registries.MekanismInfuseTypes')
 StartupEvents.registry("mekanism:gas",(event) => {
-    console.log(event)
     //const GasRegistry = MekanismAPI.gasRegistry()
     for (let gas of Object.values(Gases)) {
         let builder = GasBuilder.builder().tint(gas.getColor())
@@ -92,6 +91,10 @@ StartupEvents.registry("mekanism:gas",(event) => {
     //     let slurryInstance = SlurryClass(builder)
     //     MekanismSlurries.SLURRIES['register(java.lang.String,java.util.function.Supplier)'](slurry.identifier, () => slurryInstance)
     // }
+})
+StartupEvents.modifyCreativeTab("kubejs:tab", (event) => {
+    event.setDisplayName("SGJourney Community Pack")
+    event.setIcon(Item.INTEGRATED_CIRCUIT.getIdentifier())
 })
 
 console.info('Loaded Startup Scripts')
