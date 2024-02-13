@@ -891,9 +891,9 @@ ServerEvents.recipes((event) => {
       "mfb",
       "dsd"
     ],{
-      d: "#minecraft:dirt",
+      d: "#minecraft:dirt", 
       e: Ingredient.of(["biomesoplenty:hellbark_sapling", "biomesoplenty:umbran_sapling"]),
-      m: Ingredient.of(["biomesoplenty:magic_sapling", "biomesoplenty:rainow_birch_sapling"]),
+      m: Ingredient.of(["biomesoplenty:magic_sapling", "biomesoplenty:rainbow_birch_sapling"]),
       b: Ingredient.of(["minecraft:jungle_sapling","biomesoplenty:fir_sapling","biomesoplenty:redwood_sapling"]),
       f: Ingredient.of(["biomesoplenty:willow_sapling", "biomesoplenty:dead_sapling", "biomesoplenty:palm_sapling"]),
       s: Ingredient.of(["biomesoplenty:flowering_oak_sapling", "biomesoplenty:yellow_autumn_sapling","biomesoplenty:orange_autumn_sapling"]),
@@ -936,5 +936,5 @@ ServerEvents.recipes((event) => {
       p: Ingredient.of(["biomesoplenty:lavender","biomesoplenty:tall_lavender","biomesoplenty:violet","biomesoplenty:wildflower","minecraft:lilac","minecraft:allium"])
     })
     // Electrum
-    event.recipes.create.mixing("createaddition:electrum_ingot", ["minecraft:copper_ingot","minecraft:gold_ingot", "minecraft:iron_ingot"]).heated()
+    event.recipes.create.mixing({item:"createaddition:electrum_ingot",count:3}, ["minecraft:copper_ingot","minecraft:gold_ingot", "minecraft:iron_ingot"]).heated()
 })
