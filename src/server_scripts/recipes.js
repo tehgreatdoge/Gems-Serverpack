@@ -908,7 +908,7 @@ ServerEvents.recipes((event) => {
       f: "#forge:fruits",
       p: "#forge:paper_plants",
       l: "#forge:leafyvegetables",
-      c: "#forge:cactus_plants",
+      c: Ingredient.of(["#forge:cactus_plants","minecraft:cactus"]),
       m: "#forge:mushrooms"
     })
     event.shaped(Blocks.COMPOST_CORAL.getIdentifier(), [
