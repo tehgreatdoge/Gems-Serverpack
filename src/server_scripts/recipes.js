@@ -426,7 +426,7 @@ ServerEvents.recipes((event) => {
       "type": "mekanism:combining",
       "extraInput": {
         "ingredient": {
-          "item": "create:copper_sheet"
+          "item": "minecraft:copper_ingot"
         }
       },
       "mainInput": {
@@ -937,4 +937,43 @@ ServerEvents.recipes((event) => {
     })
     // Electrum
     event.recipes.create.mixing({item:"createaddition:electrum_ingot",count:3}, ["minecraft:copper_ingot","minecraft:gold_ingot", "minecraft:iron_ingot"]).heated()
+    // DHDs
+    event.custom({
+      type: "minecraft:smithing_transform",
+      addition: {
+        type: "forge:nbt",
+        item: "sgjourney:stargate_upgrade_crystal",
+        nbt: JSON.stringify({
+          Type: "sgjourney:milky_way_stargate"
+        })
+      },
+      base: {
+        item: "sgjourney:classic_dhd"
+      },
+      result: {
+        item: "sgjourney:milky_way_dhd"
+      },
+      template: {
+        item: "minecraft:netherite_upgrade_smithing_template"
+      }
+    })
+    event.custom({
+      type: "minecraft:smithing_transform",
+      addition: {
+        type: "forge:nbt",
+        item: "sgjourney:stargate_upgrade_crystal",
+        nbt: JSON.stringify({
+          Type: "sgjourney:pegasus_stargate"
+        })
+      },
+      base: {
+        item: "sgjourney:classic_dhd"
+      },
+      result: {
+        item: "sgjourney:pegasus_dhd"
+      },
+      template: {
+        item: "minecraft:netherite_upgrade_smithing_template"
+      }
+    })
 })
