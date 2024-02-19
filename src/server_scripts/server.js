@@ -19,7 +19,49 @@ MoreJSEvents.wandererTrades((event) => {
     event.removeTrades({firstItem:Ingredient.all,secondItem:Ingredient.all,outputItem:Ingredient.of("minecraft:beacon")})
 })
 
-let floralCompostItems = Ingredient.of("#minecraft:flowers").getItemIds()
+let floralCompostItems =[
+'minecraft:wither_rose',
+'minecraft:orange_tulip',
+'minecraft:rose_bush',
+'biomesoplenty:wilted_lily',
+'minecraft:cornflower',
+'biomesoplenty:jacaranda_leaves',
+'minecraft:flowering_azalea_leaves',
+'biomesoplenty:pink_hibiscus',
+'biomesoplenty:rose',
+'biomesoplenty:flowering_oak_leaves',
+'biomesoplenty:goldenrod',
+'minecraft:blue_orchid',
+'minecraft:white_tulip',
+'minecraft:cherry_leaves',
+'minecraft:lily_of_the_valley',
+'biomesoplenty:icy_iris',
+'biomesoplenty:snowblossom_leaves',
+'minecraft:pitcher_plant',
+'minecraft:allium',
+'biomesoplenty:blue_hydrangea',
+'biomesoplenty:orange_cosmos',
+'biomesoplenty:burning_blossom',
+'biomesoplenty:tall_lavender',
+'minecraft:flowering_azalea',
+'minecraft:pink_petals',
+'minecraft:azure_bluet',
+'minecraft:poppy',
+'minecraft:torchflower',
+'biomesoplenty:pink_daffodil',
+'biomesoplenty:lavender',
+'minecraft:mangrove_propagule',
+'minecraft:red_tulip',
+'biomesoplenty:violet',
+'biomesoplenty:glowflower',
+'minecraft:peony',
+'minecraft:sunflower',
+'biomesoplenty:white_petals',
+'biomesoplenty:wildflower',
+'minecraft:dandelion',
+'minecraft:pink_tulip',
+'minecraft:oxeye_daisy',
+'minecraft:lilac']
 let mulchItems = Ingredient.of("minecraft:saplings").getItemIds()
 let coralCompostItems = Ingredient.of("#minecraft:flowers").getItemIds()
 let organicCompostItems = Ingredient.of("#forge:crops").getItemIds()
@@ -39,7 +81,7 @@ ServerEvents.recipes((event) => {
     event.forEachRecipe({mod: "botanypots", type: "botanypots:crop"}, (recipe) => {
       let seed = recipe.json.get("seed")
       if (seed.isJsonObject()) {
-        if (KItem.of(seed.getAsJsonObject().get("item").getAsString()).hasTag("minecraft:flowers")) {
+        if (floralCompostItems.includes(seed.getAsJsonObject().get("item").getAsString())) {
           recipe.json.getAsJsonArray("categories")["add(java.lang.String)"]("floral")
           return
         }
@@ -53,8 +95,7 @@ ServerEvents.recipes((event) => {
       if (seed.isJsonArray()) {
         seed.getAsJsonArray().forEach((element) => {
           if (element.isJsonObject()) {
-            element.getAsJsonObject().get("item").getAsString()
-            if (KItem.of(element.getAsJsonObject().get("item").getAsString()).hasTag("minecraft:flowers")) {
+            if (floralCompostItems.includes(element.getAsJsonObject().get("item").getAsString())) {
               recipe.json.getAsJsonArray("categories")["add(java.lang.String)"]("floral")
               return
             }
