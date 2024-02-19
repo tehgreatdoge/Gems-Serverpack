@@ -3,6 +3,7 @@
 	default_quest_shape: ""
 	filename: "mekanised_i"
 	group: "0B892AF6A2410D9F"
+	icon: "sgcommunity_pack:mosfet"
 	id: "4BF19415D1D50DAD"
 	order_index: 3
 	quest_links: [ ]

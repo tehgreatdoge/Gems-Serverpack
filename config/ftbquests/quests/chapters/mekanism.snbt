@@ -10,6 +10,7 @@
 		{
 			dependencies: ["4D239CF8E2B220AE"]
 			description: ["The Mekanised Era is the final era. Mekanised I focuses on setting up basic automation and creating MOSFETs that will end up being used for machines like the fission reactor."]
+			hide: true
 			id: "2AA736C596A9C334"
 			tasks: [{
 				id: "03302A887E14212F"

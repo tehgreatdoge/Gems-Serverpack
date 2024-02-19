@@ -178,18 +178,6 @@
 		}
 		{
 			dependencies: ["1DEBD297BF2D5EC6"]
-			id: "695610BF2188A0C1"
-			tasks: [{
-				id: "30F2AE58489BE34E"
-				item: "minecraft:dirt"
-				type: "item"
-			}]
-			title: "Rich Soil"
-			x: -1.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["1DEBD297BF2D5EC6"]
 			description: ["This substrate introduces recipes for upgrading. Notice how you can save on gold by using the upgrade recipe."]
 			id: "4CE0D979E9A5681B"
 			rewards: [{
@@ -264,6 +252,54 @@
 			title: "Preparing for Creation"
 			x: -1.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			description: ["Organic compost gives 4x speed on anything not covered by the other composts."]
+			id: "21C339B78AC8B555"
+			tasks: [{
+				id: "35FB334A9F1D6E79"
+				item: "sgcommunity_pack:organic_compost"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			description: ["Floral compost gives 4x speed to flowers."]
+			id: "1A3F23F4F426FD7C"
+			tasks: [{
+				id: "1765B82697C46374"
+				item: "sgcommunity_pack:floral_compost"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			description: ["Coral compost give 4x speed to crops that grow in water"]
+			id: "3328AF49D13841D5"
+			tasks: [{
+				id: "5705C2738EF6A039"
+				item: "sgcommunity_pack:coral_compost"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["1DEBD297BF2D5EC6"]
+			description: ["Mulch gives 4x speed on trees and crops that grow on wood."]
+			id: "3469D07EB4D14590"
+			tasks: [{
+				id: "29163DD19AC362B8"
+				item: "sgcommunity_pack:mulch_compost"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -3.0d
 		}
 	]
 	title: "The Beginnings"

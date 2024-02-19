@@ -71,7 +71,7 @@
 				type: "checkmark"
 			}]
 			title: "Better Than Quests"
-			x: -7.0d
+			x: -9.0d
 			y: 0.0d
 		}
 		{
@@ -135,8 +135,8 @@
 				type: "checkmark"
 			}]
 			title: "Apotheosis"
-			x: -7.0d
-			y: -4.0d
+			x: -9.0d
+			y: -2.0d
 		}
 		{
 			can_repeat: true
@@ -191,6 +191,26 @@
 			}]
 			title: "Infinite Milk"
 			x: 1.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: ["Ad Astra is a space exploration mod where you can visit other planets and build space stations."]
+			icon: "ad_astra:astrodux"
+			id: "2CE0EF19B7FB7784"
+			optional: true
+			rewards: [{
+				id: "70723A4D0DFFFA4E"
+				item: "ad_astra:astrodux"
+				type: "item"
+			}]
+			tasks: [{
+				id: "03FAB846074855A5"
+				title: "Acknowledge"
+				type: "checkmark"
+			}]
+			title: "Ad Astra"
+			x: -7.0d
 			y: 0.0d
 		}
 	]
