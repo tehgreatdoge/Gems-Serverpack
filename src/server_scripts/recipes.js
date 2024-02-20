@@ -157,7 +157,7 @@ ServerEvents.recipes((event) => {
         })
     registerItemToGas(event,
         {
-        "amount": 1000,
+        "amount": 210,
         "gas": "mekanism:phosphorus"
       },"forge:phosphorus",)
     registerItemToGas(event,
