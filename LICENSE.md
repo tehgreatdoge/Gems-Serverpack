@@ -1,3 +1,7 @@
+Everything except the /kubejs/assets/moregates and /kubejs/data/moregates directories,
+of which the permission to use and distribute was obtained from the authors,
+is licensed under the following terms:
+
 Copyright (c) 2024 tehgreatdoge
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
