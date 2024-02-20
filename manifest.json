@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Stargate: Leveled",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "",
   "files": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "projectID": 431725,
-      "fileID": 5070250,
+      "fileID": 5106107,
       "required": true
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "projectID": 223794,
-      "fileID": 5032144,
+      "fileID": 5117032,
       "required": true
     },
     {
@@ -146,7 +146,7 @@
     },
     {
       "projectID": 704113,
-      "fileID": 5066854,
+      "fileID": 5118353,
       "required": true
     },
     {
@@ -181,7 +181,7 @@
     },
     {
       "projectID": 667688,
-      "fileID": 4715137,
+      "fileID": 5109705,
       "required": true
     },
     {
@@ -211,7 +211,7 @@
     },
     {
       "projectID": 238086,
-      "fileID": 5085508,
+      "fileID": 5120836,
       "required": true
     },
     {
@@ -221,7 +221,7 @@
     },
     {
       "projectID": 622112,
-      "fileID": 5089645,
+      "fileID": 5118098,
       "required": true
     },
     {
@@ -236,7 +236,7 @@
     },
     {
       "projectID": 908741,
-      "fileID": 5077202,
+      "fileID": 5110120,
       "required": true
     },
     {
@@ -256,7 +256,7 @@
     },
     {
       "projectID": 282001,
-      "fileID": 5072630,
+      "fileID": 5118388,
       "required": true
     },
     {
@@ -340,6 +340,11 @@
       "required": true
     },
     {
+      "projectID": 790626,
+      "fileID": 5077298,
+      "required": true
+    },
+    {
       "projectID": 570073,
       "fileID": 5093329,
       "required": true
@@ -352,6 +357,11 @@
     {
       "projectID": 459929,
       "fileID": 4936437,
+      "required": true
+    },
+    {
+      "projectID": 618298,
+      "fileID": 5102975,
       "required": true
     },
     {
@@ -380,6 +390,11 @@
       "required": true
     },
     {
+      "projectID": 422301,
+      "fileID": 5102995,
+      "required": true
+    },
+    {
       "projectID": 898963,
       "fileID": 4954000,
       "required": true
@@ -395,18 +410,23 @@
       "required": true
     },
     {
-      "projectID": 231484,
-      "fileID": 4749420,
-      "required": true
-    },
-    {
       "projectID": 531761,
       "fileID": 4943500,
       "required": true
     },
     {
+      "projectID": 231484,
+      "fileID": 4749420,
+      "required": true
+    },
+    {
       "projectID": 491794,
       "fileID": 4712194,
+      "required": true
+    },
+    {
+      "projectID": 238551,
+      "fileID": 4913787,
       "required": true
     },
     {
