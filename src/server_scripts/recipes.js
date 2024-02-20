@@ -471,7 +471,7 @@ ServerEvents.recipes((event) => {
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
-    registerAE2InscriberRecipe(event, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), ["mekanism:hdpe_sheet", "create:copper_sheet", "create:copper_sheet"], true)
+    registerAE2InscriberRecipe(event, Item.ADVANCED_PCB_SUBSTRATE.getIdentifier(), ["mekanism:hdpe_sheet", "minecraft:copper_ingot", "minecraft:copper_ingot"], true)
     registerAE2InscriberRecipe(event, Item.INTEGRATED_CIRCUIT.getIdentifier(), [Item.INTEGRATED_CIRCUIT_CHIP.getIdentifier(), Item.PURE_QUARTZ_GLASS.getIdentifier(), Item.ADVANCED_PCB_SUBSTRATE.getIdentifier()], true)
     // Slicing
     event.custom({
