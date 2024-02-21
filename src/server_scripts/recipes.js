@@ -143,7 +143,7 @@ ServerEvents.recipes((event) => {
     // PCB Substrate recipe
     // registerAE2InscriberRecipe(event, Item.PCB_SUBSTRATE.getIdentifier(), [Item.PURE_QUARTZ_GLASS.getIdentifier(), "create:copper_sheet","create:copper_sheet"], true)
     // Phosphorus
-    event.blasting({item: Item.PHOSPHORUS.getIdentifier(), count: 3},Blocks.PHOSPHORITE.getIdentifier())
+    event.blasting({item: Item.PHOSPHORUS.getIdentifier(), count: 7},Blocks.PHOSPHORITE.getIdentifier())
     // Silicon Wafers
     registerChemicalDissolutionRecipe(event, {"amount": 10000, chemicalType: "gas", "gas": "mekanism:silicon"},
     {amount: 10, "gas": "mekanism:blaze_gas"},
