@@ -70,7 +70,7 @@ class Item {
     // Photomasks
     //static FET_PHOTOMASK = new Item("mosfet_photomask", "MOSFET Photomask")
     static IC_PHOTOMASK = new Item("integrated_circuit_photomask", "Integrated Circuit Photomask")
-    static EP_PHOTOMASK = new Item("edible_processor_photomask", "Edible Processor Photomask")
+    //static EP_PHOTOMASK = new Item("edible_processor_photomask", "Edible Processor Photomask")
     static ISO_PHOTOMASK= new Item("isotopic_decay_oscillator_photomask", "Isotopic Decay Oscillator Photomask")
     // Mekanism Era Tier I
     static SILICON_BOULE = new Item("silicon_boule", "Silicon Boule")
