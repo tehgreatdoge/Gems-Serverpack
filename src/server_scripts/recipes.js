@@ -192,11 +192,21 @@ ServerEvents.recipes((event) => {
         f: "minecraft:iron_ingot",
         o: "mekanism:ingot_osmium"
     })
-    // Yeet the elite and basic control circuit recipes
-    event.remove([{'id': "mekanism:control_circuit/basic"},{'id': "mekanism:control_circuit/elite"}])
+    // Yeet the ultimate and basic control circuit recipes
+    event.remove([{'id': "mekanism:control_circuit/basic"},{"id":"mekanism:control_circuit/ultimate"}])
     // Replace with even harder recipes :)
     registerMetallurgicInfusing(event, {amount: 20, tag: "mekanism:redstone"}, {tag: Tags.CIRCUIT_INTERMEDIATE}, "mekanism:basic_control_circuit")
-    registerMetallurgicInfusing(event, {amount: 40, tag: "mekanism:diamond"}, {tag: Tags.CIRCUIT_ADVANCED}, "mekanism:elite_control_circuit")
+    registerMetallurgicInfusing(event, {amount: 40, tag: "mekanism:refined_obsidian"}, {tag: Tags.CIRCUIT_ADVANCED}, "mekanism:ultimate_control_circuit")
+    // Make the centrifuge easier
+    event.shaped("mekanism:isotopic_centrifuge",[
+      "lll",
+      "ctc",
+      "lll"
+    ],{
+      "c": "mekanism:control_circuit/elite",
+      "l": "#forge:ingots/lead",
+      "t": "mekanism:basic_chemical_tank"
+    })
     // Create Vacuum Tube
     event.recipes.create.pressing(Item.SILICA_DUST.getIdentifier(), "minecraft:glass")
     event.recipes.create.pressing(Item.SAND_MOLD.getIdentifier(), "minecraft:sand")
