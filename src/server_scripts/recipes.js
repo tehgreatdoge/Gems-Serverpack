@@ -157,9 +157,19 @@ ServerEvents.recipes((event) => {
         })
     registerItemToGas(event,
         {
-        "amount": 210,
+        "amount": 100,
         "gas": "mekanism:phosphorus"
       },"forge:phosphorus",)
+    event.custom({
+      type: "mekanism:oxidizing",
+      input: {
+        item: Item.PHOSPHORUS
+      },
+      output: {
+        amount: 200,
+        gas: "mekanism:phosphorus"
+      }
+    })
     registerItemToGas(event,
         {
         "amount": 1000,
@@ -416,7 +426,7 @@ ServerEvents.recipes((event) => {
         .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 2,"gas": "mekanism:boron_trifluoride"}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM, Item.MOSFET_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM, Item.MOSFET_WAFER.getIdentifier()))
         .usingItem(Item.INCOMPLETE_MOSFET_WAFER.getIdentifier())
         .register(event)
     // Slicing
@@ -459,7 +469,7 @@ ServerEvents.recipes((event) => {
         //nWell
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"}))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"}))
         //nMOS
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
@@ -477,7 +487,7 @@ ServerEvents.recipes((event) => {
         // n-type implantation
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.INTEGRATED_CIRCUIT_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.INTEGRATED_CIRCUIT_WAFER.getIdentifier()))
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
@@ -821,7 +831,7 @@ ServerEvents.recipes((event) => {
         //nWell
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"}))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"}))
         //nMOS
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
@@ -839,7 +849,7 @@ ServerEvents.recipes((event) => {
         // n-type implantation
         .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier()))
 
         .usingItem(Item.INCOMPLETE_ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier())
         .register(event)
