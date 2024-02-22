@@ -208,12 +208,13 @@ ServerEvents.recipes((event) => {
     registerMetallurgicInfusing(event, {amount: 20, tag: "mekanism:redstone"}, {tag: Tags.CIRCUIT_INTERMEDIATE}, "mekanism:basic_control_circuit")
     registerMetallurgicInfusing(event, {amount: 40, tag: "mekanism:refined_obsidian"}, {tag: Tags.CIRCUIT_ADVANCED}, "mekanism:ultimate_control_circuit")
     // Make the centrifuge easier
+    event.remove({id:"mekanism:isotopic_centrifuge"})
     event.shaped("mekanism:isotopic_centrifuge",[
       "lll",
       "ctc",
       "lll"
     ],{
-      "c": "mekanism:control_circuit/elite",
+      "c": "mekanism:elite_control_circuit",
       "l": "#forge:ingots/lead",
       "t": "mekanism:basic_chemical_tank"
     })
