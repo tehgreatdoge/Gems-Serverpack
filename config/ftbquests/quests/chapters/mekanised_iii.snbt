@@ -11,7 +11,7 @@
 		{
 			dependencies: ["7FC523FEA8F868A5"]
 			description: ["The final tier will require all your previous automation skills for one final item, the Computation Core. Once you have made your first Computation Core, however, you will still need to automate the raw resources needed for it."]
-			hide: false
+			hide: true
 			id: "57D1B4C1ED535BB0"
 			tasks: [{
 				id: "57B21BF9EDDF87B6"
