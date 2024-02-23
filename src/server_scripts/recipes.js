@@ -463,32 +463,32 @@ ServerEvents.recipes((event) => {
     // Integrated Circuit
     new MultistepProcess()
         // Oxide layer
-        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}, Item.SILICON_WAFER.getIdentifier()))
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 5,"tag": "mekanism:water_vapor"}, Item.SILICON_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         //nWell
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"}))
         //nMOS
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         //grow oxide (idk a good way to represent this step so ima leave it out)
         // polysilicon
         .addStep(new MekanismInjectingStep("Inject Silicon",{"amount": 5,"gas": "mekanism:silicon"}))
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         // p-type implantation
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Inject Boron",{"amount": 2,"gas": "mekanism:boron_trifluoride"}))
         // n-type implantation
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 2,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.IC_PHOTOMASK.getIdentifier()}))
-        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.INTEGRATED_CIRCUIT_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 2,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.INTEGRATED_CIRCUIT_WAFER.getIdentifier()))
 
         .usingItem(Item.INCOMPLETE_IC.getIdentifier())
         .register(event)
@@ -817,30 +817,30 @@ ServerEvents.recipes((event) => {
     })
     new MultistepProcess()
         // Oxide layer
-        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 10,"tag": "mekanism:water_vapor"}, Item.URANIUM_WAFER.getIdentifier()))
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Inject Water Vapor",{"amount": 5,"tag": "mekanism:water_vapor"}, Item.URANIUM_WAFER.getIdentifier()))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         //nWell
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"}))
         //nMOS
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         //grow oxide (idk a good way to represent this step so ima leave it out)
         // polysilicon
         .addStep(new MekanismInjectingStep("Inject Silicon",{"amount": 5,"gas": "mekanism:silicon"}))
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Etch Wafer", {"amount": 2,"gas": "mekanism:hydrofluoric_acid"}))
         // p-type implantation
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Inject Uranium Hexafluoride",{"amount": 2,"gas": "mekanism:uranium_hexafluoride"}))
         // n-type implantation
-        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 5,"gas": "mekanism:photoresist"}))
+        .addStep(new MekanismInjectingStep("Apply Photoresist",{"amount": 1,"gas": "mekanism:photoresist"}))
         .addStep(new Ae2InscribingStep("Expose Photoresist", {top: Item.ISO_PHOTOMASK.getIdentifier()}))
         .addStep(new MekanismInjectingStep("Inject Phosphorus",{"amount": 1,"gas": "mekanism:phosphorus"},MultistepProcess.INTERMEDIATE_ITEM,Item.ISOTOPIC_DECAY_OSCILLATOR_WAFER.getIdentifier()))
 
