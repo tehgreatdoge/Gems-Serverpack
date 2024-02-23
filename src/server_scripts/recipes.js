@@ -582,15 +582,15 @@ ServerEvents.recipes((event) => {
     ], {
         e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
         k: "#ae2:knife"
-    })
-    event.shaped(Item.EP_PHOTOMASK.getIdentifier(), [
-        " k ",
-        " e ",
-        "   "
-    ], {
-        e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
-        k: "#ae2:knife"
-    })
+    }).noMirror().noShrink()
+    // event.shaped(Item.EP_PHOTOMASK.getIdentifier(), [
+    //     " k ",
+    //     " e ",
+    //     "   "
+    // ], {
+    //     e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
+    //     k: "#ae2:knife"
+    // })
     event.shaped(Item.ISO_PHOTOMASK.getIdentifier(), [
         " ke",
         "   ",
@@ -598,7 +598,7 @@ ServerEvents.recipes((event) => {
     ], {
         e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
         k: "#ae2:knife"
-    })
+    }).noMirror().noShrink()
     // Rebalance mekanism recipes to be easier (woah how nice of me)
     event.remove({id: "mekanism:chemical_injection_chamber"})
     event.shaped("mekanism:chemical_injection_chamber",[
