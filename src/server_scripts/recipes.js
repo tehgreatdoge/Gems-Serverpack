@@ -660,8 +660,8 @@ ServerEvents.recipes((event) => {
     //====Edible Processor====\\
     // Wafer recipe
     new MultistepProcess()
-        .addStep(new CreateMixingStep("Cream Butter and Sugar", {input: ["minecraft:sugar","pamhc2foodcore:butteritem"]}))
-        .addStep(new CreateMixingStep("Add Eggs and Vanilla", {input: [MultistepProcess.INTERMEDIATE_ITEM, {item: "minecraft:egg", amount:2}, "pamhc2foodextended:vanillaitem"]}))
+        .addStep(new CreateMixingStep("Cream Butter and Sugar", {input: ["#forge:sugar","#forge:butter"]}))
+        .addStep(new CreateMixingStep("Add Eggs and Vanilla", {input: [MultistepProcess.INTERMEDIATE_ITEM, {tag: "forge:egg", amount:2}, "pamhc2foodextended:vanillaitem"]}))
         .addStep(new CreateMixingStep("Mix in some flour", {input: [MultistepProcess.INTERMEDIATE_ITEM, {tag: "forge:flour", amount:1}]}))
         .addStep(new CreateMixingStep("Mix in some more flour", {input: [MultistepProcess.INTERMEDIATE_ITEM, {tag: "forge:flour", amount:1}]}))
         .addStep(new CreateMixingStep("Mix in Sodium Bicarbonate", {input: [MultistepProcess.INTERMEDIATE_ITEM, Item.SODIUM_BICARBONATE]}))
@@ -672,7 +672,7 @@ ServerEvents.recipes((event) => {
     new MultistepProcess()
         .addStep(new CreateFillingStep("Apply Honey", {input: [Item.WAFER,{fluid: "create:honey", amount: 500}]}))
         .addStep(new CreateFillingStep("Apply Chocolate", {input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "create:chocolate", amount: 500}]}))
-        .addStep(new CreateDeployingStep("Sprinkle Sugar", {input: [MultistepProcess.INTERMEDIATE_ITEM, "minecraft:sugar"]}))
+        .addStep(new CreateDeployingStep("Sprinkle Sugar", {input: [MultistepProcess.INTERMEDIATE_ITEM, "#forge:sugar"]}))
         .addStep(new MinecraftSmokingStep("Caramelize Sugar", { output: Item.EDIBLE_PROCESSOR_WAFER }))
         .usingItem(Item.INCOMPLETE_EDIBLE_PROCESSOR_WAFER.getIdentifier())
         .register(event)
