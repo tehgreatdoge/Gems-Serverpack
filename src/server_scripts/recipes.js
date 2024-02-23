@@ -722,7 +722,7 @@ ServerEvents.recipes((event) => {
         "svvvs",
         "esssu"
     ],{ //spell-checker: enable
-        s: "ae2:cell_component_16k",
+        s: "ae2:cell_component_4k",
         v: Item.INTEGRATED_CIRCUIT.getIdentifier(),
         u: Item.ISOTOPIC_DECAY_OSCILLATOR.getIdentifier(),
         e: Item.EDIBLE_PROCESSOR.getIdentifier(),
