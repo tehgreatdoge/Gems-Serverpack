@@ -585,14 +585,14 @@ ServerEvents.recipes((event) => {
         e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
         k: "#ae2:knife"
     }).noMirror().noShrink()
-    // event.shaped(Item.EP_PHOTOMASK.getIdentifier(), [
-    //     " k ",
-    //     " e ",
-    //     "   "
-    // ], {
-    //     e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
-    //     k: "#ae2:knife"
-    // })
+    event.shaped(Item.EP_PHOTOMASK.getIdentifier(), [
+        " k ",
+        " e ",
+        "   "
+    ], {
+        e: Item.PURE_QUARTZ_GLASS.getIdentifier(),
+        k: "#ae2:knife"
+    }).noMirror().noShrink()
     event.shaped(Item.ISO_PHOTOMASK.getIdentifier(), [
         " ke",
         "   ",
@@ -673,7 +673,15 @@ ServerEvents.recipes((event) => {
     // Edible Processor Wafer
     new MultistepProcess()
         .addStep(new CreateFillingStep("Apply Honey", {input: [Item.WAFER,{fluid: "create:honey", amount: 500}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
+        .addStep(new CreateFillingStep("Etch Wafer with Milk",{input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "minecraft:milk", amount: 1000}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
         .addStep(new CreateFillingStep("Apply Chocolate", {input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "create:chocolate", amount: 500}]}))
+        .addStep(new CreateMixingStep("Mix with Maple Syrup", {input: [MultistepProcess.INTERMEDIATE_ITEM, "pamhc2trees:maplesyrupitem"]}).heated())
+        .addStep(new Ae2InscribingStep("Harden Syrup", {top: Item.EP_PHOTOMASK.getIdentifier()}))
+        .addStep(new CreateFillingStep("Etch Wafer with Milk",{input: [MultistepProcess.INTERMEDIATE_ITEM,{fluid: "minecraft:milk", amount: 1000}]}))
         .addStep(new CreateDeployingStep("Sprinkle Sugar", {input: [MultistepProcess.INTERMEDIATE_ITEM, "#forge:sugar"]}))
         .addStep(new MinecraftSmokingStep("Caramelize Sugar", { output: Item.EDIBLE_PROCESSOR_WAFER }))
         .usingItem(Item.INCOMPLETE_EDIBLE_PROCESSOR_WAFER.getIdentifier())
