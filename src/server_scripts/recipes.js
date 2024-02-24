@@ -163,7 +163,9 @@ ServerEvents.recipes((event) => {
     event.custom({
       type: "mekanism:oxidizing",
       input: {
-        item: Item.PHOSPHORUS
+        ingredient: {
+          item: Item.PHOSPHORUS
+        }
       },
       output: {
         amount: 200,
