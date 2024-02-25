@@ -235,7 +235,8 @@ ServerEvents.commandRegistry(event => {
   )
 })
 EntityEvents.spawned("minecraft:player",(event) => {
-  if (!event.getPlayer().data.hasintrobook) {
+  if (!event.getPlayer().stages.has("introbook")) {
     event.getPlayer().give(KItem.of("minecraft:written_book",{pages:['["",{"text":"About this Pack","bold":true},{"text":"\\nThis modpack has quests. You can either bind the questbook to a key or open the questbook from the top left corner of your screen while your inventory.\\n(see next page for info about easymode)\\n ","color":"reset"}]','["",{"text":"Easy Mode","bold":true},{"text":"\\nEasy Mode gets rid of the requirement for crafting circuits. This makes it more like the default experience for mekanism and create. For more info, use /easymode.","color":"reset"}]'],title:"Welcome to Stargate: Leveled",author:"Telemort",display:{Lore:["Info about this Modpack"]}}))
+    event.getPlayer().stages.add("introbook")
   }
 })
