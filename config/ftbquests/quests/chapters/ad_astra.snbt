@@ -39,7 +39,11 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["44F5A44C5C13627A"]
+			dependencies: [
+				"44F5A44C5C13627A"
+				"5C938F25D0F5D112"
+			]
+			dependency_requirement: "one_completed"
 			description: ["Ad Astra is a simple space mod that adds several tiers of rockets and 5 new worlds to visit. It also adds orbit dimensions where you can build space stations! By completing Ad Astra, you get access to powered flight as well."]
 			hide: true
 			id: "040091D32C7039BF"

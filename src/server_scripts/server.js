@@ -177,3 +177,65 @@ ServerEvents.recipes((event) => {
       growthModifier: 4
     })
 })
+ServerEvents.tags("item", (event)=> {
+  event.add(Tags.CONVERT_MOSFET, "minecraft:redstone")
+  event.add(Tags.CONVERT_IC, "mekanism:ingot_osmium")
+  event.add(Tags.CONVERT_COMPUTATION_CORE, "mekanism:elite_control_circuit")
+  event.add(Tags.CONVERT_ISO, "mekanism:ingot_uranium")
+})
+function easyModeOn(sender) {
+  let player = sender.getPlayer()
+  player.stages.add("easymode")
+  sender.sendSuccess(Text.of("You are now in easy mode"), true)
+}
+function easyModeOff(sender) {
+  let player = sender.getPlayer()
+  player.stages.remove("easymode")
+  player.data.ftbquests.reset("5C938F25D0F5D112")
+  sender.sendSuccess(Text.of("You are no longer in easy mode"), true)
+}
+function toggleEasyMode(sender) {
+  let player = sender.getPlayer()
+  if (player.stages.has("easymode")) {
+    easyModeOff(sender)
+  }
+  else {
+    easyModeOn(sender)
+  }
+  return 1
+}
+function displayEasyModeHelp(sender) {
+  sender.sendSuccess(Text.of("Easy mode allows you to skip some of the more ridiculous progression steps of the modpack. \
+When easy mode is enabled, your quest book will be updated to show all the quests, and you will get access to the oredictionificator to convert items.\n\
+/easymode toggle will toggle easymode on and off\n\
+By using /easymode getconverter, you will be given the oredictionificator\n\
+To use it, you need to add a filter. You can use the following tags:\n\
+  - convert:mosfet, converts redstone to MOSFETs\n\
+  - convert:ic, converts osmium ingots to Integrated Circuits\n\
+  - convert:computation_core, converts advanced control circuits into computation cores\n\
+  - convert:isotopic_oscillator, converts uranium into isotopic oscillators\n\
+After you enter a tag, you just need to insert items to convert them!"), true)
+  return 1
+}
+function giveConverter(sender) {
+  let player = sender.getPlayer()
+  player.give("mekanism:oredictionificator")
+  sender.sendSuccess(Text.of("Gave Oredictionificator"),true)
+  return 1
+}
+ServerEvents.commandRegistry(event => {
+  const { commands: Commands, arguments: Arguments } = event
+  
+  event.register(Commands.literal('easymode') // The name of the command
+    .requires(s => s.hasPermission(2) && s.isPlayer()) // Check if the player has operator privileges
+    .executes(c => displayEasyModeHelp(c.getSource())) // Toggle flight for the player that ran the command if the `target` argument isn't included
+    .then(Commands.literal('toggle').executes(c=>toggleEasyMode(c.getSource())))
+    .then(Commands.literal('help').executes(c=>displayEasyModeHelp(c.getSource())))
+    .then(Commands.literal('getconverter').executes(c=>giveConverter(c.getSource())))
+  )
+})
+EntityEvents.spawned("minecraft:player",(event) => {
+  if (!event.getPlayer().data.hasintrobook) {
+    event.getPlayer().give(KItem.of("minecraft:written_book",{pages:['["",{"text":"About this Pack","bold":true},{"text":"\\nThis modpack has quests. You can either bind the questbook to a key or open the questbook from the top left corner of your screen while your inventory.\\n(see next page for info about easymode)\\n ","color":"reset"}]','["",{"text":"Easy Mode","bold":true},{"text":"\\nEasy Mode gets rid of the requirement for crafting circuits. This makes it more like the default experience for mekanism and create. For more info, use /easymode.","color":"reset"}]'],title:"Welcome to Stargate: Leveled",author:"Telemort",display:{Lore:["Info about this Modpack"]}}))
+  }
+})

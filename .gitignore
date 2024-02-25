@@ -38,5 +38,9 @@ src/server_scripts/common.js
 !/config/apotheosis/apotheosis.cfg
 # cooking for blockheads
 !/config/cookingforblockheads-common.toml
+# mekanism
+!/config/Mekanism/
+/config/Mekanism/*
+!/config/Mekanism/general.toml
 /probe
 /jsconfig.json

@@ -6,6 +6,10 @@ var Tags = {
     CIRCUIT_BASIC: MODID+":circuit_basic",
     CIRCUIT_INTERMEDIATE: MODID+":circuit_intermediate",
     CIRCUIT_ADVANCED: MODID+":circuit_advanced",
+    CONVERT_MOSFET: "convert:mosfet",
+    CONVERT_IC: "convert:ic",
+    CONVERT_COMPUTATION_CORE: "convert:computation_core",
+    CONVERT_ISO: "convert:isotopic_oscillator"
 }
 
 class Substrate {
@@ -78,12 +82,12 @@ class Item {
     static INCOMPLETE_MOSFET_WAFER = new Item("incomplete_mosfet_wafer", "Incomplete MOSFET Wafer")
     static MOSFET_WAFER = new Item("mosfet_wafer", "MOSFET Wafer")
     static MOSFET_CHIP = new Item("mosfet_chip", "MOSFET Chip")
-    static MOSFET = new Item("mosfet", "MOSFET", {tags: [Tags.CIRCUIT_BASIC, Tags.CIRCUIT]})
+    static MOSFET = new Item("mosfet", "MOSFET", {tags: [Tags.CIRCUIT_BASIC, Tags.CIRCUIT, Tags.CONVERT_MOSFET]})
     // Mekanism Era Tier II
     static INCOMPLETE_IC = new Item("incomplete_integrated_circuit_wafer", "Incomplete Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_WAFER = new Item("integrated_circuit_wafer", "Integrated Circuit Wafer")
     static INTEGRATED_CIRCUIT_CHIP = new Item("integrated_circuit_chip", "Integrated Circuit Chip")
-    static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT]})
+    static INTEGRATED_CIRCUIT = new Item("integrated_circuit", "Integrated Circuit", {tags: [Tags.CIRCUIT_INTERMEDIATE, Tags.CIRCUIT, Tags.CONVERT_IC]})
     //====MEKANISM ERA TIER III===\\
     // Edible Processor
     static KELP_ASH = new Item("kelp_ash", "Kelp Ash")
@@ -99,7 +103,7 @@ class Item {
     static INCOMPLETE_ISOTOPIC_DECAY_OSCILLATOR_WAFER = new Item("incomplete_isotopic_decay_oscillator_wafer", "Incomplete Isotopic Decay Oscillator Wafer")
     static ISOTOPIC_DECAY_OSCILLATOR_WAFER = new Item("isotopic_decay_oscillator_wafer", "Isotopic Decay Oscillator Wafer")
     static ISOTOPIC_DECAY_OSCILLATOR_CHIP = new Item("isotopic_decay_oscillator_chip", "Isotopic Decay Oscillator Chip")
-    static ISOTOPIC_DECAY_OSCILLATOR = new Item("isotopic_decay_oscillator", "Isotopic Decay Oscillator")
+    static ISOTOPIC_DECAY_OSCILLATOR = new Item("isotopic_decay_oscillator", "Isotopic Decay Oscillator", {tags:[Tags.CONVERT_ISO]})
 
     // RAM Stick (read: RESOURCE AMPLIFICATION and MULTIPLICATION stick)
     // static RAM_PHOTOMASK = new Item("ram_module_photomask", "RAM Module Photomask")
@@ -118,7 +122,7 @@ class Item {
     // static COMPUTATION_PROCESSOR = new Item("computation_processor", "Computation Processor")
     
     // Computation Core
-    static COMPUTATION_CORE = new Item("computation_core", "Computation Core", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
+    static COMPUTATION_CORE = new Item("computation_core", "Computation Core", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT, Tags.CONVERT_COMPUTATION_CORE]})
     static COMPUTATION_CORE_FRAME= new Item("computation_core_frame","Computation Core Frame")
     // Ad Astra
     static RCU = new Item("rocket_control_unit","Rocket Control Unit")
