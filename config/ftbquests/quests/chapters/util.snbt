@@ -7,32 +7,16 @@
 	id: "625B45DE66DD59BB"
 	order_index: 2
 	quest_links: [ ]
-	quests: [
-		{
-			id: "0D32A3E3193EE32C"
-			invisible: true
-			tasks: [{
-				id: "657C25647BD961B2"
-				title: "Never Completed"
-				type: "checkmark"
-			}]
-			x: -4.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["0D32A3E3193EE32C"]
-			hide: true
-			id: "7797A049B5BF47B1"
-			invisible: true
-			tasks: [{
-				id: "33CFD59877A35C2D"
-				stage: "easymode"
-				type: "gamestage"
-			}]
-			title: "Easymode Completed"
-			x: -3.0d
-			y: -2.0d
-		}
-	]
+	quests: [{
+		id: "0D32A3E3193EE32C"
+		invisible: true
+		tasks: [{
+			id: "657C25647BD961B2"
+			title: "Never Completed"
+			type: "checkmark"
+		}]
+		x: -4.0d
+		y: -2.0d
+	}]
 	title: "util"
 }

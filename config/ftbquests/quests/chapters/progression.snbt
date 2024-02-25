@@ -273,14 +273,9 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"0D32A3E3193EE32C"
-				"7797A049B5BF47B1"
-			]
 			dependency_requirement: "one_completed"
 			description: ["See /easymode for more info"]
 			disable_toast: true
-			hide: true
 			id: "5C938F25D0F5D112"
 			invisible: true
 			optional: true
