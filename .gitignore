@@ -39,7 +39,7 @@ src/server_scripts/common.js
 # cooking for blockheads
 !/config/cookingforblockheads-common.toml
 # mekanism
-!/config/Mekanism/
+!/config/Mekanism
 /config/Mekanism/*
 !/config/Mekanism/general.toml
 /probe
