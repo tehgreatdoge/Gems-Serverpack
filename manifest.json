@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Stargate: Leveled",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "",
   "files": [
     {
@@ -46,7 +46,7 @@
     },
     {
       "projectID": 268560,
-      "fileID": 4866575,
+      "fileID": 5125665,
       "required": true
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "projectID": 268566,
-      "fileID": 4866578,
+      "fileID": 5125668,
       "required": true
     },
     {
@@ -111,12 +111,12 @@
     },
     {
       "projectID": 411357,
-      "fileID": 5086384,
+      "fileID": 5127097,
       "required": true
     },
     {
       "projectID": 353928,
-      "fileID": 5097409,
+      "fileID": 5127106,
       "required": true
     },
     {
@@ -221,7 +221,7 @@
     },
     {
       "projectID": 622112,
-      "fileID": 5118098,
+      "fileID": 5125096,
       "required": true
     },
     {
@@ -322,6 +322,11 @@
     {
       "projectID": 443900,
       "fileID": 4971152,
+      "required": true
+    },
+    {
+      "projectID": 268655,
+      "fileID": 4648424,
       "required": true
     },
     {
