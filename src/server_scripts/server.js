@@ -227,7 +227,7 @@ ServerEvents.commandRegistry(event => {
   const { commands: Commands, arguments: Arguments } = event
   
   event.register(Commands.literal('easymode') // The name of the command
-    .requires(s => s.hasPermission(2) && s.isPlayer()) // Check if the player has operator privileges
+    .requires(s => s.isPlayer()) // Check if the player has operator privileges
     .executes(c => displayEasyModeHelp(c.getSource())) // Toggle flight for the player that ran the command if the `target` argument isn't included
     .then(Commands.literal('toggle').executes(c=>toggleEasyMode(c.getSource())))
     .then(Commands.literal('help').executes(c=>displayEasyModeHelp(c.getSource())))
