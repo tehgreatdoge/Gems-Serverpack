@@ -1011,4 +1011,15 @@ ServerEvents.recipes((event) => {
         item: "minecraft:netherite_upgrade_smithing_template"
       }
     })
+    event.custom({
+      type: "mekanism:crystallizing",
+      chemicalType: "gas",
+      input: {
+        amount: 1000,
+        gas: "mekanism:tree_sap"
+      },
+      output: {
+        item: "pamhc2trees:maplesyrupitem"
+      }
+    })
 })
