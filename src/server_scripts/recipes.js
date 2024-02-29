@@ -1022,4 +1022,5 @@ ServerEvents.recipes((event) => {
         item: "pamhc2trees:maplesyrupitem"
       }
     })
+    registerChemicalDissolutionRecipe(event, {"amount": 1, chemicalType: "gas", gas: "mekanism:naquadria"}, {amount: 1,gas: "mekanism:plutonium"}, {item:"sgjourney:pure_naquadah", count: 30})
 })

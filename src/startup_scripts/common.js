@@ -449,4 +449,5 @@ var Gases = {
     BORON_TRIFLUORIDE: new Gas("boron_trifluoride", "Boron Trifluoride").color(0xFFFFFF),
     BORON_TRIOXIDE: new Gas("boron_trioxide", "Boron Trioxide").color(0xFFFFFF),
     TREE_SAP: new Gas("tree_sap", "Tree Sap").color(0xc06000),
+    NAQUADRIA: new Gas("naquadria", "Naquadria").color(0x444444),
 }
