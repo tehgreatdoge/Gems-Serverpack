@@ -1043,4 +1043,6 @@ ServerEvents.recipes((event) => {
     registerChemicalDissolutionRecipe(event, {"amount": 1, chemicalType: "gas", gas: "mekanism:naquadria"}, {amount: 1,gas: "mekanism:plutonium"}, {item:"sgjourney:pure_naquadah", count: 30})
     // PamHc2 compat
     event.recipes.create.mixing("pamhc2foodcore:butteritem",[{fluid: "milk", amount: 1000}, "pamhc2foodcore:potitem"])
+    // Nuke energy pipes
+    event.remove({id: "pipez:energy_pipe"})
 })

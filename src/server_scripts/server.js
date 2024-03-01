@@ -240,3 +240,8 @@ EntityEvents.spawned("minecraft:player",(event) => {
     event.getPlayer().stages.add("introbook")
   }
 })
+BlockEvents.placed("hopper",(event) => {
+  console.log("block placed")
+  event.player.sendSystemMessage(Text.of("Hoppers are disabled because they are mega laggy. Use item pipes (@pipez) instead"))
+  event.cancel()
+})
