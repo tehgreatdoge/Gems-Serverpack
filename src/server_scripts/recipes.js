@@ -100,10 +100,28 @@ ServerEvents.recipes((event) => {
         s: Substrate.MEKANISED.getIdentifier()
     })
     // Deep Space Substrate
-
-    // Naquadah Substrate
-
+    event.shaped(Substrate.DEEP_SPACE.getIdentifier(), [
+      "pcp",
+      "csc",
+      "pcp"
+    ], {
+      p: "mekanism:pellet_plutonium",
+      c: "ad_astra:calorite_ingot",
+      s: Substrate.REACTIVE.getIdentifier()
+    })
+    // Naquadria Substrate
+    event.shaped(Blocks.INACTIVE_NAQUADRIA_SUBSTRATE.getIdentifier(),[
+      "cnc",
+      "nsn",
+      "cnc"
+    ], {
+      c: Item.COMPUTATION_CORE.getIdentifier(),
+      n: "sgjourney:naquadah_block",
+      s: Substrate.DEEP_SPACE.getIdentifier()
+    })
+    registerChemicalInjectionRecipe(event, {"chemicalType": "gas", "gas": "mekanism:naquadria", "amount": 50}, Substrate.NAQUADRIA.getIdentifier(), Blocks.INACTIVE_NAQUADRIA_SUBSTRATE.getIdentifier())
     // Positronic Substrate
+    registerChemicalInjectionRecipe(event, {"chemicalType": "gas", "gas": "mekanism:antimatter", "amount": 25},Substrate.POSITRONIC.getIdentifier(),Substrate.NAQUADRIA.getIdentifier())
     // Be evil and remove all the easy ae2 circuit recipes
     event.remove([{id:"ae2:inscriber/engineering_processor"},{id:"ae2:inscriber/logic_processor"},{id:"ae2:inscriber/calculation_processor"},{id:"megacells:inscriber/accumulation_processor"}])
     // Replace them with harder recipes
@@ -1023,4 +1041,6 @@ ServerEvents.recipes((event) => {
       }
     })
     registerChemicalDissolutionRecipe(event, {"amount": 1, chemicalType: "gas", gas: "mekanism:naquadria"}, {amount: 1,gas: "mekanism:plutonium"}, {item:"sgjourney:pure_naquadah", count: 30})
+    // PamHc2 compat
+    event.recipes.create.mixing("pamhc2foodcore:butteritem",[{fluid: "milk", amount: 1000}, "pamhc2foodcore:potitem"])
 })

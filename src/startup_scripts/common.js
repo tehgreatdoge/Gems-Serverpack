@@ -22,8 +22,8 @@ class Substrate {
     static MEKANISED = new Substrate("mekanised_substrate", "Mekanised Substrate")
     static REACTIVE = new Substrate("reactive_substrate", "Reactive Substrate")
     static DEEP_SPACE = new Substrate("deep_space_substrate", "Deep Space Substrate")
-    static NAQUADRIA = new Substrate("naquadria_substrate", "Naquadria Substrate")
-    static POSITRONIC = new Substrate("positronic_substrate", "Positronic Substrate")
+    static NAQUADRIA = new Substrate("naquadria_substrate", "Naquadria Substrate", {lightLevel: 1})
+    static POSITRONIC = new Substrate("positronic_substrate", "Positronic Substrate", {lightLevel: 1, renderType: "translucent"})
     constructor(identifier, name, builderOptions) {
         this.name = name
         this.identifier = identifier
@@ -45,7 +45,6 @@ class Item {
     static SILICA_DUST_BUCKET = new Item("silica_dust_bucket","Silica Dust Bucket", {stackSize: 1})
     static SAND_MOLD = new Item("sand_mold","Sand Mold")
     static IRON_FILAMENT = new Item("iron_filament", "Iron Filament")
-    static ADVANCED_TEST_CIRCUIT = new Item("advanced_test_circuit", "test circuit III", {tags: [Tags.CIRCUIT_ADVANCED, Tags.CIRCUIT]})
     // Pure quartz glass
     static INCOMPLETE_SILICA_DUST = new Item("incomplete_washed_silica_dust", "Incomplete Washed Silica Dust", { itemType: "create:sequenced_assembly"})
     static WASHED_SILICA_DUST = new Item("washed_silica_dust", "Washed Silica Dust")
@@ -315,6 +314,7 @@ class ToolTier {
 class MaterialType {
     static STONE = new MaterialType("stone", "stone")
     static DIRT = new MaterialType("gravel", "dirt")
+    static METAL = new MaterialType("metal", "metal")
     constructor(sound, color) {
         this.sound = sound
         this.color = color
@@ -419,6 +419,7 @@ var Blocks = {
     COMPOST_MULCH: new Block("mulch_compost", "Mulch").material(MaterialType.DIRT).useTool(ToolType.SHOVEL),
     COMPOST_ORGANIC: new Block("organic_compost", "Organic Compost").material(MaterialType.DIRT).useTool(ToolType.SHOVEL),
     COMPOST_CORAL: new Block("coral_compost", "Coral Compost").material(MaterialType.DIRT).useTool(ToolType.PICKAXE),
+    INACTIVE_NAQUADRIA_SUBSTRATE: new Block("inactive_naquadria_substrate", "Inactive Naquadria Substrate").material(MaterialType.METAL).useTool(ToolType.PICKAXE).hardness(2).blastResistance(10)
 }
 class Gas {
     _color = 0x000000

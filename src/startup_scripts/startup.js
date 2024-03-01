@@ -16,6 +16,7 @@ StartupEvents.registry("block", (event) => {
             .hardness(1.0) // Set hardness (affects mining time)
             .resistance(1.0) // Set resistance (to explosions, etc)
             .lightLevel(substrate.builderOptions.lightLevel ?? 0)
+            .renderType(substrate.builderOptions.renderType ?? "basic")
             .tagBoth(MODID+"substrates") // Tag the block and item
             .requiresTool(true) // Requires a tool or it won't drop (see tags below)
             .tagBlock("mineable/pickaxe") // or a pickaxe

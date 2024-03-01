@@ -55,7 +55,7 @@ function registerChemicalInjectionRecipe(event, chemicalInput, itemOutput, itemI
         type: "mekanism:injecting",
         itemInput: parseMekanismIngredient(itemInput),
         chemicalInput: chemicalInput,
-        output: parseMekanismIngredient(itemOutput)
+        output: KItem.of(itemOutput)
     })
 }
 function registerChemicalInfusionRecipe(event, output, leftInput, rightInput) {
