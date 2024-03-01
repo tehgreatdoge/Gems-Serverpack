@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Stargate: Leveled",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "",
   "files": [
     {
@@ -131,7 +131,7 @@
     },
     {
       "projectID": 865273,
-      "fileID": 5017522,
+      "fileID": 5131189,
       "required": true
     },
     {
@@ -186,7 +186,12 @@
     },
     {
       "projectID": 313970,
-      "fileID": 5100485,
+      "fileID": 5145344,
+      "required": true
+    },
+    {
+      "projectID": 448233,
+      "fileID": 4763645,
       "required": true
     },
     {
@@ -216,7 +221,12 @@
     },
     {
       "projectID": 421850,
-      "fileID": 5070641,
+      "fileID": 5147001,
+      "required": true
+    },
+    {
+      "projectID": 230976,
+      "fileID": 4620069,
       "required": true
     },
     {
@@ -236,7 +246,12 @@
     },
     {
       "projectID": 908741,
-      "fileID": 5110120,
+      "fileID": 5142143,
+      "required": true
+    },
+    {
+      "projectID": 968398,
+      "fileID": 5098059,
       "required": true
     },
     {
@@ -247,6 +262,11 @@
     {
       "projectID": 306770,
       "fileID": 4966125,
+      "required": true
+    },
+    {
+      "projectID": 233019,
+      "fileID": 4578262,
       "required": true
     },
     {
@@ -296,7 +316,7 @@
     },
     {
       "projectID": 402231,
-      "fileID": 4606448,
+      "fileID": 5147171,
       "required": true
     },
     {
@@ -312,6 +332,11 @@
     {
       "projectID": 858542,
       "fileID": 4779110,
+      "required": true
+    },
+    {
+      "projectID": 410811,
+      "fileID": 4896152,
       "required": true
     },
     {
@@ -360,13 +385,13 @@
       "required": true
     },
     {
-      "projectID": 459929,
-      "fileID": 4936437,
+      "projectID": 618298,
+      "fileID": 5102975,
       "required": true
     },
     {
-      "projectID": 618298,
-      "fileID": 5102975,
+      "projectID": 459929,
+      "fileID": 4936437,
       "required": true
     },
     {
@@ -390,13 +415,18 @@
       "required": true
     },
     {
-      "projectID": 419699,
-      "fileID": 5084452,
+      "projectID": 256717,
+      "fileID": 4614555,
       "required": true
     },
     {
       "projectID": 422301,
       "fileID": 5102995,
+      "required": true
+    },
+    {
+      "projectID": 419699,
+      "fileID": 5137938,
       "required": true
     },
     {
@@ -406,7 +436,7 @@
     },
     {
       "projectID": 254241,
-      "fileID": 4785138,
+      "fileID": 5131447,
       "required": true
     },
     {
@@ -415,18 +445,13 @@
       "required": true
     },
     {
-      "projectID": 531761,
-      "fileID": 4943500,
-      "required": true
-    },
-    {
       "projectID": 231484,
-      "fileID": 4749420,
+      "fileID": 5141447,
       "required": true
     },
     {
-      "projectID": 491794,
-      "fileID": 4712194,
+      "projectID": 531761,
+      "fileID": 5140912,
       "required": true
     },
     {
@@ -435,8 +460,18 @@
       "required": true
     },
     {
+      "projectID": 491794,
+      "fileID": 4712194,
+      "required": true
+    },
+    {
       "projectID": 252848,
       "fileID": 4712189,
+      "required": true
+    },
+    {
+      "projectID": 509575,
+      "fileID": 5080064,
       "required": true
     },
     {
