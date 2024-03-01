@@ -142,5 +142,21 @@
       "sounds":[
          "moregates:dark_ascension_ring_spin"
       ]
-   }
+   },
+   	"dark_ascension_dial_fail":
+	{
+		"subtitle": "sounds.sgjourney.dial_fail",
+		"sounds":
+		[
+			"moregates:dark_ascension_dial_fail"
+		]
+	},
+	"dark_ascension_chevron_incoming":
+	{
+		"subtitle": "sounds.sgjourney.chevron_engage",
+		"sounds":
+		[
+			"moregates:dark_ascension_chevron_engage"
+		]
+	}
 }

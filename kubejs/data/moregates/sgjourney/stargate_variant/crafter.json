@@ -23,8 +23,8 @@
 	
 	"sounds":
 	{
-		"chevron_engage_sound": "moregates:crafter_chevron_engage",
-		"chevron_encode_sound": "moregates:crafter_chevron_encode",
+		"chevron_engage_sound": "moregates:crafter_chevron_encode",
+		"chevron_encode_sound": "moregates:nox_chevron_encode",
 		"chevron_open_sound": "moregates:crafter_chevron_open",
 		"incoming_sound": "moregates:crafter_chevron_open",
 		"chevron_incoming_sound": "moregates:crafter_chevron_open",

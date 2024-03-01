@@ -29,7 +29,7 @@
 		"wormhole_open_sound": "sgjourney:milky_way_wormhole_open",
 		"wormhole_close_sound": "sgjourney:milky_way_wormhole_close",
 		"rotation_sound": "moregates:makeshift_spin",
-		"rotation_stop_sound": "moregates:ori_chevron_encode",
+		"rotation_stop_sound": "moregates:ori_chevron_engage",
 		"rotation_buildup_sound": "moregates:makeshift_spin_start"
 	}
 }
