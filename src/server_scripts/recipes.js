@@ -1045,4 +1045,16 @@ ServerEvents.recipes((event) => {
     event.recipes.create.mixing("pamhc2foodcore:butteritem",[{fluid: "milk", amount: 1000}, "pamhc2foodcore:potitem"])
     // Nuke energy pipes
     event.remove({id: "pipez:energy_pipe"})
+    event.remove({id: "pipez:universal_pipe"})
+    event.shaped({item: "pipez:universal_pipe", count:6}, [
+        "igf",
+        "ere",
+        "igf"
+      ], {
+        "i": "pipez:item_pipe",
+        "g": "pipez:gas_pipe",
+        "f": "pipez:fluid_pipe",
+        "r": "#forge:storage_blocks/redstone",
+        "e": "#forge:ingots/iron"
+    })
 })
