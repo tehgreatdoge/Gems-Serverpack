@@ -87,5 +87,14 @@ StartupEvents.modifyCreativeTab("kubejs:tab", (event) => {
     event.setDisplayName("Stargate: Leveled")
     event.setIcon(Item.INTEGRATED_CIRCUIT.getIdentifier())
 })
-
+// Easter egg ig
+ItemEvents.modification((event) => {
+    event.modify("pamhc2crops:cornitem",(item) => {
+        item.setFoodProperties((builder) => {
+            builder
+                .hunger(1)
+                .saturation(1)
+        })
+    })
+})
 console.info('Loaded Startup Scripts')
