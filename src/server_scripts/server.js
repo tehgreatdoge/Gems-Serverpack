@@ -180,7 +180,7 @@ ServerEvents.recipes((event) => {
 ServerEvents.tags("item", (event)=> {
   event.add(Tags.CONVERT_MOSFET, "minecraft:redstone")
   event.add(Tags.CONVERT_IC, "mekanism:ingot_osmium")
-  event.add(Tags.CONVERT_COMPUTATION_CORE, "mekanism:elite_control_circuit")
+  event.add(Tags.CONVERT_COMPUTATION_CORE, "mekanism:advanced_control_circuit")
   event.add(Tags.CONVERT_ISO, "mekanism:ingot_uranium")
 })
 function easyModeOn(sender) {
