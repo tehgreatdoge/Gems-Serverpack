@@ -180,10 +180,10 @@ class Tier {
     static COMPUTATIONAL = new Tier(Substrate.COMPUTATIONAL, {coal: 4, iron: 4, gold: 4, zinc: 2, diamond: 3, ancient_debris: 1, lapis: 3, redstone: 3, emerald: 1, certus:2, nether_quartz: 2})
     // Now we begin the hard tiers (e.g., the substrate made with osmium doesn't give osmium)
     static MEKANISED = new Tier(Substrate.MEKANISED, {coal: 4, copper: 4, iron: 4, gold: 4, zinc:4, diamond: 4, ancient_debris: 2, lapis: 4, redstone: 4, emerald: 2, certus:2, nether_quartz: 2, fluix:1})
-    static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 2, certus:3, nether_quartz: 3, fluix:1, osmium:1})
-    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, tin:1, lead: 1, borax: 1})
-    static NAQUADRIA = new Tier(Substrate.NAQUADRIA, {coal: 8, copper: 8, iron: 8, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, emerald: 4, certus: 4, nether_quartz: 4, fluix:4, osmium:4, tin:2, lead: 2, borax: 2, fluorine:1, uranium: 1})
-    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, copper: 8, iron: 8, gold: 8, zinc: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, emerald: 4, certus: 8, nether_quartz: 8, fluix:8, osmium:8, tin:4, lead: 4, borax: 3, fluorine:4, uranium: 4, naquadah: 2})
+    static REACTIVE = new Tier(Substrate.REACTIVE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 2, certus:3, nether_quartz: 3, fluix:1, osmium:1, desh:1})
+    static DEEP_SPACE = new Tier(Substrate.DEEP_SPACE, {coal: 4, copper: 4, iron: 4, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 4, emerald: 4, certus:4, nether_quartz: 4, fluix:2, osmium:2, desh:2, tin:1, lead: 1, borax: 1, ostrum: 1,})
+    static NAQUADRIA = new Tier(Substrate.NAQUADRIA, {coal: 8, copper: 8, iron: 8, gold: 4, zinc: 4, diamond: 4, ancient_debris: 4, lapis: 4, redstone: 8, emerald: 4, certus: 4, nether_quartz: 4, fluix:4, osmium:4, desh:4, tin:2, lead: 2, borax: 2, ostrum:2, fluorine:1, uranium: 1, calorite: 1})
+    static POSITRONIC = new Tier(Substrate.POSITRONIC, {coal: 16, copper: 8, iron: 8, gold: 8, zinc: 8, diamond: 8, ancient_debris: 8, lapis: 8, redstone: 16, emerald: 4, certus: 8, nether_quartz: 8, fluix:8, osmium:8, desh:8, tin:4, lead: 4, borax: 3, ostrum:4, fluorine:4, uranium: 4, calorite:4, naquadah: 2})
     constructor(substrate, materials) {
         this.substrate = substrate
         this.materials = materials
@@ -284,6 +284,21 @@ var Materials = {
         item: "mekanism:ingot_uranium",
         display: "mekanism:uranium_ore",
         drops: [{"item": "mekanism:raw_uranium",min:2, max:3}]
+    },
+    desh: {
+        item: "ad_astra:desh_ingot",
+        display: "ad_astra:moon_desh_ore",
+        drops: [{"item": "ad_astra:raw_desh",min:2, max:3}]
+    },
+    ostrum: {
+        item: "ad_astra:ostrum_ingot",
+        display: "ad_astra:mars_ostrum_ore",
+        drops: [{"item": "ad_astra:raw_ostrum",min:2, max:3}]
+    },
+    calorite: {
+        item: "ad_astra:calorite_ingot",
+        display: "ad_astra:venus_calorite_ore",
+        drops: [{"item": "ad_astra:raw_calorite",min:2, max:3}]
     },
     naquadah: {
         item: "sgjourney:pure_naquadah",
