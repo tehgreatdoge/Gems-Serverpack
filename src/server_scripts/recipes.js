@@ -1040,7 +1040,30 @@ ServerEvents.recipes((event) => {
         item: "pamhc2trees:maplesyrupitem"
       }
     })
-    registerChemicalDissolutionRecipe(event, {"amount": 1, chemicalType: "gas", gas: "mekanism:naquadria"}, {amount: 1,gas: "mekanism:plutonium"}, {item:"sgjourney:pure_naquadah", count: 30})
+    event.custom({
+      "type": "mekanism:reaction",
+      "duration": 100,
+      "fluidInput": {
+        "amount": 100,
+        "fluid": "sgjourney:liquid_naquadah"
+      },
+      "gasInput": {
+        "amount": 25,
+        "gas": "mekanism:plutonium"
+      },
+      "gasOutput": {
+        "amount": 1,
+        "gas": "mekanism:naquadria"
+      },
+      "itemInput": {
+        "ingredient": {
+          item: "sgjourney:pure_naquadah"
+        }
+      },
+      "itemOutput": {
+        "item": "sgjourney:raw_naquadah"
+      }
+    })
     // PamHc2 compat
     event.recipes.create.mixing("pamhc2foodcore:butteritem",[{fluid: "milk", amount: 1000}, "pamhc2foodcore:potitem"])
     // Nuke energy pipes
