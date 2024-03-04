@@ -177,6 +177,9 @@ ServerEvents.recipes((event) => {
       growthModifier: 4
     })
 })
+ServerEvents.tags("block", event => {
+  event.add("sgjourney:kawoosh_immune","gravestone:gravestone")
+})
 ServerEvents.tags("item", (event)=> {
   event.add(Tags.CONVERT_MOSFET, "minecraft:redstone")
   event.add(Tags.CONVERT_IC, "mekanism:ingot_osmium")
