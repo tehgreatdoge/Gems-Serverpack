@@ -132,6 +132,8 @@ ServerEvents.recipes((event) => {
       categories: [
         "log",
         "wood",
+        "jungle_wood",
+        "wood",
         "mushroom",
         "mulch"
       ],
