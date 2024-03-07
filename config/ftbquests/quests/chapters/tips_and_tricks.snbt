@@ -200,8 +200,14 @@
 			id: "2CE0EF19B7FB7784"
 			optional: true
 			rewards: [{
-				id: "70723A4D0DFFFA4E"
-				item: "ad_astra:astrodux"
+				id: "7A91E3342C2889AC"
+				item: {
+					Count: 1b
+					id: "patchouli:guide_book"
+					tag: {
+						"patchouli:book": "ad_astra:astrodux"
+					}
+				}
 				type: "item"
 			}]
 			tasks: [{
