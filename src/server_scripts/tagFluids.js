@@ -1,4 +1,4 @@
-let bottomless = ["create:honey", "create:chocolate", "#forge:experience"]
+let bottomless = ["create:honey", "create:chocolate", "#forge:experience", "create:tea"]
 ServerEvents.tags("fluid", (event) => {
     for (let tag of bottomless) {
         event.add("create:bottomless/allow",tag)
