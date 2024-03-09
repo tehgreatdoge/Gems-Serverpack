@@ -381,7 +381,7 @@
 			tasks: [{
 				count: 48L
 				id: "44E3F40F5ECF7EBE"
-				item: "ae2:cell_component_16k"
+				item: "ae2:cell_component_4k"
 				type: "item"
 			}]
 			title: "Storage Components"
