@@ -116,6 +116,12 @@
 			#The maximum amount of blocks allowed within the ring area before Stargate becomes obstructed
 			#Range: 1 ~ 21
 			max_obstructive_blocks = 12
+			#Decides if 8-chevron addresses can be used for dialing within the same galaxy
+			allow_interstellar_8_chevron_addresses = false
+			#Decides if two Stargates from the same Solar System should be able to connect
+			allow_system_wide_connections = true
+			#If true, the Universe Stargate will always rotate in the best direction; If false, the Universe Stargate will alternate between rotation directions
+			universe_stargate_best_direction = true
 
 	["Stargate Journey Common Config"."Naquadah Generator Config"]
 
