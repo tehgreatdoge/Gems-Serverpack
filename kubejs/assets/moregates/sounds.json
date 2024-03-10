@@ -143,7 +143,7 @@
          "moregates:dark_ascension_ring_spin"
       ]
    },
-   	"dark_ascension_dial_fail":
+   "dark_ascension_dial_fail":
 	{
 		"subtitle": "sounds.sgjourney.dial_fail",
 		"sounds":
@@ -158,5 +158,59 @@
 		[
 			"moregates:dark_ascension_chevron_engage"
 		]
-	}
+	},
+   "create_chevron_close":{
+      "subtitle":"sounds.sgjourney.chevron_engage",
+      "sounds":[
+         "moregates:create_chevron_close"
+      ]
+   },
+   "create_chevron_open":{
+      "subtitle":"sounds.sgjourney.chevron_open",
+      "sounds":[
+         "moregates:create_chevron_open"
+      ]
+   },
+   "create_ring_stop":{
+      "subtitle":"sounds.sgjourney.ring_spin_stop",
+      "sounds":[
+         "moregates:create_ring_stop"
+      ]
+   },
+   "create_wormhole_idle":{
+      "subtitle":"sounds.sgjourney.wormhole_idle",
+      "sounds":[
+         "moregates:create_wormhole_idle"
+      ]
+   },
+   "create_wormhole_open":{
+      "subtitle":"sounds.sgjourney.wormhole_open",
+      "sounds":[
+         "moregates:create_gate_open"
+      ]
+   },
+   "create_mw_wormhole_open":{
+      "subtitle":"sounds.sgjourney.wormhole_open",
+      "sounds":[
+         "moregates:create_mw_gate_open"
+      ]
+   },
+   "create_gate_close":{
+      "subtitle":"sounds.sgjourney.wormhole_close",
+      "sounds":[
+         "moregates:create_gate_close"
+      ]
+   },
+   "create_gate_spin":{
+      "subtitle":"sounds.sgjourney.ring_spin",
+      "sounds":[
+         "moregates:create_ring_spin"
+      ]
+   },
+   "create_chevron_encode":{
+      "subtitle":"sounds.sgjourney.chevron_encode",
+      "sounds":[
+         "moregates:create_chevron_encode"
+      ]
+   }
 }
