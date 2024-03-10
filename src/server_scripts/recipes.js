@@ -1080,4 +1080,6 @@ ServerEvents.recipes((event) => {
         "r": "#forge:storage_blocks/redstone",
         "e": "#forge:ingots/iron"
     })
+    // Phosphorus
+    registerChemicalInjectionRecipe(event, {chemicalType: "gas", gas: "mekanism:sulfuric_acid",amount:2},Item.PHOSPHORUS.getIdentifier(), "mekanism:bio_fuel")
 })
