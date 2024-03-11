@@ -42,5 +42,7 @@ src/server_scripts/common.js
 !/config/Mekanism
 /config/Mekanism/*
 !/config/Mekanism/general.toml
+# torchmaster
+!/config/torchmaster.toml
 /probe
 /jsconfig.json
