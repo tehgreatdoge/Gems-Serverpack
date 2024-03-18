@@ -82,7 +82,7 @@ ServerEvents.recipes((event) => {
     })
     //rftools utility
     //remove teleportation
-    event.remove([{id: "rftoolsutility:simple_dialer"},{id: "rftoolsutility:matter_transmitter"},{id: "rftoolsutility:matter_receiver"},{id: "rftoolsutility:dialing_device"},{id: "rftoolsutility:destination_analyzer"},{id: "rftoolsutility:matter_booster"},{id: "rftoolsutility:matter_booster"},{id: "rftoolsutility:charged_porter"},{id: "rftoolsutility:advanced_charged_porter"}])
+    event.remove([{id: "rftoolsutility:simple_dialer"},{id: "rftoolsutility:matter_receiver"},{id: "rftoolsutility:destination_analyzer"},{id: "rftoolsutility:matter_booster"},{id: "rftoolsutility:matter_booster"},{id: "rftoolsutility:charged_porter"},{id: "rftoolsutility:advanced_charged_porter"}])
     //balance
     event.remove([{id:"rftoolsutility:spawner"},{id:"rftoolsutility:environmental_controller"}])
     event.shaped("rftoolsutility:spawner",[
