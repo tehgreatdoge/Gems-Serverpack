@@ -5,7 +5,7 @@
 	"engaged_texture": "moregates:textures/entity/stargate/milky_way/ori/ori_stargate_engaged.png",
 	"event_horizon_texture": "moregates:textures/entity/stargate/milky_way/ori/ori_event_horizon.png",
 	"shiny_event_horizon_texture": "moregates:textures/entity/stargate/milky_way/ori/ori_event_horizon_shiny.png",
-	"symbol_color": [49, 9, 102, 255],
+	"symbol_color": [50, 50, 50, 255],
 	"encoded_symbol_color": [144, 0, 255, 255],
 	"engaged_symbol_color": [144, 0, 255, 255],
 	
